@@ -1,0 +1,955 @@
+{
+  "articles": 723,
+  "stats": {
+    "own_files": 3240,
+    "shared_files": 382
+  },
+  "missing_media": {
+    "a-study-on-the-brain-trees": [
+      "2017/09/Screenshot_86_-_Copy-300x94.png",
+      "2017/09/Elite_-_Dangerous_CLIENT_9_8_2017_4_33_45_PM_Wavescanner_Cropped_-_Copy.png",
+      "2017/09/Elite_-_Dangerous_CLIENT_9_8_2017_4_33_45_PM_Wavescanner_Cropped_-_Copy-300x182.png",
+      "2017/09/Screenshot_86_-_Copy.png",
+      "2017/09/Screenshot_86_-_Copy-600x189.png"
+    ],
+    "ace-of-dalfur": [
+      "2018/05/JTA_Python.jpg",
+      "2018/05/JTA_Python-300x245.jpg"
+    ],
+    "almeida-landing": [
+      "2017/11/Reverse-Engineered-3-6.ogg",
+      "2017/11/Reverse-Engineered-1-6.ogg",
+      "2017/11/UCB-Teegardens-Star-2-2024-03-21.ogg",
+      "2017/11/Reverse-Engineered-5-6.ogg",
+      "2017/11/Conn.jpg",
+      "2017/11/Reverse-Engineered-2-6.ogg",
+      "2017/11/Screenshot_2647.jpg",
+      "2017/11/Screenshot_2648.jpg",
+      "2017/11/Reverse-Engineered-6-6.ogg",
+      "2017/11/Reverse-Engineered-4-6.ogg"
+    ],
+    "ax-weapon-damage-partitions": [
+      "2019/04/XX_01_Summary_Table-768x141.png",
+      "2019/04/XX_01_Summary_Table-1024x188.png",
+      "2019/04/XX_02_Results-300x260.png",
+      "2019/04/XX_02_Results-600x519.png",
+      "2019/04/XX_01_Summary_Table.png",
+      "2019/04/XX_02_Results.png",
+      "2019/04/XX_02_Results-768x665.png",
+      "2019/04/XX_01_Summary_Table-300x55.png",
+      "2019/04/XX_01_Summary_Table-600x110.png"
+    ],
+    "axi-adder-build": [
+      "2017/04/adder-front-jpg-600x338.jpg",
+      "2017/04/adder-front-jpg-1024x576.jpg",
+      "2017/04/adder-bottom-jpg-1024x576.jpg",
+      "2017/04/adder-bottom-jpg-300x169.jpg",
+      "2017/04/adder-iso-jpg-1-768x432.jpg",
+      "2017/04/adder-front-jpg-768x432.jpg",
+      "2017/04/adder-front-jpg.jpg",
+      "2017/04/adder-top-jpg-1024x576.jpg",
+      "2017/04/adder-front-jpg-300x169.jpg",
+      "2017/04/AXI-Adder-2.0-768x363.jpg",
+      "2017/04/adder-iso-jpg-1.jpg",
+      "2017/04/AXI-Adder-2.0-600x284.jpg",
+      "2017/04/adder-iso-jpg-1-600x338.jpg",
+      "2017/04/adder-side-jpg-600x338.jpg",
+      "2017/04/adder-bottom-jpg-768x432.jpg",
+      "2017/04/adder-iso-jpg-1-300x169.jpg",
+      "2017/04/adder-top-jpg-300x169.jpg",
+      "2017/04/AXI-Adder-2.0-300x142.jpg",
+      "2017/04/adder-side-jpg.jpg",
+      "2017/04/adder-top-jpg-600x338.jpg",
+      "2017/04/adder-side-jpg-300x169.jpg",
+      "2017/04/AXI-Adder-2.0-1024x484.jpg",
+      "2017/04/AXI-Adder-2.0.jpg",
+      "2017/04/adder-side-jpg-1024x576.jpg",
+      "2017/04/adder-iso-jpg-1-1024x576.jpg",
+      "2017/04/adder-side-jpg-768x432.jpg",
+      "2017/04/adder-top-jpg-768x432.jpg",
+      "2017/04/adder-bottom-jpg.jpg",
+      "2017/04/adder-bottom-jpg-600x338.jpg",
+      "2017/04/adder-top-jpg.jpg"
+    ],
+    "axi-fds-build": [
+      "2018/04/fds-top-jpg-300x169.jpg",
+      "2017/04/DropshipOutfitting.jpg",
+      "2018/04/fds-bottom-jpg-768x432.jpg",
+      "2018/04/fds-top-jpg-768x432.jpg",
+      "2018/04/fds-front-jpg-300x169.jpg",
+      "2018/04/fds-side-jpg-1024x576.jpg",
+      "2018/04/fds-side-jpg-600x338.jpg",
+      "2017/04/DropshipOutfitting-600x565.jpg",
+      "2018/04/fds-front-jpg-768x432.jpg",
+      "2018/04/fds-front-jpg.jpg",
+      "2018/04/fds-bottom-jpg-300x169.jpg",
+      "2018/04/fds-front-jpg-1024x576.jpg",
+      "2018/04/fds-side-jpg-768x432.jpg",
+      "2018/04/fds-bottom-jpg-600x338.jpg",
+      "2018/04/fds-side-jpg.jpg",
+      "2018/04/fds-front-jpg-600x338.jpg",
+      "2018/04/fds-side-jpg-300x169.jpg",
+      "2018/04/fds-top-jpg-600x338.jpg",
+      "2018/04/fds-top-jpg-1024x576.jpg",
+      "2017/04/DropshipOutfitting-300x282.jpg",
+      "2018/04/fds-bottom-jpg-1024x576.jpg",
+      "2018/04/fds-top-jpg.jpg",
+      "2018/04/fds-bottom-jpg.jpg"
+    ],
+    "betterton-outpost": [
+      "2018/07/Mercy-2-4.ogg",
+      "2018/07/Mercy-1-4.ogg",
+      "2018/07/Mercy-4-4.ogg",
+      "2018/07/Mercy-3-4.ogg"
+    ],
+    "canonn-lore": [
+      "2016/02/1256440216_128.jpg",
+      "2016/06/HuttonLogoFlat-300x41.png",
+      "2016/10/Elite-Dangerous-Core-300x169.png",
+      "2016/10/Elite-Dangerous-Core.png",
+      "2016/10/Elite-Dangerous-Core-768x432.png",
+      "2016/03/Twitter-Profile-150x150.png",
+      "2016/10/Elite-Dangerous-Core-128x72.png",
+      "2016/06/HuttonLogoFlat.png",
+      "2016/03/Twitter-Profile.png",
+      "2016/10/Elite-Dangerous-Core-1024x576.png"
+    ],
+    "canonn-toolkit": [
+      "2017/04/CanonnToolkit.jpg"
+    ],
+    "canonnball-run-3": [
+      "2017/11/Canonnball3.jpg",
+      "2017/11/Canonnball3-600x822.jpg"
+    ],
+    "carmichael-point": [
+      "2017/12/Watching-The-Sky-3-4.ogg",
+      "2017/12/UCB-HR-1188-A-2-2024-03-21.ogg",
+      "2017/12/Watching-The-Sky-1-4.ogg",
+      "2017/12/Watching-The-Sky-4-4.ogg",
+      "2017/12/Watching-The-Sky-2-4.ogg"
+    ],
+    "caucuma-unregistered-comms-beacon": [
+      "2024/03/Herald-Snippet-Caucuma-2024-03-18.jpeg"
+    ],
+    "cfn-special-report-canonn-decals": [
+      "2017/05/TallBird-PhotoCompWinner-600x338.jpg",
+      "2017/05/TallBird-PhotoCompWinner-768x432.jpg",
+      "2017/05/TallBird-PhotoCompWinner-1024x576.jpg",
+      "2017/05/TallBird-PhotoCompWinner-300x169.jpg"
+    ],
+    "clarks-rest": [
+      "2017/10/ALSHAT-map-final.jpg"
+    ],
+    "communication-hub-zeta-12": [
+      "2017/07/UCB-Electra-4-2024-03-22.ogg",
+      "2017/07/Comms-Hub-Zeta-12-Tech-Officers-Log-2-4.ogg",
+      "2017/07/Comms-Hub-Zeta-12-Tech-Officers-Log-3-4.ogg",
+      "2017/07/Comms-Hub-Zeta-12-Tech-Officers-Log-1-4.ogg",
+      "2017/07/Comms-Hub-Zeta-12-Tech-Officers-Log-4-4.ogg",
+      "2017/07/Screenshot_2292.jpg"
+    ],
+    "conflux-alpha-site": [
+      "2017/09/UCB-Pru-Aescs-TY-J-a64-1-1-2024-06-03.ogg"
+    ],
+    "conflux-beta-site": [
+      "2017/09/UCB-Pru-Aescs-HW-S-b31-2-A-2024-06-03.ogg"
+    ],
+    "conflux-delta-site": [
+      "2017/09/UCB-Pru-Aescs-NC-M-d7-192-A-2-a-2024-06-03.ogg"
+    ],
+    "conflux-gamma-site": [
+      "2017/09/UCB-Pru-Aescs-OI-K-a64-0-1-2024-06-03.ogg"
+    ],
+    "crashed-scout-3": [
+      "2023/11/Thargoid-Scout-Arietis-Sector-ZE-A-d75-600x338.png",
+      "2023/11/Thargoid-Scout-Arietis-Sector-ZE-A-d75-1024x576.png",
+      "2023/11/Thargoid-Scout-Arietis-Sector-ZE-A-d75-768x432.png",
+      "2023/11/Thargoid-Scout-Arietis-Sector-ZE-A-d75-300x169.png",
+      "2023/11/Thargoid-Scout-Arietis-Sector-ZE-A-d75.png"
+    ],
+    "crowthers-rest": [
+      "2022/04/Crowther_2-1024x576.png",
+      "2022/04/Crowther_2-768x432.png",
+      "2022/04/Crowther_2.png",
+      "2022/04/Crowther_2-600x338.png",
+      "2022/04/Crowther_2-300x169.png"
+    ],
+    "debris-field": [
+      "2024/03/Herald-Snippet-Sanuma-2017-03-04.jpeg"
+    ],
+    "dedicant": [
+      "2023/08/Desmond_West_-_Log_1_of_2.mp3",
+      "2023/08/SPOILER_Dedicant_Log_Locations_2-600x338.jpg",
+      "2023/08/Desmond_West_-_Log_2_of_2.mp3",
+      "2023/08/Sophie_Brandt_-_Log_2_of_2.mp3",
+      "2023/08/Joseph_Tolmen_-_Log_1_of_2.mp3",
+      "2023/08/Kelvin_Mitchell_-_Log_2_of_2.mp3",
+      "2023/08/SPOILER_Dedicant_Log_Locations_2-768x432.jpg",
+      "2023/08/Sophie_Brandt_-_Log_1_of_2.mp3",
+      "2023/08/Kelvin_Mitchell_-_Log_1_of_2.mp3",
+      "2023/08/Sharon_Gateshead_-_Log_1_of_2.mp3",
+      "2023/08/Sharon_Gateshead_-_Log_2_of_2.mp3",
+      "2023/08/Joseph_Tolmen_-_Log_2_of_2.mp3",
+      "2023/08/SPOILER_Dedicant_Log_Locations_2-300x169.jpg",
+      "2023/08/SPOILER_Dedicant_Log_Locations_2-1024x576.jpg"
+    ],
+    "earths-inheritance-wildlife-reserve": [
+      "2017/05/Screenshot_1355-600x338.jpg",
+      "2017/05/Screenshot_1375-1024x576.jpg",
+      "2017/05/Screenshot_1355.jpg",
+      "2017/05/Screenshot_1375-600x338.jpg",
+      "2017/05/Screenshot_1355-768x432.jpg",
+      "2017/05/Screenshot_1375.jpg",
+      "2017/05/Screenshot_1375-768x432.jpg",
+      "2017/05/Screenshot_1375-300x169.jpg",
+      "2017/05/Screenshot_1355-300x169.jpg",
+      "2017/05/Screenshot_1355-1024x576.jpg"
+    ],
+    "ed-lewis-memorial": [
+      "2024/04/UCB-Dubbuennel-3-a-2024-04-26.ogg"
+    ],
+    "edge-fraternity-unregistered-comms-beacons": [
+      "2017/05/UCB-LHS-3447-B-1-a-2024-03-19.ogg"
+    ],
+    "electricae": [
+      "2023/12/Trello_Electricae_Pluma_Vegnio_ZP-G_d10-75_Felsen83-300x169.jpg",
+      "2023/12/Trello_Electricae_Radialem_Blue_Eol_Prou_ML-T_b18-0_Arras_DeCAiro-600x338.jpg",
+      "2023/12/Trello_Electricae_Pluma_Vegnio_ZP-G_d10-75_Felsen83.jpg",
+      "2023/12/Trello_Electricae_Radialem_Blue_Eol_Prou_ML-T_b18-0_Arras_DeCAiro-1024x576.jpg",
+      "2023/12/Trello_Electricae_Radialem_Blue_Eol_Prou_ML-T_b18-0_Arras_DeCAiro-768x432.jpg",
+      "2023/12/Trello_Electricae_Pluma_Vegnio_ZP-G_d10-75_Felsen83-1024x576.jpg",
+      "2023/12/Trello_Electricae_Radialem_Blue_Eol_Prou_ML-T_b18-0_Arras_DeCAiro-300x169.jpg",
+      "2023/12/Trello_Electricae_Pluma_Vegnio_ZP-G_d10-75_Felsen83-768x432.jpg",
+      "2023/12/Trello_Electricae_Pluma_Vegnio_ZP-G_d10-75_Felsen83-600x338.jpg"
+    ],
+    "expedition-vessel-odysseus": [
+      "2017/10/ALSHAT-map-final.jpg"
+    ],
+    "exploration": [
+      "2016/04/APassageThroughThePoseidalWall.pdf"
+    ],
+    "federal-navy-fleet": [
+      "2017/05/Screenshot_1349-768x432.jpg",
+      "2017/05/Screenshot_1349-300x169.jpg",
+      "2017/05/Screenshot_1349-1024x576.jpg",
+      "2017/05/Screenshot_1349-600x338.jpg"
+    ],
+    "flippin-fish-fantastic": [
+      "2016/06/V2-FFF-Event-768x543.jpg",
+      "2016/06/Limited-Edition-768x215.jpg",
+      "2016/06/Limited-Edition.jpg",
+      "2016/06/V2-FFF-Event.jpg",
+      "2016/06/Limited-Edition-300x84.jpg",
+      "2016/06/V2-FFF-Event-300x212.jpg",
+      "2016/06/V2-FFF-Event-1024x724.jpg"
+    ],
+    "formidine-rift-alpha-site": [
+      "2017/05/UCB-Eafots-EU-R-c4-1-A-2024-05-31.ogg"
+    ],
+    "formidine-rift-beta-site": [
+      "2017/05/UCB-Eafots-LZ-H-b10-0-D-2024-05-31.ogg"
+    ],
+    "formidine-rift-gamma-site": [
+      "2017/05/UCB-Eafots-RA-G-B11-0-3-2024-05-31.ogg"
+    ],
+    "frutexa": [
+      "2023/12/Trello_Frutexa_Collum_Green_California_Sector_HR-W_d1-4_Arras_DeCairo-768x432.jpg",
+      "2023/12/Trello_Frutexa_Metallicum_Emerald_Darwin-768x432.jpg",
+      "2023/12/Trello_Frutexa_Sponsae_Markus_Mathieson-600x251.jpg",
+      "2023/12/Trello_Frutexa_Sponsae_Markus_Mathieson-768x321.jpg",
+      "2023/12/Trello_Frutexa_Metallicum_Emerald_Darwin.jpg",
+      "2023/12/Trello_Frutexa_Collum_Green_California_Sector_HR-W_d1-4_Arras_DeCairo-300x169.jpg",
+      "2023/12/Trello_Frutexa_Sponsae_Markus_Mathieson-300x126.jpg",
+      "2023/12/Trello_Frutexa_Acus_Teal_Col_359_Sector_PF-L_b23-4_LCU_No_Fool_Like_One.png",
+      "2023/12/Trello_Frutexa_Flabellum_Teal_Markus_Mathieson-1024x768.jpg",
+      "2023/12/Trello_Frutexa_Metallicum_Emerald_Darwin-1024x576.jpg",
+      "2023/12/Trello_Frutexa_Acus_Teal_Col_359_Sector_PF-L_b23-4_LCU_No_Fool_Like_One-600x338.png",
+      "2024/10/Frutexa-Fera-Red-Blyeia-Ain-ZY-S-d3-4354-1.jpg",
+      "2023/12/Trello_Frutexa_Flammasis_Eol_Prou_IS-J_d9-563_Arra_DeCairo-600x338.jpg",
+      "2023/12/Trello_Frutexa_Flabellum_Teal_Markus_Mathieson-300x225.jpg",
+      "2023/12/Trello_Frutexa_Sponsae_Markus_Mathieson-1024x429.jpg",
+      "2023/12/Trello_Frutexa_Flabellum_Teal_Markus_Mathieson-768x576.jpg",
+      "2023/12/Trello_Frutexa_Flammasis_Eol_Prou_IS-J_d9-563_Arra_DeCairo-1024x576.jpg",
+      "2023/12/Trello_Frutexa_Acus_Teal_Col_359_Sector_PF-L_b23-4_LCU_No_Fool_Like_One-768x432.png",
+      "2024/10/Frutexa-Fera-Red-Blyeia-Ain-ZY-S-d3-4354-1-1024x576.jpg",
+      "2023/12/Trello_Frutexa_Flammasis_Eol_Prou_IS-J_d9-563_Arra_DeCairo-768x432.jpg",
+      "2023/12/Trello_Frutexa_Flabellum_Teal_Markus_Mathieson.jpg",
+      "2023/12/Trello_Frutexa_Flabellum_Teal_Markus_Mathieson-600x450.jpg",
+      "2023/12/Trello_Frutexa_Acus_Teal_Col_359_Sector_PF-L_b23-4_LCU_No_Fool_Like_One-300x169.png",
+      "2023/12/Trello_Frutexa_Collum_Green_California_Sector_HR-W_d1-4_Arras_DeCairo-1024x576.jpg",
+      "2023/12/Trello_Frutexa_Acus_Teal_Col_359_Sector_PF-L_b23-4_LCU_No_Fool_Like_One-1024x576.png",
+      "2023/12/Trello_Frutexa_Collum_Green_California_Sector_HR-W_d1-4_Arras_DeCairo-600x338.jpg",
+      "2024/10/Frutexa-Fera-Red-Blyeia-Ain-ZY-S-d3-4354-1-300x169.jpg",
+      "2024/10/Frutexa-Fera-Red-Blyeia-Ain-ZY-S-d3-4354-1-768x432.jpg",
+      "2023/12/Trello_Frutexa_Flammasis_Eol_Prou_IS-J_d9-563_Arra_DeCairo-300x169.jpg",
+      "2023/12/Trello_Frutexa_Metallicum_Emerald_Darwin-300x169.jpg",
+      "2023/12/Trello_Frutexa_Metallicum_Emerald_Darwin-600x338.jpg",
+      "2024/10/Frutexa-Fera-Red-Blyeia-Ain-ZY-S-d3-4354-1-600x338.jpg"
+    ],
+    "fuel-rats-checkpoint": [
+      "2024/03/Herald-Kitani-2017-03-14.jpeg"
+    ],
+    "fumerola": [
+      "2023/12/Trello_Fumerola_Carbosis_Orange_Teptec-600x449.png",
+      "2023/12/Trello_Fumerola_Nitris_Peach_Beldum-1024x576.png",
+      "2024/10/Fumerola-Aquatis-Yellow-Froarks-SQ-P-b5-193-768x432.png",
+      "2024/10/Fumerola-Aquatis-Yellow-Froarks-SQ-P-b5-193-1024x576.png",
+      "2023/12/Trello_Fumerola_Extremus_Aquamarine_Markus_Mathieson-768x321.jpg",
+      "2023/12/Trello_Fumerola_Carbosis_Orange_Teptec-768x575.png",
+      "2024/10/Fumerola-Aquatis-Yellow-Froarks-SQ-P-b5-193-300x169.png",
+      "2023/12/Trello_Fumerola_Extremus_Aquamarine_Markus_Mathieson-1024x429.jpg",
+      "2023/12/Trello_Fumerola_Carbosis_Orange_Teptec-1024x766.png",
+      "2023/12/Trello_Fumerola_Carbosis_Orange_Teptec-300x224.png",
+      "2023/12/Trello_Fumerola_Nitris_Peach_Beldum-768x432.png",
+      "2023/12/Trello_Fumerola_Nitris_Peach_Beldum-300x169.png",
+      "2023/12/Trello_Fumerola_Carbosis_Orange_Teptec.png",
+      "2023/12/Trello_Fumerola_Extremus_Aquamarine_Markus_Mathieson-300x126.jpg",
+      "2023/12/Trello_Fumerola_Nitris_Peach_Beldum.png",
+      "2023/12/Trello_Fumerola_Extremus_Aquamarine_Markus_Mathieson-600x251.jpg",
+      "2024/10/Fumerola-Aquatis-Yellow-Froarks-SQ-P-b5-193-600x338.png",
+      "2023/12/Trello_Fumerola_Nitris_Peach_Beldum-600x338.png",
+      "2024/10/Fumerola-Aquatis-Yellow-Froarks-SQ-P-b5-193.png"
+    ],
+    "fungoida": [
+      "2023/12/Trello_Fungoida_Stabitis_Blue_Darwin-300x188.png",
+      "2023/12/Trello_Fungoida_Bullarum_Gold_Pyra_Dryiae_FY-B_c16-0_LCU_No_Fool_Like_One-300x169.png",
+      "2024/10/Fungoida-Gelata-Lime-Ogairy-EV-Y-d1434-B-4-a-300x169.jpg",
+      "2024/10/Fungoida-Gelata-Lime-Ogairy-EV-Y-d1434-B-4-a-768x432.jpg",
+      "2023/12/Trello_Fungoida_Bullarum_Gold_Pyra_Dryiae_FY-B_c16-0_LCU_No_Fool_Like_One-600x338.png",
+      "2023/12/Trello_Fungoida_Setisis_Lime_Wregoe_ZK-D_c26-8_Arras_DeCairo-1024x576.jpg",
+      "2023/12/Trello_Fungoida_Setisis_Lime_Wregoe_ZK-D_c26-8_Arras_DeCairo-300x169.jpg",
+      "2023/12/Trello_Fungoida_Stabitis_Blue_Darwin.png",
+      "2024/10/Fungoida-Gelata-Lime-Ogairy-EV-Y-d1434-B-4-a-1024x576.jpg",
+      "2024/10/Fungoida-Gelata-Lime-Ogairy-EV-Y-d1434-B-4-a.jpg",
+      "2023/12/Trello_Fungoida_Bullarum_Gold_Pyra_Dryiae_FY-B_c16-0_LCU_No_Fool_Like_One-1024x576.png",
+      "2023/12/Trello_Fungoida_Setisis_Lime_Wregoe_ZK-D_c26-8_Arras_DeCairo-600x338.jpg",
+      "2023/12/Trello_Fungoida_Setisis_Lime_Wregoe_ZK-D_c26-8_Arras_DeCairo-768x432.jpg",
+      "2024/10/Fungoida-Gelata-Lime-Ogairy-EV-Y-d1434-B-4-a-600x338.jpg",
+      "2023/12/Trello_Fungoida_Stabitis_Blue_Darwin-600x375.png",
+      "2023/12/Trello_Fungoida_Bullarum_Gold_Pyra_Dryiae_FY-B_c16-0_LCU_No_Fool_Like_One.png",
+      "2023/12/Trello_Fungoida_Stabitis_Blue_Darwin-768x480.png",
+      "2023/12/Trello_Fungoida_Stabitis_Blue_Darwin-1024x640.png",
+      "2023/12/Trello_Fungoida_Bullarum_Gold_Pyra_Dryiae_FY-B_c16-0_LCU_No_Fool_Like_One-768x432.png"
+    ],
+    "galactic-intern-briefing-bruce": [
+      "2020/09/BriefingBruce.jpg",
+      "2020/09/BriefingBruce-768x432.jpg",
+      "2020/09/BriefingBruce-300x169.jpg",
+      "2020/09/BriefingBruce-1024x576.jpg",
+      "2020/09/BriefingBruce-600x338.jpg"
+    ],
+    "gcs-sarasvati": [
+      "2017/10/Screenshot_2452.jpg",
+      "2017/10/Screenshot_2443.jpg"
+    ],
+    "generation-ship-achlys": [
+      "2018/06/Achlys-Programmed-to-Succeed-4-4.ogg",
+      "2018/06/Achlys-Programmed-to-Succeed-1-4.ogg",
+      "2018/06/Achlys-Programmed-to-Succeed-2-4.ogg",
+      "2018/06/Achlys-Programmed-to-Succeed-3-4.ogg"
+    ],
+    "generation-ship-artemis": [
+      "2017/11/Screenshot_2681.jpg",
+      "2017/11/Screenshot_2680.jpg",
+      "2017/11/Screenshot_2680-768x432.jpg"
+    ],
+    "generation-ship-atlas": [
+      "2017/05/Screenshot_2109.jpg"
+    ],
+    "generation-ship-demeter": [
+      "2018/09/Demeter-Two-Tribes-2-4.ogg",
+      "2018/09/Demeter-Two-Tribes-4-4.ogg",
+      "2018/09/Demeter-Two-Tribes-3-4.ogg"
+    ],
+    "generation-ship-hyperion": [
+      "2017/05/Hyperion-The-Promised-Land-1-5.ogg",
+      "2017/05/Hyperion-The-Promised-Land-2-5.ogg",
+      "2017/05/Screenshot_2154.jpg",
+      "2017/05/Hyperion-The-Promised-Land-4-5.ogg",
+      "2017/05/Hyperion-The-Promised-Land-3-5.ogg",
+      "2017/05/Hyperion-The-Promised-Land-5-5.ogg"
+    ],
+    "generation-ship-lycaon": [
+      "2017/05/Screenshot_2145.jpg",
+      "2017/05/Lycaon-Contagion-4-5.ogg",
+      "2017/05/Lycaon-Contagion-1-5.ogg",
+      "2017/05/Lycaon-Contagion-5-5.ogg",
+      "2017/05/Lycaon-Contagion-2-5.ogg",
+      "2017/05/Screenshot_2142.jpg",
+      "2017/05/Lycaon-Contagion-3-5.ogg"
+    ],
+    "generation-ship-odysseus": [
+      "2017/05/Screenshot_2207-600x338.jpg",
+      "2017/05/Screenshot_2211.jpg",
+      "2017/05/Screenshot_2211-300x169.jpg",
+      "2017/05/Odysseus-Our-New-Eden-2-5.ogg",
+      "2017/05/Odysseus-Our-New-Eden-4-5.ogg",
+      "2017/05/Screenshot_2211-600x338.jpg",
+      "2017/05/Odysseus-Our-New-Eden-1-5.ogg",
+      "2017/05/Screenshot_2207.jpg",
+      "2017/05/Odysseus-Our-New-Eden-5-5.ogg",
+      "2017/05/Screenshot_2207-768x432.jpg",
+      "2017/05/Screenshot_2211-768x432.jpg",
+      "2017/05/Odysseus-Our-New-Eden-3-5.ogg",
+      "2017/05/Screenshot_2207-300x169.jpg"
+    ],
+    "generation-ship-phanes": [
+      "2018/08/Phanes-The-Last-People-2-4.ogg",
+      "2018/08/Phanes-The-Last-People-3-4.ogg",
+      "2018/08/Phanes-The-Last-People-4-4.ogg",
+      "2018/08/Phanes-The-Last-People-1-4.ogg"
+    ],
+    "generation-ship-spear-of-hope": [
+      "2018/11/Spear-of-Hope-Slingshot-2-4.ogg",
+      "2018/11/Spear-of-Hope-Slingshot-3-4.ogg",
+      "2018/11/Spear-of-Hope-Slingshot-1-4.ogg",
+      "2018/11/Spear-of-Hope-Slingshot-4-4.ogg"
+    ],
+    "generation-ship-thetis": [
+      "2017/05/Screenshot_2134.jpg",
+      "2017/05/Screenshot_2133.jpg"
+    ],
+    "grabrigpa-agricultural-installation": [
+      "2017/09/Screenshot_0035-600x338.jpg",
+      "2017/09/Screenshot_0035-1024x576.jpg",
+      "2017/09/Screenshot_0035.jpg",
+      "2017/09/Screenshot_0035-768x432.jpg",
+      "2017/09/Screenshot_0035-300x169.jpg"
+    ],
+    "guardian-structure": [
+      "2026/06/ancient_medium_002-C-scaled.jpeg",
+      "2026/06/ancient_medium_001-C.jpeg",
+      "2026/06/ancient_medium_001-D.jpeg",
+      "2026/06/ancient_medium_003-A-scaled.jpeg",
+      "2026/06/ancient_medium_003-Pylons-scaled.jpeg",
+      "2026/06/ancient_medium_001-A.jpeg",
+      "2026/06/ancient_medium_003-B-scaled.jpeg",
+      "2026/06/ancient_medium_001-Pylons.png",
+      "2026/06/ancient_medium_001-B.jpeg",
+      "2026/06/ancient_medium_002-B-scaled.jpeg",
+      "2026/06/ancient_medium_003-D-H-scaled.jpeg",
+      "2026/06/ancient_medium_003-C-scaled.jpeg",
+      "2026/06/ancient_medium_002-A-scaled.jpeg",
+      "2026/06/ancient_medium_002-D-scaled.jpeg",
+      "2026/06/ancient_medium_002-Pylons.png"
+    ],
+    "hawkins-gap-beta-site": [
+      "2017/09/UCB-Plaa-Aec-XZ-Z-b41-0-1-2024-06-04.ogg"
+    ],
+    "hawkins-gap-delta-site": [
+      "2017/09/UCB-Plaa-Aec-RY-B-B41-1-1-2024-06-04.ogg"
+    ],
+    "hip-14909-distress-call": [
+      "2017/07/Screenshot_2309.jpg"
+    ],
+    "hip-17044-distress-call": [
+      "2017/06/Screenshot_2194.jpg",
+      "2017/06/Distress-Call-HIP-17044-Morse-Example-600x108.png",
+      "2017/06/Screenshot_2191.jpg",
+      "2017/06/Screenshot_2193.jpg",
+      "2017/06/Distress-Call-HIP-17044-Morse-Example.png",
+      "2017/06/Distress-Call-HIP-17044.ogg",
+      "2017/06/Distress-Call-HIP-17044-Morse-Example-300x53.png"
+    ],
+    "hip-22460-wreckage-logs": [
+      "2024/08/HIP-22460-Wreckage-Ship-Comms-087290-b-Grayling-Stan.png",
+      "2024/08/HIP-22460-Wreckage-Personal-Log-214028-b-Santacoloma-Wilbur.png",
+      "2024/08/Heart-of-Taurus-Private-Comms-Log.png",
+      "2024/08/Bright-Sentinel-Outbound-Comms-Log.png",
+      "2024/08/Bright-Sentinel-Crew-Announcement.png",
+      "2024/08/HIP-22460-Wreckage-Personal-Log-208630-t-Ching-Fung.png",
+      "2024/08/HIP-22460-Wreckage-Ship-Comms-114815-f-Chavez-Robert.png",
+      "2024/08/Bright-Sentinel-Personal-Log.png",
+      "2024/08/HIP-22460-Wreckage-Personal-Log-214028-b-Painter-Lloyd.png",
+      "2024/08/Oath-of-Tyndareus-Personal-Log.png",
+      "2024/08/HIP-22460-Wreckage-Personal-Log-230255-b-Fairchild-Emma.png",
+      "2024/08/Bright-Sentinel-Personal-Log-27-07-3308-Salvation.png",
+      "2024/08/Heart-of-Taurus-Unverified-Recording.png",
+      "2024/08/Alert-HIP-22460-Evacuation.png",
+      "2024/08/Oath-of-Tyndareus-Engineering-Log.png"
+    ],
+    "hip-8396-distress-call": [
+      "2024/03/Herald-Snippet-HIP-8396-2017-03-14.jpeg"
+    ],
+    "hogan-depot": [
+      "2017/10/Pesticides-2-3.ogg",
+      "2017/11/HIP-7158.jpg",
+      "2017/10/Pesticides-3-3.ogg",
+      "2017/10/Screenshot_2552.jpg",
+      "2017/10/Pesticides-1-3.ogg",
+      "2017/10/Screenshot_2553.jpg"
+    ],
+    "hollis-gateway": [
+      "2017/10/Technology-Testing-3-4.ogg",
+      "2017/10/Technology-Testing-1-4.ogg",
+      "2017/10/Technology-Testing-2-4.ogg",
+      "2017/10/Screenshot_2609.jpg",
+      "2017/10/Screenshot_2609-300x169.jpg",
+      "2017/10/Technology-Testing-4-4.ogg",
+      "2017/10/Screenshot_2609-600x338.jpg",
+      "2017/10/Screenshot_2609-768x432.jpg",
+      "2017/10/Hermitage-600x338.jpg",
+      "2017/10/Screenshot_2610.jpg",
+      "2017/10/Screenshot_2610-600x338.jpg",
+      "2017/10/Hermitage-300x169.jpg",
+      "2017/10/Screenshot_2610-300x169.jpg",
+      "2017/10/Screenshot_2610-768x432.jpg",
+      "2017/10/Hermitage.jpg",
+      "2017/10/Hermitage-768x432.jpg"
+    ],
+    "hr-1185-distress-call": [
+      "2017/09/Screenshot_0062.jpg"
+    ],
+    "iraxon-lane": [
+      "2022/05/Iraxon-Lane-Azimuth-Contract-2-5.ogg",
+      "2022/05/Iraxon-Lane-Azimuth-Contract-5-5.ogg",
+      "2022/05/IRAXON.png",
+      "2022/05/Iraxon-Lane-Azimuth-Contract-4-5.ogg",
+      "2022/05/Iraxon-Lane-Azimuth-Contract-3-5.ogg",
+      "2022/05/IRAXON-300x169.png",
+      "2022/05/IRAXON-600x338.png",
+      "2022/05/Iraxon-Lane-Azimuth-Contract-1-5.ogg",
+      "2022/05/IRAXON-1024x576.png",
+      "2022/05/IRAXON-768x432.png"
+    ],
+    "klatt-enterprises": [
+      "2017/10/History-Will-Decide-5-5.ogg",
+      "2017/10/History-Will-Decide-4-5.ogg",
+      "2017/10/Alnath.jpg",
+      "2017/10/History-Will-Decide-1-5.ogg",
+      "2017/10/Screenshot_2536.jpg",
+      "2017/10/Screenshot_2535.jpg",
+      "2017/10/History-Will-Decide-2-5.ogg",
+      "2017/10/History-Will-Decide-3-5.ogg"
+    ],
+    "laklano-checkpoint": [
+      "2024/03/Herald-Laklano-2017-03-14.jpeg"
+    ],
+    "large-barnacles": [
+      "2016/01/Screenshot_0092.png"
+    ],
+    "lazarus-expedition": [
+      "2017/09/Screenshot_0024.jpg"
+    ],
+    "mahon-research-base": [
+      "2017/05/Screenshot_1792.jpg"
+    ],
+    "mayes-chemical-plant": [
+      "2017/10/Screenshot_2548.jpg",
+      "2017/10/Screenshot_2550.jpg",
+      "2017/10/HIP-59382.jpg"
+    ],
+    "mic-turner-base": [
+      "2017/05/Screenshot_1275.jpg"
+    ],
+    "monday-night-mayhem-for-murca": [
+      "2016/06/MondayMayhemMurcaV2-300x169.png",
+      "2016/06/MondayMayhemMurcaV2.png",
+      "2016/06/MondayMayhemMurcaV2-1024x576.png",
+      "2016/06/MondayMayhemMurcaV2-128x72.png",
+      "2016/06/MondayMayhemMurcaV2-768x432.png"
+    ],
+    "nemesis-investigation": [
+      "2024/09/Nemesis-Investigation-1-3.ogg",
+      "2024/09/Nemesis-Investigation-3-3.ogg",
+      "2024/09/Nemesis-Investigation-2-3.ogg"
+    ],
+    "nommai-convoy-beacon": [
+      "2017/07/UCB-Nommai-4-2024-03-19.ogg"
+    ],
+    "oaken-point": [
+      "2021/08/Oaken-Point-5-5.ogg",
+      "2021/08/Oaken-Point-1-5.ogg",
+      "2021/08/Oaken-Point-3-5.ogg",
+      "2021/08/Oaken-Point-4-5.ogg",
+      "2021/08/Oaken-Point-2-5.ogg"
+    ],
+    "ocd-gnosis-b": [
+      "2020/06/OCD-Gnosis-B-600x372.jpg",
+      "2020/06/OCD-Gnosis-B.jpg",
+      "2020/06/OCD-Gnosis-B-300x186.jpg",
+      "2020/06/OCD-Gnosis-B-768x476.jpg"
+    ],
+    "organic-scanning-guide": [
+      "2024/06/before.png",
+      "2024/06/image.png"
+    ],
+    "orions-folly": [
+      "2017/05/Screenshot_1116.jpg"
+    ],
+    "panacea-medical-centre": [
+      "2017/07/Screenshot_2275.jpg"
+    ],
+    "phasing-multi-cannon": [
+      "2022/12/PhasingMultiPlot-300x155.png",
+      "2022/12/PhasingMultiPlot.png"
+    ],
+    "pirate-trader": [
+      "2024/03/Herald-Snippet-Unelinte-2017-04-01.jpeg"
+    ],
+    "pirates-attacking-federation": [
+      "2024/03/Herald-Velli-2017-03-14.jpeg"
+    ],
+    "radicoida": [
+      "2026/04/Unica-Seed.png",
+      "2026/04/Unica-Seed-Description.png",
+      "2026/04/Radicoida-Unica-Pods-2.png",
+      "2026/04/Unica-Seed-Bartender.png",
+      "2026/04/Radicoida-Unica-Pod-Glow.png",
+      "2026/04/Radicoida-Unica-Pod-Destroyed.png"
+    ],
+    "recent-community-created-thargoid-link-puzzle": [
+      "2019/02/Table1-600x65.jpg",
+      "2019/02/Table1-300x32.jpg",
+      "2019/02/Table1-768x83.jpg",
+      "2019/02/CanonnDecryptor-1.jpg",
+      "2019/02/CanonnDecryptor-1-768x666.jpg",
+      "2019/02/CanonnDecryptor-1-300x260.jpg",
+      "2019/02/CanonnDecryptor-1-600x520.jpg",
+      "2019/02/Table1-1024x110.jpg",
+      "2019/02/Table1.jpg"
+    ],
+    "relay-station-psj-17": [
+      "2017/07/PSJ-17-Communication-Log-1-6.ogg",
+      "2017/07/Screenshot_2303.jpg",
+      "2017/07/PSJ-17-Communication-Log-5-6.ogg",
+      "2017/07/PSJ-17-Communication-Log-2-6.ogg",
+      "2017/07/PSJ-17-Communication-Log-3-6.ogg",
+      "2017/07/PSJ-17-Communication-Log-4-6.ogg",
+      "2017/07/PSJ-17-Communication-Log-6-6.ogg",
+      "2017/07/Screenshot_2303-768x432.jpg"
+    ],
+    "research-base-kg-3362": [
+      "2018/06/Ripe-For-The-Picking-1-4.ogg",
+      "2018/06/Ripe-For-The-Picking-2-4.ogg",
+      "2018/06/Ripe-For-The-Picking-4-4.ogg",
+      "2018/06/Ripe-For-The-Picking-3-4.ogg"
+    ],
+    "research-base-lv-87": [
+      "2024/03/Curiosity-Killed-The-Cat-3-4.ogg",
+      "2024/03/Curiosity-Killed-The-Cat-4-4.ogg",
+      "2024/03/Curiosity-Killed-The-Cat-2-4.ogg",
+      "2024/03/Curiosity-Killed-The-Cat-1-4.ogg"
+    ],
+    "rhubarb-and-custard": [
+      "2020/08/20200809025009_1.jpg"
+    ],
+    "san-tu-scientific-installation": [
+      "2017/05/Screenshot_0822.png",
+      "2017/05/UCB-San-Tu-4-c-2024-03-26.ogg"
+    ],
+    "save-the-data": [
+      "2020/08/lkNa8VP-300x229.png",
+      "2020/08/lkNa8VP.png"
+    ],
+    "shalatucas-civilian-broadcast": [
+      "2024/03/Herald-Lie-Zhonpon-2017-03-14.jpeg",
+      "2017/05/UCB-Lie-Zhonpon-3-2024-03-19.ogg"
+    ],
+    "sharpe-works": [
+      "2018/06/Dont-Panic-4-4.ogg",
+      "2018/06/Dont-Panic-3-4.ogg",
+      "2018/06/Dont-Panic-2-4.ogg"
+    ],
+    "silurion-anomalous-signal": [
+      "2024/03/Herald-Snippet-Silurion-2017-11-10.jpeg"
+    ],
+    "site-94": [
+      "2018/07/In-The-Deep-4-4.ogg",
+      "2018/07/In-The-Deep-2-4.ogg",
+      "2018/07/In-The-Deep-3-4.ogg",
+      "2018/07/In-The-Deep-1-4.ogg"
+    ],
+    "solachenargateway-numbers-beacon-mystery": [
+      "2017/05/UCB-Sol-Europa-2024-03-25.ogg",
+      "2017/05/UCB-Lave-2-2024-03-26.ogg",
+      "2017/05/Screenshot_0823-1.png",
+      "2017/05/UCB-Sol-Moon-2024-03-26.ogg",
+      "2017/05/UCB-Eravate-5-2024-03-26.ogg"
+    ],
+    "squirrels-nest-bar": [
+      "2017/09/Screenshot_2485-768x432.jpg",
+      "2017/09/Screenshot_2485.jpg",
+      "2017/09/Screenshot_2486.jpg",
+      "2017/09/Screenshot_2462.jpg"
+    ],
+    "srv-odysseus": [
+      "2017/10/ALSHAT-map-final.jpg"
+    ],
+    "stack": [
+      "2017/12/Living-Specimen-1-4.ogg",
+      "2017/12/Living-Specimen-3-4.ogg",
+      "2017/12/Living-Specimen-2-4.ogg",
+      "2017/12/Living-Specimen-4-4.ogg",
+      "2017/12/UCB-HIP-8887-A-1-2024-03-30.ogg"
+    ],
+    "steve-kirby-memorial": [
+      "2024/04/UCB-Dubbuennel-3-a-2024-04-26.ogg"
+    ],
+    "stuart-retreat": [
+      "2017/10/Screenshot_2563.jpg",
+      "2017/10/HIP-15329.jpg",
+      "2017/10/Screenshot_2567.jpg"
+    ],
+    "study-of-bark-mound-acoustic-features": [
+      "2018/02/Figure-1-1-768x423.png",
+      "2018/02/Figure-1-1-300x165.png",
+      "2018/02/Figure-3-300x166.png",
+      "2018/02/Figure-2-1.png",
+      "2018/02/Figure-3-768x424.png",
+      "2018/02/Figure-2-1-300x166.png",
+      "2018/02/Figure-3-600x332.png",
+      "2018/02/Figure-1-1.png",
+      "2018/02/Figure-3-1024x566.png",
+      "2018/02/Figure-4-2-300x187.png",
+      "2018/02/Figure-2-1-768x424.png",
+      "2018/02/Figure-4-2-1024x639.png",
+      "2018/02/Figure-1-1-600x330.png",
+      "2018/02/Figure-4-2.png",
+      "2018/02/Figure-4-2-768x479.png",
+      "2018/02/Figure-2-1-1024x566.png",
+      "2018/02/Figure-2-1-600x332.png",
+      "2018/02/Figure-1-1-1024x564.png",
+      "2018/02/Figure-4-2-600x374.png",
+      "2018/02/Figure-3.png"
+    ],
+    "study-of-hyperdiction-statistics": [
+      "2019/11/Hyperdiction_Contents_v2-600x540.png",
+      "2019/11/Hyperdiction_Contents_v2-768x692.png",
+      "2019/11/Hyperdiction_Contents_v2.png",
+      "2019/11/Hyperdiction_Contents_v2-300x270.png"
+    ],
+    "study-of-number-of-sites-on-volcanic-body-part-1": [
+      "2018/02/Ship_picture_annotated-768x432.png",
+      "2018/02/Ship_picture_annotated.png",
+      "2018/02/Screenshot-111-1024x696.png",
+      "2018/02/Ship_picture_annotated-300x169.png",
+      "2018/02/Screenshot-112-1024x499.png",
+      "2018/02/Screenshot-112-300x146.png",
+      "2018/02/Screenshot-111-768x522.png",
+      "2018/02/Screenshot-112-768x374.png",
+      "2018/02/Screenshot-111.png",
+      "2018/02/Screenshot-112-600x292.png",
+      "2018/02/Ship_picture_annotated-1024x576.png",
+      "2018/02/Screenshot-111-600x408.png",
+      "2018/02/Screenshot-112.png",
+      "2018/02/Ship_picture_annotated-600x338.png",
+      "2018/02/Screenshot-111-300x204.png"
+    ],
+    "survey-vessel-pandora": [
+      "2017/07/Screenshot_2311.jpg"
+    ],
+    "survey-vessel-victorias-song": [
+      "2017/07/Victorias-Song-Commanders-Log-4-4.ogg",
+      "2017/07/Victorias-Song-Commanders-Log-2-4.ogg",
+      "2017/07/Screenshot_2315.jpg"
+    ],
+    "takurua-anomalous-signal": [
+      "2017/05/UCB-Takurua-3-2024-03-20.ogg",
+      "2024/03/Herald-Snippet-Takurua-2017-04-02.jpeg"
+    ],
+    "thargoids": [
+      "2023/06/GlaiveHunter-1-1024x576.png",
+      "2017/12/Scout-600x337.png",
+      "2017/12/Scout-768x432.png",
+      "2023/05/revenant-600x338.png",
+      "2017/12/Scout.png",
+      "2023/05/revenant-768x432.png",
+      "2023/10/20231024044256_1-600x338.jpg",
+      "2023/05/revenant.png",
+      "2023/06/GlaiveHunter-1-600x338.png",
+      "2017/12/Scout-1024x576.png",
+      "2023/05/revenant-300x169.png",
+      "2023/10/20231024044256_1-1024x576.jpg",
+      "2023/10/20231024044256_1-768x432.jpg",
+      "2017/12/Scout-300x169.png",
+      "2023/06/GlaiveHunter-1-300x169.png",
+      "2023/06/GlaiveHunter-1-768x432.png",
+      "2023/10/20231024044256_1-300x169.jpg"
+    ],
+    "the-artificers-clan": [
+      "2024/01/baG4V8j.png",
+      "2024/01/aja8Gf7-259x300.png",
+      "2024/01/baG4V8j-264x300.png",
+      "2024/01/XKVBx98.png",
+      "2024/01/ti9ZreC.png",
+      "2024/01/XKVBx98-261x300.png",
+      "2024/01/ti9ZreC-266x300.png",
+      "2024/01/aja8Gf7.png"
+    ],
+    "the-cete": [
+      "2017/07/Screenshot_2236.jpg",
+      "2017/07/Screenshot_2238.jpg"
+    ],
+    "the-phagos-clan": [
+      "2024/01/SwK3H2B-260x300.png",
+      "2024/01/Bu56by1.png",
+      "2024/01/a8AtUsV.png",
+      "2024/01/Xvd0CV8-259x300.png",
+      "2024/01/Bu56by1-262x300.png",
+      "2024/01/SwK3H2B.png",
+      "2024/01/a8AtUsV-268x300.png",
+      "2024/01/Xvd0CV8.png"
+    ],
+    "the-return": [
+      "2017/06/TheReturn-768x432.jpg",
+      "2017/06/TheReturn.jpg",
+      "2017/06/TheReturn-300x169.jpg",
+      "2017/06/TheReturn-1024x576.jpg",
+      "2017/06/TheReturn-600x338.jpg"
+    ],
+    "the-sanctum-the-prophet": [
+      "2018/08/Order-of-the-Far-God-5-9.ogg",
+      "2018/08/Order-of-the-Far-God-4-9.ogg",
+      "2018/08/Order-of-the-Far-God-3-9.ogg",
+      "2018/08/Order-of-the-Far-God-6-9.ogg",
+      "2018/08/Order-of-the-Far-God-2-9.ogg",
+      "2018/08/Order-of-the-Far-God-7-9.ogg",
+      "2018/08/Order-of-the-Far-God-8-9.ogg",
+      "2018/08/Order-of-the-Far-God-1-9.ogg",
+      "2018/08/Order-of-the-Far-God-9-9.ogg"
+    ],
+    "thepredeitor-discovers-new-mollusc": [
+      "2021/03/image-1-1024x691.png",
+      "2021/03/image-1-600x405.png",
+      "2021/03/image-1.png",
+      "2021/03/image-1-768x518.png",
+      "2021/03/image-1-300x202.png"
+    ],
+    "tubus": [
+      "2023/12/Trello_Tubus_Rosarium_Turquoise_Markus_Mathieson.jpg",
+      "2023/12/Trello_Tubus_Sororibus_Ocher_Markus_Mathieson-1-300x225.jpg",
+      "2023/12/Trello_Tubus_Campagibus_Ocher_Synuefai_WL-W_c18-18_Arras_DeCairo-600x338.jpg",
+      "2023/12/Trello_Tubus_Campagibus_Ocher_Synuefai_WL-W_c18-18_Arras_DeCairo-1024x576.jpg",
+      "2023/12/Trello_Tubus_Cavas_Indigo_Blaa_Phoe_XQ-T_d4-1100_Paul_Thompson-300x127.jpg",
+      "2023/12/Trello_Tubus_Rosarium_Turquoise_Markus_Mathieson-1024x768.jpg",
+      "2023/12/Trello_Tubus_Cavas_Indigo_Blaa_Phoe_XQ-T_d4-1100_Paul_Thompson-768x324.jpg",
+      "2023/12/Trello_Tubus_Sororibus_Ocher_Markus_Mathieson-1.jpg",
+      "2023/12/Trello_Tubus_Campagibus_Ocher_Synuefai_WL-W_c18-18_Arras_DeCairo-768x432.jpg",
+      "2023/12/Trello_Tubus_Rosarium_Turquoise_Markus_Mathieson-300x225.jpg",
+      "2023/12/Trello_Tubus_Rosarium_Turquoise_Markus_Mathieson-600x450.jpg",
+      "2023/12/Trello_Tubus_Sororibus_Ocher_Markus_Mathieson-1-768x576.jpg",
+      "2023/12/Trello_Tubus_Campagibus_Ocher_Synuefai_WL-W_c18-18_Arras_DeCairo-300x169.jpg",
+      "2023/12/Trello_Tubus_Conifer_Maroon_Arras_DeCairo-600x338.jpg",
+      "2023/12/Trello_Tubus_Sororibus_Ocher_Markus_Mathieson-1-600x450.jpg",
+      "2023/12/Trello_Tubus_Conifer_Maroon_Arras_DeCairo-1024x576.jpg",
+      "2023/12/Trello_Tubus_Conifer_Maroon_Arras_DeCairo-768x432.jpg",
+      "2023/12/Trello_Tubus_Cavas_Indigo_Blaa_Phoe_XQ-T_d4-1100_Paul_Thompson-600x253.jpg",
+      "2023/12/Trello_Tubus_Sororibus_Ocher_Markus_Mathieson-1-1024x768.jpg",
+      "2023/12/Trello_Tubus_Rosarium_Turquoise_Markus_Mathieson-768x576.jpg",
+      "2023/12/Trello_Tubus_Cavas_Indigo_Blaa_Phoe_XQ-T_d4-1100_Paul_Thompson-1024x432.jpg",
+      "2023/12/Trello_Tubus_Conifer_Maroon_Arras_DeCairo-300x169.jpg"
+    ],
+    "tussock": [
+      "2023/12/Trello_Tussock_Caputus_Yellow_Darwin-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Triticum_Yellow_Darwin-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Propagito_Emerald_Dryio_Flyuae_QO-I_b25-22_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Stigmatis_Yellow_California_Sector_HR-W_d1-4_Arras_DeCairo-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Virgam_Sage_Texas_Terry-1-768x321.jpg",
+      "2023/12/Trello_Tussock_Ventusa_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Ventusa_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Capillum_Emerald_Felsen83-1-768x324.png",
+      "2023/12/Trello_Tussock_Propagito_Emerald_Dryio_Flyuae_QO-I_b25-22_Arras_DeCairo-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Serrati_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Ignis_Sage_Praea_Euq_LL-Y_d34_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Propagito_Emerald_Dryio_Flyuae_QO-I_b25-22_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Cultro_Yellow_Praea_Euq_MA-A_d51_Arras_DeCairo-1-600x375.png",
+      "2023/12/Trello_Tussock_Serrati_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Triticum_Yellow_Darwin-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Virgam_Sage_Texas_Terry-1-300x126.jpg",
+      "2023/12/Trello_Tussock_Caputus_Yellow_Darwin-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Virgam_Sage_Texas_Terry-1-1024x429.jpg",
+      "2023/12/Trello_Tussock_Propagito_Emerald_Dryio_Flyuae_QO-I_b25-22_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Pennata_Yellow_Slegi_CA-Z_d7_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Caputus_Yellow_Darwin-1.jpg",
+      "2023/12/Trello_Tussock_Capillum_Emerald_Felsen83-1-300x127.png",
+      "2023/12/Trello_Tussock_Ventusa_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Pennatis_Lime_Phua_Aub_PA-A_d4161_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Capillum_Emerald_Felsen83-1-1024x432.png",
+      "2023/12/Trello_Tussock_Divisa_Red_Slegi_HY-T_b19-0_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Albata_Lime_Praea_Euq_QR-W_d1-34_Arras_DeCairo-1-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Catena_Sage_Chreesee_TL-J_b10-0_Eahlstan_Fiskerne-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Albata_Lime_Praea_Euq_QR-W_d1-34_Arras_DeCairo-1-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Stigmatis_Yellow_California_Sector_HR-W_d1-4_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Stigmatis_Yellow_California_Sector_HR-W_d1-4_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Pennata_Yellow_Slegi_CA-Z_d7_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Cultro_Yellow_Praea_Euq_MA-A_d51_Arras_DeCairo-1-300x188.png",
+      "2023/12/Trello_Tussock_Cultro_Yellow_Praea_Euq_MA-A_d51_Arras_DeCairo-1-768x480.png",
+      "2023/12/Trello_Tussock_Pennata_Yellow_Slegi_CA-Z_d7_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Caputus_Yellow_Darwin-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Capillum_Emerald_Felsen83-1-600x253.png",
+      "2023/12/Trello_Tussock_Divisa_Red_Slegi_HY-T_b19-0_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Ventusa_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Catena_Sage_Chreesee_TL-J_b10-0_Eahlstan_Fiskerne-1.jpg",
+      "2023/12/Trello_Tussock_Pennatis_Lime_Phua_Aub_PA-A_d4161_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Ignis_Sage_Praea_Euq_LL-Y_d34_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Ignis_Sage_Praea_Euq_LL-Y_d34_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Divisa_Red_Slegi_HY-T_b19-0_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Albata_Lime_Praea_Euq_QR-W_d1-34_Arras_DeCairo-1-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Catena_Sage_Chreesee_TL-J_b10-0_Eahlstan_Fiskerne-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Catena_Sage_Chreesee_TL-J_b10-0_Eahlstan_Fiskerne-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Albata_Lime_Praea_Euq_QR-W_d1-34_Arras_DeCairo-1-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Triticum_Yellow_Darwin-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Serrati_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Triticum_Yellow_Darwin-1.jpg",
+      "2023/12/Trello_Tussock_Stigmatis_Yellow_California_Sector_HR-W_d1-4_Arras_DeCairo-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Triticum_Yellow_Darwin-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Pennatis_Lime_Phua_Aub_PA-A_d4161_Arras_DeCairo-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Catena_Sage_Chreesee_TL-J_b10-0_Eahlstan_Fiskerne-1-300x169.jpg",
+      "2023/12/Trello_Tussock_Caputus_Yellow_Darwin-1-600x338.jpg",
+      "2023/12/Trello_Tussock_Cultro_Yellow_Praea_Euq_MA-A_d51_Arras_DeCairo-1.png",
+      "2023/12/Trello_Tussock_Serrati_Lime_Pleiades_Sector_HH-V_c2-6_Arras_DeCairo-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Ignis_Sage_Praea_Euq_LL-Y_d34_Arras_DeCairo-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Virgam_Sage_Texas_Terry-1-600x251.jpg",
+      "2023/12/Trello_Tussock_Pennata_Yellow_Slegi_CA-Z_d7_Arras_DeCairo-1-768x432.jpg",
+      "2023/12/Trello_Tussock_Cultro_Yellow_Praea_Euq_MA-A_d51_Arras_DeCairo-1-1024x640.png",
+      "2023/12/Trello_Tussock_Pennatis_Lime_Phua_Aub_PA-A_d4161_Arras_DeCairo-1-1024x576.jpg",
+      "2023/12/Trello_Tussock_Divisa_Red_Slegi_HY-T_b19-0_Arras_DeCairo-1-768x432.jpg"
+    ],
+    "ua-and-barnacle-firefly-interaction": [
+      "2017/07/UA_artbook.jpg",
+      "2017/07/Barnacle_and_Metaalloy-768x432.jpg",
+      "2017/07/Barnacle_and_Metaalloy-600x338.jpg",
+      "2017/07/UA_artbook-768x830.jpg",
+      "2017/07/Barnacle_and_Metaalloy-300x169.jpg",
+      "2017/07/UA_artbook-600x648.jpg",
+      "2017/07/Firefly_green.jpg",
+      "2017/07/Barnacle_and_Metaalloy.jpg",
+      "2017/07/UA_artbook-278x300.jpg"
+    ],
+    "unusual-signal-sources": [
+      "2017/05/Screenshot_1610-600x600.jpg",
+      "2017/05/Screenshot_1610-150x150.jpg",
+      "2017/05/Screenshot_1610-350x350.jpg"
+    ],
+    "velasquez-medical-research-centre": [
+      "2017/10/Screenshot_2557.jpg",
+      "2017/10/LP-389-95.jpg",
+      "2017/10/Screenshot_2559.jpg"
+    ],
+    "voyager-1": [
+      "2017/07/Screenshot_2272.jpg"
+    ]
+  },
+  "articles_with_script": [
+    "about-us",
+    "barnacle-research-notes",
+    "converting-legacy-coordinates-to-xyz",
+    "council",
+    "generation-ship-hyperion",
+    "how-to-join",
+    "merchandise",
+    "organic-scanning-guide",
+    "panacea-medical-centre",
+    "ram-tah-decrypting-the-guardian-logs",
+    "recent-community-created-thargoid-link-puzzle",
+    "speed-scanning-challenge",
+    "study-of-barnacle-acoustic-features",
+    "thargoid-data-gathering",
+    "the-gnosis",
+    "the-zurara",
+    "voyager-1",
+    "voyager-2",
+    "we-still-have-gin"
+  ]
+}

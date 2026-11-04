@@ -1,0 +1,26 @@
+{
+  "title": "Hollis Gateway",
+  "slug": "hollis-gateway",
+  "section": "codex",
+  "date": "2017-10-19T08:54:46",
+  "modified": "2024-03-26T02:54:21",
+  "excerpt": "Hollis Gateway is an abandoned settlement in the Hermitage system, on body 4 a.",
+  "banner": "media/Screenshot_2608.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/hollis-gateway/"
+}

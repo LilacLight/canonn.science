@@ -1,0 +1,11 @@
+# Anything that is not a single article folder needs a maintainer.
+# Replace @canonn-science/maintainers with the real GitHub team or user(s).
+*                              @canonn-science/maintainers
+/content/articles/             
+/content/shared-media/         @canonn-science/maintainers
+/content/taxonomy.json         @canonn-science/maintainers
+/content-policy.json           @canonn-science/maintainers
+/tools/                        @canonn-science/maintainers
+/.github/                      @canonn-science/maintainers
+/src/                          @canonn-science/maintainers
+/docs/CONTENT-REVIEW.md        @canonn-science/maintainers

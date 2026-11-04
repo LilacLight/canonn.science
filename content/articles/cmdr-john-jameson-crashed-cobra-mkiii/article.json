@@ -1,0 +1,26 @@
+{
+  "title": "CMDR John Jameson Crashed Cobra MkIII",
+  "slug": "cmdr-john-jameson-crashed-cobra-mkiii",
+  "section": "codex",
+  "date": "2018-01-21T21:58:53",
+  "modified": "2024-03-26T02:56:48",
+  "excerpt": "The crashed Cobra Mk III of ill-fated CMDR John Jameson can be found in the HIP 12099 system, on body 1 b.",
+  "banner": "media/Delmonte_JamesonCrashedShip01.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Crashed Ships"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/cmdr-john-jameson-crashed-cobra-mkiii/"
+}

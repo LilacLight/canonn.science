@@ -1,0 +1,26 @@
+{
+  "title": "Attacked Settlements",
+  "slug": "attacked-settlements",
+  "section": "codex",
+  "date": "2018-06-30T19:46:53",
+  "modified": "2018-07-01T11:48:09",
+  "excerpt": "In late June 3304 a series of surface settlements that had been attacked by Thargoids were discovered. Listening Posts, in groups of three, were found in systems within the Pleiades, often within inhabited systems. These listening posts gave distances to the settlement systems, as well as planet, latitude, longitude which allowed the settlements to be…",
+  "banner": "media/Screenshot_0317.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/attacked-settlements/"
+}

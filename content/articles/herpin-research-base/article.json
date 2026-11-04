@@ -1,0 +1,20 @@
+{
+  "title": "Herpin Research Base",
+  "slug": "herpin-research-base",
+  "section": "codex",
+  "date": "2019-10-07T10:49:45",
+  "modified": "2024-07-07T22:22:11",
+  "excerpt": "Herpin Research Base is an abandoned settlement in the Wregoe HV-Z b15-0 system on body C 1.",
+  "banner": "media/Herpin-Research-Base.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/herpin-research-base/"
+}

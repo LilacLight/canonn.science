@@ -1,0 +1,26 @@
+{
+  "title": "INRA Settlements",
+  "slug": "inra-settlements",
+  "section": "codex",
+  "date": "2017-10-30T23:16:34+00:00",
+  "modified": null,
+  "excerpt": "",
+  "banner": "media/Ecthelion_INRA_mycoid_tanks2.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "wayback",
+  "original_link": "https://canonn.science/codex/inra-settlements/"
+}

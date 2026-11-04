@@ -1,0 +1,20 @@
+{
+  "title": "Hawkins Gap Gamma Site",
+  "slug": "hawkins-gap-gamma-site",
+  "section": "codex",
+  "date": "2017-09-30T06:51:12",
+  "modified": "2024-06-25T13:42:51",
+  "excerpt": "An Unregistered Comms Beacon can be found in the Plaa Aec TT-B b41-3 system, orbiting body B 1.",
+  "banner": "media/Hawkins-Gap-Gamma-Site-Overview.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/hawkins-gap-gamma-site/"
+}

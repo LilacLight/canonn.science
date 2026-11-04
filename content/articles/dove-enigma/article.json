@@ -1,0 +1,20 @@
+{
+  "title": "Dove Enigma",
+  "slug": "dove-enigma",
+  "section": "codex",
+  "date": "2018-01-15T16:06:44",
+  "modified": "2023-11-19T20:08:45",
+  "excerpt": "Dove Enigma is a dockable megaship in Colonia around 3 a, added to Colonia as part of the Enigma Expedition.",
+  "banner": "media/doveenigma.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Dockable Megaships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/dove-enigma/"
+}

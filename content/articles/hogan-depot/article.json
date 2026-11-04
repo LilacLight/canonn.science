@@ -1,0 +1,26 @@
+{
+  "title": "Hogan Depot",
+  "slug": "hogan-depot",
+  "section": "codex",
+  "date": "2017-10-19T08:57:50",
+  "modified": "2024-03-26T02:57:49",
+  "excerpt": "Hogan Depot is an abandoned settlement in the HIP 7158 system, on body A 2 b.",
+  "banner": "media/Screenshot_2555.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/hogan-depot/"
+}

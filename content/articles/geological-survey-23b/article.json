@@ -1,0 +1,26 @@
+{
+  "title": "Geological Survey 23B",
+  "slug": "geological-survey-23b",
+  "section": "codex",
+  "date": "2020-10-30T10:29:04",
+  "modified": "2024-07-08T00:02:32",
+  "excerpt": "Geological Survey 23B is an abandoned settlement in the Musca Dark Region PJ-P b6-1 system, on body 3.",
+  "banner": "media/Geological-Survey-23B.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/geological-survey-23b/"
+}

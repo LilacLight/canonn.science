@@ -1,0 +1,26 @@
+{
+  "title": "Betterton Outpost",
+  "slug": "betterton-outpost",
+  "section": "codex",
+  "date": "2018-07-01T09:33:10",
+  "modified": "2024-07-08T14:05:06",
+  "excerpt": "Betterton Outpostis an abandoned settlement that has been attacked by Thargoids in the HIP 19792 system on body C 2.",
+  "banner": "media/Betterton.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/betterton-outpost/"
+}

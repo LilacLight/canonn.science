@@ -1,0 +1,20 @@
+{
+  "title": "Welcome Deviation",
+  "slug": "the-welcome-deviation-story",
+  "section": "codex",
+  "date": "2018-08-25T12:21:41",
+  "modified": "2024-03-26T23:13:42",
+  "excerpt": "Welcome Deviation is a megaship that can be found in the Kachirigin system, orbiting body 2.",
+  "banner": "media/Welcome-Deviation-Trail.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/the-welcome-deviation-story/"
+}

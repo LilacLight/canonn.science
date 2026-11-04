@@ -1,0 +1,60 @@
+<p>Occasionally people will research the ancient star maps looking for star systems that may have had different names back in the 21st Century so that the can go visit them. Or they may wish to visit the nearest star in the milky way to another galaxy so they can get an uninterupted view. We will be providing some tools on this page to help convert to the XYZ coordinate system that we use today.</p>
+<p></p>
+<h2>Galactic Coordinate System</h2>
+<p>The galactic coordinate system is a celestial coordinate system in spherical coordinates, with the Sun as its center, the primary direction aligned with the approximate center of the Milky Way Galaxy, and the fundamental plane parallel to an approximation of the galactic plane but offset to its north. It uses the right-handed convention, meaning that coordinates are positive toward the north and toward the east in the fundamental plane.</p>
+<p>The first galactic coordinate system was used by William Herschel in 1785 and a number of different systems adopted until the final version was specified in 1958 by the International Astronomical Union (IUA)</p>
+<p>If you know the distance to the object in light years and the Declination and Ascension in degrees then you can use this form to calculate the XYZ coordinates. </p>
+<p>You can use the <a href="https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/convcoord/convcoord.pl?CoordVal=Merope&amp;CoordType=J2000&amp;Resolver=GRB%2FSIMBAD%2BSesame%2FNED&amp;NoCache=on&amp;Epoch=" title="Nasa">Nasa HEASARC tools</a> to look up a system and get the Declination and Ascention. In the example below the declination is 166.569918 and the ascention is -23.749195 you may need to search additional catalogs to find distances. </p>
+<figure class="wp-block-image size-large"><img alt="" class="wp-image-8408" sizes="(max-width: 684px) 100vw, 684px" src="media/image.png" srcset="media/image.png 684w, media/image-300x159.png 300w, media/image-600x318.png 600w"/></figure>
+<p></p>
+<hr class="wp-block-separator"/>
+<p>The tool below will convert the coordinates but bear in mind that the ancient records may not be completely accurate. If you want to search the coordinates that it has calculated you can use the <a href="https://spansh.co.uk/systems" rel="noreferrer noopener" target="_blank" title="Spansh">spansh system search</a> using reference coordinates and sorting by distance and this will give you a list of nearby systems. </p>
+<p></p>
+<form action="" onsubmit="return calc_xyz()">
+<span style="display: inline;">
+  Declination: <input id="declination" name="declination" step="any" type="number"/>
+  Ascension: <input id="ascension" name="ascension" step="any" type="number"/>
+  Distance: <input id="distance" name="distance" step="any" type="number"/>
+</span>
+<br/>
+<span style="display: inline;">
+<span>X: <input id="x" name="x" readonly="" step="any" type="number"/></span>
+  Y: <input id="y" name="y" readonly="" step="any" type="number"/>
+  Z: <input id="z" name="z" readonly="" step="any" type="number"/>
+</span>
+<input name="submit" type="submit" value="Submit"/>
+</form>
+<script>
+function radians(degrees)
+{
+  var pi = Math.PI;
+  return degrees * (pi/180);
+}
+
+function gal2xyz(declination,ascension,distance){
+		x=distance*Math.sin(0-radians(declination));
+    y=distance*Math.sin(radians(ascension));
+    z=distance*Math.cos(radians(declination));
+    return [x,y,z];
+}
+
+function calc_xyz(){
+		var ascension = document.getElementById('ascension').value;
+    var declination = document.getElementById('declination').value;
+    var distance = document.getElementById('distance').value;
+    
+    var x=document.getElementById('x');
+    var y=document.getElementById('y');
+    var z=document.getElementById('z');
+    
+    a=gal2xyz(ascension,declination,distance);
+    x.value=a[0];
+    y.value=a[1];
+    z.value=a[2];
+    
+    
+		//console.log(gal2xyz(ascension,declination,distance));
+    return false;
+}
+</script>
+<p> </p>

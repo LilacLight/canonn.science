@@ -1,0 +1,20 @@
+{
+  "title": "Extraction Site HS-98",
+  "slug": "extraction-site-hs-98",
+  "section": "codex",
+  "date": "2022-08-14T19:32:49",
+  "modified": "2024-07-08T12:49:17",
+  "excerpt": "Extraction Site HS-98 is an abandoned settlement in the Col 285 Sector NP-W a31-3 system on body 6 a.",
+  "banner": "media/ExtractionSiteHS98-2.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/extraction-site-hs-98/"
+}

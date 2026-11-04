@@ -1,0 +1,20 @@
+{
+  "title": "Hesperus",
+  "slug": "hesperus",
+  "section": "codex",
+  "date": "2021-04-11T11:37:11",
+  "modified": "2024-06-15T23:48:30",
+  "excerpt": "The Hesperus is a Lowell class megaship that can be found in the Perseus Dark Region KC-V c2-2 system, orbiting body B (A Belt – Cluster 1).",
+  "banner": "media/HighResScreenShot_2022-12-11_22-26-58.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/hesperus/"
+}

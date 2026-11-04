@@ -1,0 +1,26 @@
+{
+  "title": "Velasquez Medical Research Centre",
+  "slug": "velasquez-medical-research-centre",
+  "section": "codex",
+  "date": "2017-10-19T08:57:53",
+  "modified": "2024-03-26T02:55:07",
+  "excerpt": "Velasquez Medical Research Centre is an abandoned settlement in the LP 389-95 system, on body 7.",
+  "banner": "media/Screenshot_2556.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/velasquez-medical-research-centre/"
+}

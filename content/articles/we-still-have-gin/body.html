@@ -1,0 +1,108 @@
+<p><span style="font-weight: 400;">You may have heard rumours that the Gnosis has been repossessed by the pilot’s federation, You should not believe every rumour you hear.</span></p>
+<p><span style="font-weight: 400;">Originally intended to provide for scientific deployment over 20-24 years, the Canonn’s storied flagship the Gnosis shall soon begin its last chapter of service.  A combined technical review crew – made up of engineering staff from the Gnosis, the Institute and Thompson Dock – have determined, with no small reluctance, that the Gnosis is simply unfit for long continuing ongoing operations of the like it has provided Canonneers and other CMDRs alike since its construction.  Battle and collision have combined to take too great a toll upon the vessel’s superstructure.</span></p>
+<p><span style="font-weight: 400;">Many of you will now be aware of the ‘school bus’ route which the Gnosis shall be continuing to provide us. The technical review engineers have deemed such a route as this to be one which can be continued safely, and within both a reduced budget at a time when other assets are being considered and also the maintenance capabilities of its crew.</span></p>
+<p><span style="font-weight: 400;">To speak further of its crew, all of whom have now received their Retention Packages, rumours that several of them have been headhunted to add their considerable experience and talent to the operations of the many, many fleet carriers we all expect to soon see in service throughout the Bubble and beyond are, frankly, true.  </span></p>
+<p><span style="font-weight: 400;">Many are currently considering such positions, but the retention of such a pool of experience has been a priority for the Council and we are confident that many shall be continuing service in the ranks of Canonn.  Exact details of this continued service are not currently subject to public review but all Canonneers are assured that, so far as the Gnosis itself is concerned, they remain welcome aboard and facilities such as they have enjoyed to date shall remain fully provisioned and available to all. Though you may have to share quarters so we can make room for fee paying passengers. Commanders assigned airlocks as temporary sleeping quarters should of course wear their remlok at all times.</span></p>
+<p><span style="font-weight: 400;">While the Gnosis’ route shall become somewhat less expansive its onboard resources are being maintained; the Gnosis shall remain a full scientific partner to Thompson Dock, the Institute and Arcanonn’s Legacy.</span></p>
+<p><span style="font-weight: 400;">As to the details, the Gnosis is to be expected by Canonneers to be the Council’s preferred asset for training and retraining cycles for personnel being rotated to those other key assets.  </span></p>
+<p><span style="font-weight: 400;">Furthermore, while its flight path shall be somewhat less expansive than previously enjoyed by Canonneers and guest commanders, the operational resources of the vessel will remain.  Those Canonneers using the facilities of the vessel can expect them to remain available, be it berthing, laboratory or quarters.  The bar will still have gin.</span></p>
+<p><em><span style="font-weight: 400;"><strong>We invite all past and previous passengers of the Gnosis to leave us a message on the Guest book:</strong>  </span></em><a href="https://forms.gle/Qp1JDiz7ocqwbZRH9"><span style="font-weight: 400;">https://forms.gle/Qp1JDiz7ocqwbZRH9</span></a></p>
+<p><a href="/council/"><strong>Canonn Council</strong></a></p>
+<p><iframe frameborder="0" height="900" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLSe-3VAEMu2B77SuSA2kkpQyygj510w0gBpghLd8tURx8qKHIw/viewform?embedded=true" width="950">Loading…</iframe></p>
+<h4>Gnosis Itinerary</h4>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.28.5/date_fns.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<table>
+<tr>
+<th>System</th>
+<th>Arrival</th>
+<th>Departure</th>
+</tr>
+<tr class="rows">
+<script>
+
+    var startDate = dateFns.startOfDay(Date.UTC(2020, 8, 17, 0, 0, 0));
+
+        var dates = {
+            "Varati": dateFns.addWeeks(startDate, 0),
+            "HIP 17862": dateFns.addWeeks(startDate, 1),
+            "Pleiades Sector PN-T b3-0": dateFns.addWeeks(startDate, 2),
+            "Synuefe PR-L b40-1": dateFns.addWeeks(startDate, 3),
+            "HIP 18120": dateFns.addWeeks(startDate, 4),
+            "IC 2391 Sector CQ-Y c16": dateFns.addWeeks(startDate, 5),
+            "Kappa-1 Volantis": dateFns.addWeeks(startDate, 6),
+            "Epsilon Indi": dateFns.addWeeks(startDate, 7)
+        }
+
+        function get_date(system) {
+        
+            console.log("startDate: " + startDate)
+
+            var d = dates[system]
+
+            const dayINeed = 4; // for Thursday
+
+
+            const today = dateFns.startOfDay(new Date())
+
+
+            //const today = dateFns.startOfDay(new Date())
+            //console.log("today: " + dateFns.format(today, 'MMMM DD, YYYY'))
+            const todayDay = dateFns.getISODay(today);
+
+
+            var currentjump = dateFns.setISODay(today, dayINeed)
+            // if we haven't yet passed the day of the week that I need:
+            if (todayDay <= dayINeed) {
+                // then just give me this week's instance of that day
+                currentjump = dateFns.setISODay(dateFns.subWeeks(today, 1), dayINeed);
+            }
+
+            var weekstoadd = dateFns.differenceInWeeks(d, currentjump) % 8;
+            if (weekstoadd < 0) {
+                weekstoadd = 8 + weekstoadd
+            }
+            var newdate = dateFns.addWeeks(currentjump, weekstoadd)
+            begindate = dateFns.startOfDay(Date.UTC(dateFns.getYear(newdate) + 1286, dateFns.getMonth(newdate), dateFns.getDate(newdate), 0, 0, 0));
+            var enddate = dateFns.addWeeks(begindate, 1)
+            //return newdate.format('YYYY-MM-DD')
+
+            retval = dateFns.format(newdate, 'MMMM DD, YYYY') + ' - ' + dateFns.format(enddate, 'MMMM DD, YYYY')
+            currentLocation = (dateFns.differenceInDays(newdate, currentjump) == 0)
+
+            return { startdate: begindate, enddate: enddate, currentLocation: currentLocation }
+        }
+
+        function sortByKey(array, key) {
+            return array.sort(function (a, b) {
+                var x = a[key]; var y = b[key];
+                return (dateFns.differenceInDays(x, y) < 0 ? -1 : (dateFns.differenceInDays(x, y) > 0 ? 1 : 0));
+            });
+        }
+
+        function get_full_schedule() {
+            var retval = []
+            Object.keys(dates).forEach(function (key) {
+                d = get_date(key)
+                item = { "name": key, startdate: dateFns.format(d.startdate, 'MMMM DD, YYYY'), enddate: dateFns.format(d.enddate, 'MMMM DD, YYYY'), currentLocation: d.currentLocation }
+                console.log(item)
+                retval.push(item)
+            });
+
+            return sortByKey(retval, "startdate")
+        };
+
+        $(document).ready(function () {
+
+        var itinary = get_full_schedule()
+            rows = ""
+            itinary.forEach(function (system) {
+                rows = rows + '<tr><td>' + system.name + '</td><td>' + system.startdate + '</td><td>' + system.enddate + '</td></tr>\n'
+            })
+            $('.rows').replaceWith(rows);
+            
+        });            
+
+    </script>
+</tr>
+</table>

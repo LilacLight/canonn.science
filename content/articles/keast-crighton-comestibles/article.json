@@ -1,0 +1,20 @@
+{
+  "title": "Keast & Crighton Comestibles",
+  "slug": "keast-crighton-comestibles",
+  "section": "codex",
+  "date": "2018-01-12T17:37:00",
+  "modified": "2022-11-24T13:46:31",
+  "excerpt": "Agricultural Vessel orbiting Pleiades Sector GW-W c1-15 8 which appears to have been added as a result of a Community Goal for Angeli Imperial Enterprises on 15 DEC 3303. Main feature is two sets of biodomes with lighting rigs. Two satellites and a Navigation Beacon are in the area.",
+  "banner": "media/Screenshot_0104.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/keast-crighton-comestibles/"
+}

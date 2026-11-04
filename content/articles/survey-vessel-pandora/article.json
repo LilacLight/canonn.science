@@ -1,0 +1,26 @@
+{
+  "title": "Survey Vessel Pandora",
+  "slug": "survey-vessel-pandora",
+  "section": "codex",
+  "date": "2017-07-19T09:15:45",
+  "modified": "2024-06-18T23:29:32",
+  "excerpt": "The Survey Vessel Pandora can be found in the HIP 21478 system, orbiting body A 1 f.",
+  "banner": "media/Screenshot_2310.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/survey-vessel-pandora/"
+}

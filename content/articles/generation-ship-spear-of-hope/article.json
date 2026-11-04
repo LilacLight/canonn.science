@@ -1,0 +1,20 @@
+{
+  "title": "Generation Ship: Spear of Hope",
+  "slug": "generation-ship-spear-of-hope",
+  "section": "codex",
+  "date": "2018-11-23T09:53:32",
+  "modified": "2024-03-25T01:40:03",
+  "excerpt": "Spear of Hope is an abandoned Generation Ship that can be found in the HIP 21654 system, orbiting body 1.",
+  "banner": "media/Spearofhope.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Generation Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/generation-ship-spear-of-hope/"
+}

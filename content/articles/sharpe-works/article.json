@@ -1,0 +1,26 @@
+{
+  "title": "Sharpe Works",
+  "slug": "sharpe-works",
+  "section": "codex",
+  "date": "2018-06-30T19:24:28",
+  "modified": "2024-07-08T15:07:08",
+  "excerpt": "Sharpe Works is an abandoned settlement that has been attacked by Thargoids in the Pleiades Sector IC-U B3-1 system on body 1.",
+  "banner": "media/Sharpe-Works.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/sharpe-works/"
+}

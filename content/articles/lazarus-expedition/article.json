@@ -1,0 +1,20 @@
+{
+  "title": "Lazarus Expedition",
+  "slug": "lazarus-expedition",
+  "section": "codex",
+  "date": "2017-09-22T04:56:29",
+  "modified": "2024-03-24T23:16:36",
+  "excerpt": "The Lazarus is an abandoned generation ship that can be found in the Virudnir system, orbiting body 6.",
+  "banner": "media/Screenshot_0025.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Generation Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/lazarus-expedition/"
+}

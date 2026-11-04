@@ -1,0 +1,26 @@
+{
+  "title": "Communication Hub Zeta 12",
+  "slug": "communication-hub-zeta-12",
+  "section": "codex",
+  "date": "2017-07-19T09:17:06",
+  "modified": "2024-07-08T13:42:57",
+  "excerpt": "Communication Hub Zeta 12 is an installation that can be found in the Electra system, orbiting body 4.",
+  "banner": "media/Screenshot_2289.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Orbital Installations"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/communication-hub-zeta-12/"
+}

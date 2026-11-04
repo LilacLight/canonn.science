@@ -1,0 +1,26 @@
+{
+  "title": "Comms Facility 89563",
+  "slug": "comms-facility-89563",
+  "section": "codex",
+  "date": "2018-06-30T22:19:29",
+  "modified": "2024-07-08T14:16:53",
+  "excerpt": "Comms Facility 89563 is an abandoned settlement that has been attacked by Thargoids in the HR 1172 system on body A 5 b.",
+  "banner": "media/Comms-Facility-89563.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/comms-facility-89563/"
+}

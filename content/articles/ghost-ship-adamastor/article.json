@@ -1,0 +1,26 @@
+{
+  "title": "Ghost Ship Adamastor",
+  "slug": "ghost-ship-adamastor",
+  "section": "codex",
+  "date": "2020-11-03T12:27:20",
+  "modified": "2024-03-22T03:49:10",
+  "excerpt": "The Adamastor, a Lowell class science megaship, can be found orbiting Chukchan 5 b. It is on fire and there are cargo and engineering materials nearby. Scanning the ship with the Datalink scanner reveals the usual array of subtargets, including a data point that gives more information about the ship. There is also a local…",
+  "banner": "media/adamastor.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/ghost-ship-adamastor/"
+}

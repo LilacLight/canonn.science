@@ -1,0 +1,20 @@
+{
+  "title": "Dr. Kays Heart",
+  "slug": "dr-kays-heart",
+  "section": "codex",
+  "date": "2024-10-16T11:42:06",
+  "modified": "2024-10-16T11:44:33",
+  "excerpt": "An Unregistered Comms Beacon can be found in the Dr. Kay’s Heart system, orbiting body A 1 b.",
+  "banner": "shared-media/2017/05/Screenshot_1496.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Memorials"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/dr-kays-heart/"
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Stack",
+  "slug": "stack",
+  "section": "codex",
+  "date": "2017-12-21T11:44:04",
+  "modified": "2024-04-03T00:13:27",
+  "excerpt": "Stack is an abandoned settlement in the HIP 12099 system, on body 1 a.",
+  "banner": "media/Screenshot_0051.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/stack/"
+}

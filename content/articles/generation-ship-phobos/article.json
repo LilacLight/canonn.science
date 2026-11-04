@@ -1,0 +1,20 @@
+{
+  "title": "Generation Ship: Phobos",
+  "slug": "generation-ship-phobos",
+  "section": "codex",
+  "date": "2018-08-08T13:22:51",
+  "modified": "2024-03-25T01:45:36",
+  "excerpt": "Phobos is an abandoned Generation Ship that can be found in the Coelachi system, 3,363 Ls away from the Main Star, in the direction of the HIP 10229 system.",
+  "banner": "media/Phobos.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Generation Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/generation-ship-phobos/"
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Penal Colony BV-2259",
+  "slug": "penal-colony-bv-2259",
+  "section": "codex",
+  "date": "2018-06-30T23:57:59",
+  "modified": "2024-07-08T14:49:45",
+  "excerpt": "Penal Colony BV-2259 is an abandoned penal colony that has been attacked by Thargoids in the HIP 16217 system on body AB 1 a.",
+  "banner": "media/Penal-Colony-BV-2259.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/penal-colony-bv-2259/"
+}

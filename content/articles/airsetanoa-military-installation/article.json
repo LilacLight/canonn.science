@@ -1,0 +1,20 @@
+{
+  "title": "Airsetanoa Military Installation",
+  "slug": "airsetanoa-military-installation",
+  "section": "codex",
+  "date": "2017-09-19T06:45:56",
+  "modified": "2018-08-10T21:18:12",
+  "excerpt": "A Federation capital ship dock facility is in orbit above the independent planet Airsetanoa 2. It contains one or more Farragut-class Battlecruisers, showing signs of battle damage, undergoing repairs. The ships are not broadcasting a transponder signal, and do not carry any identifying hull markings, so cannot be identified. Not of any known scientific interest.",
+  "banner": "media/Screenshot_0019.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Orbital Installations"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/airsetanoa-military-installation/"
+}

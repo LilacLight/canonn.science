@@ -1,0 +1,26 @@
+{
+  "title": "Iraxon Lane",
+  "slug": "iraxon-lane",
+  "section": "codex",
+  "date": "2022-05-26T14:30:02",
+  "modified": "2024-03-26T02:57:05",
+  "excerpt": "Iraxon Lane is an abandoned settlement in the DG Canum Venaticorum system, on body A 4 a.",
+  "banner": "media/Iraxon-Lane.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/iraxon-lane/"
+}

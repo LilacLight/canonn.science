@@ -1,0 +1,21 @@
+{
+  "title": "Ram Tah : Decrypting the Guardian Logs",
+  "slug": "ram-tah-decrypting-the-guardian-logs",
+  "section": "codex",
+  "date": "2018-03-03T11:18:29",
+  "modified": "2020-04-21T11:18:20",
+  "excerpt": "This is the second mission from Ram Tah. It is based around the task of collecting messages from several locations, so is similar to his first mission in some ways, though with important differences. This mission has not been completed yet, so this guide is a work in progress.",
+  "banner": "media/GamerVaderPlays_GuardianStructure.jpg",
+  "categories": [
+    {
+      "category": "Xenology",
+      "subs": [
+        "Guardian"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/ram-tah-decrypting-the-guardian-logs/",
+  "scripts": true
+}

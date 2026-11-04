@@ -1,0 +1,20 @@
+{
+  "title": "Relay Station PSJ-17",
+  "slug": "relay-station-psj-17",
+  "section": "codex",
+  "date": "2017-07-19T09:10:25",
+  "modified": "2024-07-08T13:23:18",
+  "excerpt": "An installation may be found in the Celaeno system orbiting body 1, designated as a Relay Station, it was first discovered by Canonn’s Head of Archaeology & Technology Mykl Atrum. Use extreme caution when visiting the facility as a large number of Elite ships with unusual designations such as SVI-075C are present, and will attack. Since…",
+  "banner": "media/Screenshot_2302.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Orbital Installations"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/relay-station-psj-17/"
+}

@@ -1,0 +1,20 @@
+{
+  "title": "The Bug Killer",
+  "slug": "bug-killer-crashed-anaconda",
+  "section": "codex",
+  "date": "2018-07-01T11:11:55",
+  "modified": "2024-07-08T14:37:53",
+  "excerpt": "The Bug Killer is a crashed Anaconda in the HIP 16613 system on body 1 a.",
+  "banner": "media/Bug-Killer.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Crashed Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/bug-killer-crashed-anaconda/"
+}

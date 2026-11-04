@@ -1,0 +1,20 @@
+{
+  "title": "Gregorys Rest",
+  "slug": "gregorys-rest",
+  "section": "codex",
+  "date": "2017-09-19T05:46:57",
+  "modified": "2024-07-07T23:46:31",
+  "excerpt": "Gregorys Rest is an abandoned settlement in the Koli Discii system on body C 6 a.",
+  "banner": "media/Screenshot_0005.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/gregorys-rest/"
+}

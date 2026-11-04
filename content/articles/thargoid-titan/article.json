@@ -1,0 +1,20 @@
+{
+  "title": "Thargoid Titan",
+  "slug": "thargoid-titan",
+  "section": "codex",
+  "date": "2023-05-11T11:34:12+01:00",
+  "modified": null,
+  "excerpt": "",
+  "banner": "media/titan.png",
+  "categories": [
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "wayback",
+  "original_link": "https://canonn.science/codex/thargoid-titan/"
+}

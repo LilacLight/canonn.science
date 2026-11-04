@@ -1,0 +1,18 @@
+{
+  "title": "Get Your Name In The Codex",
+  "slug": "get-your-name-in-the-codex",
+  "section": "codex",
+  "date": "2023-05-29T01:31:12",
+  "modified": "2023-05-29T01:37:17",
+  "excerpt": "Commander Marxanthius is one of our dedicated catalogers. He does a weekly audit of the Codex against our records to ensure that we are up to date and has a unique knowledge of the codex. He doesn’t just fly a desk he is also one of the pioneers of the Canonn Challenge and has visited…",
+  "banner": "media/codex_marxanthius.png",
+  "categories": [
+    {
+      "category": "Biology & Geology",
+      "subs": []
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/get-your-name-in-the-codex/"
+}

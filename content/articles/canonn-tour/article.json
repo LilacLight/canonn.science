@@ -1,0 +1,18 @@
+{
+  "title": "Canonn Tour",
+  "slug": "canonn-tour",
+  "section": "codex",
+  "date": "2022-06-01T22:18:49",
+  "modified": "2022-06-01T22:18:50",
+  "excerpt": "Cmdr Content created a expedition to represent Canonn in an HCS Voicepacks competition This route provides 17 destinations rich with the lore of the Galaxy. Most of these destinations focus on our xeno friends, the Thargoids, and our efforts to hide and eradicate them. Varati: Varati has been the start of many expeditions, both local…",
+  "banner": "shared-media/2017/04/Starbeaver_01_ThompsonDock.jpg",
+  "categories": [
+    {
+      "category": "News and Events",
+      "subs": []
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/canonn-tour/"
+}

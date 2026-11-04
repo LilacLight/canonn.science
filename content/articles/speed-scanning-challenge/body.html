@@ -1,0 +1,116 @@
+<p>In the Inner Orion Spur, about 300 light years from Sol,  Tucanae Sector AF-A d71 4 e is a 1000km radius rocky body, with a thin Carbon Dioxide Atmosphere, that supports 9 different life forms. Worth a modest 2,093,600 credits at Vista Genomics, the system was visited by CMDR Yanosh who analysed all the biology in a leisurely 20,264 seconds or 5 Hours 37 minutes and 44 seconds.  </p>
+<p>Your task is to beat that record in as short a time as possible. The fastest time to perform three scans of a single species at the time of writing is 49 seconds, so we would expect the winner to complete all nine scans in less than 25 minutes and must sell their data at the local Vista Genomics so that they cannot make a second attempt. </p>
+<p>Don’t worry if you are unable to enter the competition at this time because of hardware issues. We will be re-running the competition on the same body in the future when all commanders have an opportunity to join in. So you will be able to take part in the future when your ships are capable of planetary landings. Commanders who have already attempted the run will be unable to take part a second time.</p>
+<p>Clearly the winners will be the commanders who put the most effort into planning their run, but if you just want to enter casually, we have a leaderboard below using data gathered from your journals from any of our telemetry options. </p>
+<p>It is not compulsory to use <a href="https://canonn.fyi/plugin">EDMC-Canonn</a>,  EDD-Canonn or <a href="https://journal-limpet.com">Journal-Limpet</a> but if you would like to see your name on the leader-board please consider installing and using these tools as we cannot manually upload your data.</p>
+<h2>The Rules</h2>
+<p>Please read and understand the rules carefully. If you have any questions please ask on the Canonn Discord or Twitter. </p>
+<ul><li>The competition will take place in Tucanae Sector AF-A d71 on body 4 e.</li><li>The timer will start ticking the moment you perform your first organic scan. </li><li>The timer will stop when the final species has been analysed and the analysis animation is complete.</li><li>All entries must be supported with video evidence covering the whole event.<ul><li>The video should start with you in your ship and the clock visible.</li><li>The video should end with you selling the data at the local Vista Genomics.</li></ul></li><li>The competition will be closed at midnight UTC on the 14th January.</li><li>The player judged to have completed the task in the shortest time will be declared the winner</li><li>The winners will be formally announced on the 22nd January 3308</li><li>Canonn Interstellar Research Group accept no liability for loss or damage. </li><li>Bribes will not be refunded.</li><li>The judges’ decision is final</li></ul>
+<h2>The Prizes</h2>
+<p>What? There are prizes? It had better not be coming out of my budget! The prizes are really very nice indeed. While there is no fee for entering the competition perhaps you might consider donating some credits on our <a href="/donate/" title="Gin and Biscuit Fund">donation page</a> . </p>
+<h4>Top 3 commanders</h4>
+<p>The first three places will be awarded one of our fabulous 70cl thargoid sample flasks that they will be able to use at their own risk if they don’t mind really bad things happening in their digestive tract. </p>
+<figure class="wp-block-image size-large"><img alt="" class="wp-image-8151" sizes="(max-width: 1024px) 100vw, 1024px" src="media/vista_prize-1024x576.png" srcset="media/vista_prize-1024x576.png 1024w, media/vista_prize-300x169.png 300w, media/vista_prize-600x338.png 600w, media/vista_prize-768x432.png 768w, media/vista_prize.png 1920w"/><figcaption>Thargoid Sample Flasks (Not to scale)</figcaption></figure>
+<p></p>
+<h5>First Prize</h5>
+<p>Additionally the commander in first place will be awarded The Canonn Coin, designed by Sovereign Winter, forged from actual metal and bearing Dr Arcanonn’s signature. It is not only one of the coolest things in the Galaxy it is uniquely numbered and grants you free gin and biscuits anywhere in Canonn space. </p>
+<figure class="wp-block-image size-large"><img alt="" class="wp-image-8153" sizes="(max-width: 1024px) 100vw, 1024px" src="media/coinjpg-1024x1024.jpg" srcset="media/coinjpg-1024x1024.jpg 1024w, media/coinjpg-300x300.jpg 300w, media/coinjpg-150x150.jpg 150w, media/coinjpg-350x350.jpg 350w, media/coinjpg-600x600.jpg 600w, media/coinjpg-768x768.jpg 768w"/><figcaption>The Canonn Coin: Grants the bearer free gin and biscuits in Canonn space </figcaption></figure>
+<h2>The Biology</h2>
+<p>There is a variety of biology, some of which will be easy to find and others will be harder. If you wish to get the fastest time, then you would be advised to plan a route and practice your run before using your organic scanner. Remember to look in the codex to see what the genetic diversity ranges are for each of the species.</p>
+<pre class="wp-block-verse"><strong>NB: Do not use your organic scanner until you are ready to start as the timer will start ticking from that moment. </strong></pre>
+<ul><li>Aleoida Coronamus – Teal</li><li>Bacterium Aurasus – Lime</li><li>Cactoida Cortexum – Yellow</li><li>Concha Renibus – Peach</li><li>Frutexa Acus – Green</li><li>Fungoida Stabitis – Magenta</li><li>Osseus Fractus – Turquoise</li><li>Stratum Excutitus – Emerald</li><li>Tussock Caputus – Yellow</li></ul>
+<p>You may want to do some research such as mapping the terrain that gives the best overlap between species to minimise traveling time. Please consider writing up your research into a paper that we can publish  on this web site.</p>
+<h2>The Leaderboard</h2>
+<p>The leaderboard will show up to 100 commander’s times. Please note that this does not take into account whether data has been sold (at this time)</p>
+<div id="result">Fetching leaderboard from the Canonn server</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<style>
+    .species {
+        width: 5px;
+        height: 5px;
+        margin-right: 2px;
+        margin-bottom: 2px;
+        background-color: red;
+        float: right;
+        line-height: normal;
+    }
+
+    .done {
+        background-color: green;
+    }
+</style>
+<script>
+
+    function updateData(json) {
+        table = '<table><tr><th>Commander</th><th>Started</th><th>Finished</th><th style="text-align:right">Seconds</th><th>&nbsp;x/9</th></tr>';
+        json.forEach(element => {
+            names = {
+                "aleoid": "Aleoida Coronamus – Teal",
+                "bacterium": "Bacterium Aurasus – Lime",
+                "cactoid": "Cactoida Cortexum – Yellow",
+                "concha": "Concha Renibus – Peach",
+                "fungoid": "Fungoida Stabitis – Magenta",
+                "osseus": "Osseus Fractus – Turquoise",
+                "shrub": "Frutexa Acus – Green",
+                "stratum": "Stratum Excutitus – Emerald",
+                "tussock": "Tussock Caputus – Yellow"
+            }
+
+            table = table + '<tr>';
+
+            table = table + '<td>' + element.cmdr + '</td>';
+            table = table + '<td>' + element.started + '</td>';
+            if (element.ended === null) {
+                ended = 'Not Finished'
+            } else {
+                ended = element.ended;
+            }
+            table = table + '<td>' + ended + '</td>';
+            if (element.seconds === null) {
+                seconds = '';
+            } else {
+                seconds = element.seconds.toLocaleString();
+            }
+            table = table + '<td style="text-align:right">' + seconds + '</td>'
+            table = table + '<td width="21px">';
+            for (const species in names) {
+                if (['ended', 'cmdr', 'started', 'seconds'].includes(species)) continue;
+
+                if (element[species] > 0) {
+                    speciestime = element[species].toLocaleString()
+                    table = table + '<span  title="' + names[species] + ' (' + speciestime + ' seconds)" class="species';
+                    table = table + ' done';
+                } else {
+                    table = table + '<span  title="' + names[species] + '" class="species';
+                }
+
+                table = table + '">&nbsp;</span>';
+            }
+            table = table + '</td>';
+            table = table + '</tr>';
+
+        });
+        table = table + '</table>';
+        $("#result").html(table);
+
+    }
+
+
+    function getData() {
+        $("#result").text("Running network query")
+
+        fetch(encodeURI('https://us-central1-canonn-api-236217.cloudfunctions.net/query/challenge/speed?_limit=100'))
+            .then(response => response.json())
+            .then(json => updateData(json));
+    }
+
+    $(document).ready(function () {
+        getData()
+    });
+</script>
+<p class="has-text-align-center">You can view more statistics on our <a href="https://docs.google.com/spreadsheets/d/1Lpu3r2QCPa6BiSPGqCB7WS_QWghBQfVlfpgl92pXJSU/edit?usp=sharing" title="Speed Challenge Data Sheet">speadsheet</a> (updated hourly)</p>
+<h2>FAQ</h2>
+<ul><li><strong>Can I do a trial run?  </strong>: Yes but you will need to commit suicide after using your organic scanner otherwise you will not be able to complete a second run. It may be simpler to do your trial runs without using the scanner. </li><li><strong>Why do you hate console users? </strong> : We don’t hate console users, that is why we will run another competition when you are able to participate. </li><li><strong>Can I use an alt? </strong>: If you have an alt then you may use them</li><li><strong>Why do I need to sell my data? :</strong>  We need to re-run the contest for people who can’t play now and want to restrict it to people who haven’t participated in this one.</li><li><strong>Is time to market part of the task</strong> : Its not strictly part of the task but may be used as a tie breaker. </li><li><strong>Where can I sell my data?</strong> :  <strong><a href="https://www.edsm.net/en/system/stations/id/899023/name/Tucanae+Sector+AF-A+d71/details/idS/120308/nameS/Kizim+Installation">Kizim Installation</a></strong> on planet 4 f or <strong><a href="https://www.edsm.net/en/system/stations/id/899023/name/Tucanae+Sector+AF-A+d71/details/idS/50530/nameS/Gann+Arsenal">Gann Arsenal</a></strong> on planet 6 e</li><li>How do a submit my entry?: You can email challenge@canonn.science </li></ul>
+<p></p>
+<p></p>
+<p></p>

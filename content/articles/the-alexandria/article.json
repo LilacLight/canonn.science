@@ -1,0 +1,26 @@
+{
+  "title": "The Alexandria",
+  "slug": "the-alexandria",
+  "section": "codex",
+  "date": "2022-01-20T11:53:38",
+  "modified": "2024-03-25T03:17:45",
+  "excerpt": "The Alexandria was a megaship owned by Aegis, which can be found in the Wregoe TC-X b29-0 system, in the planetary rings of body AB 2.",
+  "banner": "media/The-Alexandria.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Dockable Megaships"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/the-alexandria/"
+}

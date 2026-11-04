@@ -1,0 +1,20 @@
+{
+  "title": "Barnacle Forest",
+  "slug": "barnacle-forest",
+  "section": "codex",
+  "date": "2017-09-28T07:50:47",
+  "modified": "2023-11-17T10:56:06",
+  "excerpt": "There are a number of locations where barnacles can be found in large numbers. These are know as barnacle forests. Scanning the body with the full spectrum scanner will show that the body has Thargoid signals. Scanning the body with the surface scanner will allow the individual barnacle sites to show up on the navigation…",
+  "banner": "media/Pleiades-Sector-LY-Q-b5-2_A-2_LCU-No-Fool-Like-One_00001.png",
+  "categories": [
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/barnacle-forest/"
+}

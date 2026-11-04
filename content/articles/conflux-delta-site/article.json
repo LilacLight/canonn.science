@@ -1,0 +1,20 @@
+{
+  "title": "Conflux Delta Site",
+  "slug": "conflux-delta-site",
+  "section": "codex",
+  "date": "2017-09-30T05:59:40",
+  "modified": "2024-06-25T17:40:42",
+  "excerpt": "An Unregistered Comms Beacon can be found in the Pru Aescs NC-M d7-192 system, orbiting body A 2 a.",
+  "banner": "media/20170925232651_1.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/conflux-delta-site/"
+}

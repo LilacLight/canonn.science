@@ -1,0 +1,20 @@
+{
+  "title": "The Bifrost",
+  "slug": "the-bifrost",
+  "section": "codex",
+  "date": "2022-08-19T23:33:43",
+  "modified": "2023-12-03T19:30:11",
+  "excerpt": "The Bifrost is a crashed Anaconda in Col 173 Sector LJ-F c12-0 on body A 4 c, at -68.0162, 49.9007 (in Live/4.0) or at 23.5061, 154.8769 (in Legacy/3.8). Around the crash site there are a variety of engineering materials, an access point to give data, and three logs. The Bifrost was part of a Canonn…",
+  "banner": null,
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Crashed Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/the-bifrost/"
+}

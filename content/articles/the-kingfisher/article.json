@@ -1,0 +1,20 @@
+{
+  "title": "The Kingfisher",
+  "slug": "the-kingfisher",
+  "section": "codex",
+  "date": "2022-11-24T11:41:35+00:00",
+  "modified": null,
+  "excerpt": "",
+  "banner": "media/kingfisher.png",
+  "categories": [
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "wayback",
+  "original_link": "https://canonn.science/codex/the-kingfisher/"
+}

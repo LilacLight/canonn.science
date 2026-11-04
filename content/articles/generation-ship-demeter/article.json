@@ -1,0 +1,20 @@
+{
+  "title": "Generation Ship: Demeter",
+  "slug": "generation-ship-demeter",
+  "section": "codex",
+  "date": "2018-09-15T10:26:59",
+  "modified": "2024-03-25T01:45:57",
+  "excerpt": "Demeter is an abandoned generation ship that can be found in the Mizuchi system, orbiting body 2.",
+  "banner": "media/Genship-Demeter.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Generation Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/generation-ship-demeter/"
+}

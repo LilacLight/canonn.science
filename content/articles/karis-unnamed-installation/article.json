@@ -1,0 +1,20 @@
+{
+  "title": "Karis Unnamed Installation",
+  "slug": "karis-unnamed-installation",
+  "section": "codex",
+  "date": "2017-11-10T04:25:51",
+  "modified": "2017-11-10T04:25:51",
+  "excerpt": "An unnamed installation (with a blank name in the navigation panel) may be found in orbit of Karis AB 2. The existence of this installation was revealed by the listening post found in orbit of the planet Quy in the Quiness system that actually lead to Halley Terminal, but incorrectly named the Karis system. Two…",
+  "banner": "media/Screenshot_2671.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Orbital Installations"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/karis-unnamed-installation/"
+}

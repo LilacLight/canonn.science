@@ -1,0 +1,104 @@
+<p>The ship was constructed by an appeal to the wider community, and provides docking, repair, outfitting, and market services to all. It originally moved on a weekly schedule decided by the membership and council to conduct science throughout the galaxy, but in September 3306 the megaship retired from active science duty to instead carry out a set itinerary, which you can find below.</p>
+<p>The current location is tracked by tools such as EDSM and EDDB – with <strong>the current</strong> location shown below courtesy of EDSM.</p>
+<blockquote class="edsm-embed" data-value="station::42167" lang="en_GB">
+<p><a href="https://www.edsm.net/" rel="noopener noreferrer" target="_blank">EDSM – Elite Dangerous Star Map</a>/blockquote&gt;<br/><script async="" charset="utf-8" src="https://www.edsm.net/js/embed.js"></script></p>
+<p>Ships docked with the Gnosis are taken with it when it jumps.</p>
+</blockquote>
+<h4>Itinerary:</h4>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.28.5/date_fns.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<table>
+<tbody><tr>
+<th>System</th>
+<th>Arrival</th>
+<th>Departure</th>
+</tr>
+<tr class="rows">
+<script>
+
+    var startDate = dateFns.startOfDay(Date.UTC(2020, 8, 10, 0, 0, 0));
+
+        var dates = {
+            "Varati": dateFns.addWeeks(startDate, 0),
+            "HIP 17862": dateFns.addWeeks(startDate, 1),
+            "Pleiades Sector PN-T b3-0": dateFns.addWeeks(startDate, 2),
+            "Synuefe PR-L b40-1": dateFns.addWeeks(startDate, 3),
+            "HIP 18120": dateFns.addWeeks(startDate, 4),
+            "IC 2391 Sector CQ-Y c16": dateFns.addWeeks(startDate, 5),
+            "Kappa-1 Volantis": dateFns.addWeeks(startDate, 6),
+            "Epsilon Indi": dateFns.addWeeks(startDate, 7)
+        }
+
+        function get_date(system) {
+        
+            console.log("startDate: " + startDate)
+
+            var d = dates[system]
+
+            const dayINeed = 4; // for Thursday
+
+
+            const today = dateFns.startOfDay(new Date())
+
+
+            //const today = dateFns.startOfDay(new Date())
+            //console.log("today: " + dateFns.format(today, 'MMMM DD, YYYY'))
+            const todayDay = dateFns.getISODay(today);
+
+
+            var currentjump = dateFns.setISODay(today, dayINeed)
+            // if we haven't yet passed the day of the week that I need:
+            if (todayDay <= dayINeed) {
+                // then just give me this week's instance of that day
+                currentjump = dateFns.setISODay(dateFns.subWeeks(today, 1), dayINeed);
+            }
+
+            var weekstoadd = dateFns.differenceInWeeks(d, currentjump) % 8;
+            if (weekstoadd < 0) {
+                weekstoadd = 8 + weekstoadd
+            }
+            var newdate = dateFns.addWeeks(currentjump, weekstoadd)
+            begindate = dateFns.startOfDay(Date.UTC(dateFns.getYear(newdate) + 1286, dateFns.getMonth(newdate), dateFns.getDate(newdate), 0, 0, 0));
+            var enddate = dateFns.addWeeks(begindate, 1)
+            //return newdate.format('YYYY-MM-DD')
+
+            retval = dateFns.format(newdate, 'MMMM DD, YYYY') + ' - ' + dateFns.format(enddate, 'MMMM DD, YYYY')
+            currentLocation = (dateFns.differenceInDays(newdate, currentjump) == 0)
+
+            return { startdate: begindate, enddate: enddate, currentLocation: currentLocation }
+        }
+
+        function sortByKey(array, key) {
+            return array.sort(function (a, b) {
+                var x = a[key]; var y = b[key];
+                return (dateFns.differenceInDays(x, y) < 0 ? -1 : (dateFns.differenceInDays(x, y) > 0 ? 1 : 0));
+            });
+        }
+
+        function get_full_schedule() {
+            var retval = []
+            Object.keys(dates).forEach(function (key) {
+                d = get_date(key)
+                item = { "name": key, startdate: dateFns.format(d.startdate, 'MMMM DD, YYYY'), enddate: dateFns.format(d.enddate, 'MMMM DD, YYYY'), currentLocation: d.currentLocation }
+                console.log(item)
+                retval.push(item)
+            });
+
+            return sortByKey(retval, "startdate")
+        };
+
+        $(document).ready(function () {
+
+        var itinary = get_full_schedule()
+            rows = ""
+            itinary.forEach(function (system) {
+                rows = rows + '<tr><td>' + system.name + '</td><td>' + system.startdate + '</td><td>' + system.enddate + '</td></tr>\n'
+            })
+            $('.rows').replaceWith(rows);
+            
+        });            
+
+    </script>
+</tr>
+</tbody></table>
+<p></p>

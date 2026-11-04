@@ -1,0 +1,20 @@
+{
+  "title": "Hawkins Gap Beta Site",
+  "slug": "hawkins-gap-beta-site",
+  "section": "codex",
+  "date": "2017-09-30T06:50:39",
+  "modified": "2024-06-25T13:42:25",
+  "excerpt": "An Unregistered Comms Beacon can be found in the Plaa Aec XZ-Z b41-0 system, orbiting body 1.",
+  "banner": "media/Hawkins-Gap-Beta-Site-Overview.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/hawkins-gap-beta-site/"
+}

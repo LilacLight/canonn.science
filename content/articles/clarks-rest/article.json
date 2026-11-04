@@ -1,0 +1,20 @@
+{
+  "title": "Clark’s Rest",
+  "slug": "clarks-rest",
+  "section": "codex",
+  "date": "2017-10-02T06:37:27",
+  "modified": "2024-07-07T23:49:33",
+  "excerpt": "Clark’s Rest is a point of interest on in the Alshat system on body A 6 b.",
+  "banner": "media/Screenshot_2426-b.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/clarks-rest/"
+}

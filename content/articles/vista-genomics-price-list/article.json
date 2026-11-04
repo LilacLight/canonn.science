@@ -1,0 +1,20 @@
+{
+  "title": "Vista Genomics Price List",
+  "slug": "vista-genomics-price-list",
+  "section": "codex",
+  "date": "2021-06-07T20:14:51",
+  "modified": "2022-11-30T09:35:07",
+  "excerpt": "Are you tired of getting stiffed at Vista Genomics? Commanders using our software have been uploading their sales data so we can create this price list…",
+  "banner": "media/LHS-3447Yaping-Enterprise_00007.png",
+  "categories": [
+    {
+      "category": "Biology & Geology",
+      "subs": [
+        "Surface Biology"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/vista-genomics-price-list/"
+}

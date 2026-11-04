@@ -1,0 +1,26 @@
+{
+  "title": "Recon 6 Crash Site",
+  "slug": "recon-6",
+  "section": "codex",
+  "date": "2017-07-19T09:11:30",
+  "modified": "2024-07-08T14:48:52",
+  "excerpt": "Recon 6 Crash Site is a crashed Diamondback Explorer in the HIP 17746 system on body 3 c, at 28.7029, 16.5512 (in Live/4.0) or at 23.1706, 14.8575 (in Legacy/3.8). The existence of this crash site was hinted by the logs at Relay Station PSJ-17, and the location of this site can be found by following…",
+  "banner": "media/Screenshot_2337.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Crashed Ships"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/recon-6/"
+}

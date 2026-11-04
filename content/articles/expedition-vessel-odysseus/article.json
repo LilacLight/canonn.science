@@ -1,0 +1,20 @@
+{
+  "title": "Expedition Vessel Odysseus",
+  "slug": "expedition-vessel-odysseus",
+  "section": "codex",
+  "date": "2017-07-30T06:52:09",
+  "modified": "2024-07-07T14:07:17",
+  "excerpt": "is an abandoned Anaconda which can be found in the.",
+  "banner": "media/Screenshot_2367.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Crashed Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/expedition-vessel-odysseus/"
+}

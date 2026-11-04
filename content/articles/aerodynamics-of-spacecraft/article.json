@@ -1,0 +1,20 @@
+{
+  "title": "Aerodynamics of Spacecraft",
+  "slug": "aerodynamics-of-spacecraft",
+  "section": "codex",
+  "date": "2023-10-06T02:54:22",
+  "modified": "2024-07-06T18:10:55",
+  "excerpt": "With the release of the Odyssey branded software upgrade to the Commanders of the Pilots Federation’s fleet of ships, they are now capable of atmospheric flight. Although to-date, only tenuous atmospheric entry is allowed by the software, this brings into question the potential future of such updates and whether or now denser atmospheres will one…",
+  "banner": null,
+  "categories": [
+    {
+      "category": "Technology",
+      "subs": [
+        "Spacecraft"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/research-notes/aerodynamics-of-spacecraft/"
+}

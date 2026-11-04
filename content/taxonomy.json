@@ -1,0 +1,105 @@
+{
+  "otherName": "Everything else",
+  "categories": [
+    {
+      "name": "Cartographics & Exploration",
+      "description": "Cartographics & Exploration uncovers the locations of the galaxy's wonders, both natural and intelligently made -- travelling the vast reaches of space and the plains of distant worlds on the lookout for anything unusual and noteworthy. These catalogues are an invaluable resource for the rest of Canonn's research.",
+      "subs": [
+        "Cartographics",
+        "Signals",
+        "Planetary Features"
+      ]
+    },
+    {
+      "name": "Biology & Geology",
+      "description": "Biology & Geology catalogues the lifeforms and plant life found across the galaxy, keeping an open mind to how and where they develop, and records the geological formations found naturally on other worlds -- advancing our understanding of the natural universe through careful measurement and study.",
+      "subs": [
+        "Surface Biology",
+        "Geology",
+        "Space Biology"
+      ]
+    },
+    {
+      "name": "Xenology",
+      "description": "Xenology covers the Canonn's study of alien life and technology -- from the Thargoids and Guardians to the secrets of ancient civilisations -- uncovering their history, ruins and the technology their species is built on, including the work of Lab 69 XIA and Eagle Eye.",
+      "subs": [
+        "Thargoids",
+        "Guardian",
+        "Lab 69",
+        "Eagle Eye"
+      ]
+    },
+    {
+      "name": "Civilisation",
+      "description": "Civilisation gathers what explorers find of human (and sometimes less than human) presence among the stars -- megaships, settlements, listening posts, memorials and the wreckage left behind by ships that didn't make it.",
+      "subs": [
+        "Dockable Megaships",
+        "Gnosis",
+        "Generation Ships",
+        "Megaships",
+        "Orbital Installations",
+        "Wreckage",
+        "Abandoned Settlements",
+        "Crashed Ships",
+        "Tourist Beacons",
+        "Memorials",
+        "Unregistered Comms Beacons",
+        "Listening Posts",
+        "Settlements"
+      ]
+    },
+    {
+      "name": "Technology",
+      "description": "Technology covers the spacecraft, weapons and shields Commanders fly and fight with -- the hardware behind the Canonn's research and the wider galaxy.",
+      "subs": [
+        "Spacecraft",
+        "weapons",
+        "megaships",
+        "Shields"
+      ]
+    },
+    {
+      "name": "Bureau of Governance & Settlement",
+      "description": "The Bureau of Governance & Settlement leads Canonn's work with the Background Simulation -- colonisation, expansions and the defence of Canonn's minor factions across the Bubble and Colonia -- along with the Council and membership matters that keep the group running.",
+      "subs": [
+        "Colonisation",
+        "Governance",
+        "Membership",
+        "Research"
+      ]
+    },
+    {
+      "name": "News and Events",
+      "description": "News and Events is the public face of Canonn Research -- news of import to Canonn and stories of galactic importance, alongside community gatherings, bulletins and the mysteries and hunts that bring Commanders together.",
+      "subs": [
+        "Community",
+        "Past Events",
+        "Biscuit Bugle",
+        "Canonn Faction News",
+        "Mysteries & Hunts"
+      ]
+    },
+    {
+      "name": "Merchandise",
+      "description": "Canonn merchandise -- tees, hoodies, badges, hats and mugs for Commanders who want to wear their research group on their sleeve.",
+      "subs": []
+    },
+    {
+      "name": "About Canonn",
+      "description": "Canonn Interstellar Research Group is an independent cooperative of Commanders committed to science and discovering the mysteries of the universe. This section covers who Canonn is, how to join, and how to support the group.",
+      "subs": [
+        "Donate"
+      ]
+    },
+    {
+      "name": "Obsolete/Incomplete",
+      "description": "Articles that are outdated, superseded, or were never finished -- kept here for reference rather than left to vanish.",
+      "subs": []
+    },
+    {
+      "name": "Useful Links",
+      "description": "Canonn R&D tools and other resources used by Commanders -- EDMC plugins, signal and codex lookups, and other sites built by and for the Canonn community.",
+      "subs": []
+    }
+  ]
+}

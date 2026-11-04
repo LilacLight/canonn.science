@@ -1,0 +1,20 @@
+{
+  "title": "Generation Ship: Achlys",
+  "slug": "generation-ship-achlys",
+  "section": "codex",
+  "date": "2018-06-30T11:56:52",
+  "modified": "2024-03-25T01:49:20",
+  "excerpt": "Achlys is an abandoned Generation Ship that can be found in the HIP 114458 system, orbiting body A 2.",
+  "banner": "media/Screenshot_0310.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Generation Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/generation-ship-achlys/"
+}

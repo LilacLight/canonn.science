@@ -1,0 +1,26 @@
+{
+  "title": "Mayes Chemical Plant",
+  "slug": "mayes-chemical-plant",
+  "section": "codex",
+  "date": "2017-10-19T08:57:48",
+  "modified": "2024-03-26T02:54:37",
+  "excerpt": "Mayes Chemical Plant is an abandoned settlement in the HIP 59382 system, on body 1 b.",
+  "banner": "media/Screenshot_2547.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/mayes-chemical-plant/"
+}

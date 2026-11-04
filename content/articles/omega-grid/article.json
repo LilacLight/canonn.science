@@ -1,0 +1,18 @@
+{
+  "title": "Omega Grid",
+  "slug": "omega-grid",
+  "section": "codex",
+  "date": "2022-02-04T17:37:49",
+  "modified": "2023-02-09T10:07:33",
+  "excerpt": "The Omega Grid is a secret communications network used by the Empire, as revealed in Galnet by Captain Saskia Landau of ACT on 4 JAN 3308. Subversion by the NMLA Omega Grid technology was used by the Neo-Marlinist Liberation Army (NMLA) in a plot against the Empire, as was revealed by a series of Listening…",
+  "banner": "media/omega.png",
+  "categories": [
+    {
+      "category": "News and Events",
+      "subs": []
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/omega-grid/"
+}

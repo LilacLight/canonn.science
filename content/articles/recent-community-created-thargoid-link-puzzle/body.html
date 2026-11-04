@@ -1,0 +1,37 @@
+<h3>Following is the write-up from LCU No Fool Like One about the recent community-created Thargoid Link puzzle.</h3>
+<p>Congratulations to <strong>Commander Ethzero</strong> for solving the little puzzle we set to commemorate the departure of Ed Lewis from the Pilot’s Federation. I have been watching with great interest the work you have all been doing to break the code and it was nice to see you <strong>working together in the open</strong> which is very much the ethos of Canonn.</p>
+<p>But before I move on to the debriefing I would first like to apologise if anyone was misled about the nature of the task. I had thought that it would be obvious that this was not a genuine message from the Thargoids but I had not anticipated that people’s desire for a true puzzle of this nature would lead them to suspend disbelief and leave some feeling let down.</p>
+<p>I assure you that if we ever organise an event of this nature outside of one of our periodic Canonnball events then we will make it clearer that it is indeed community created.</p>
+<p>With that apology out of the way I would like to give you a breakdown on how you could have arrived at the solution and the tools you could have used to help you along the way. I will not be revealing the answer but this debriefing will allow you to arrive at the solution very quickly.</p>
+<h6>PLEASE READ NO FURTHER IF YOU WISH TO SOLVE THE PUZZLE ON YOUR OWN</h6>
+<p>There are a number of clues in the news post that are there to help you solve the puzzle. There are additional clues in the Hutton Orbital Radio Show linked below that will help with filling in some gaps in your knowledge. The main clues are as follows:</p>
+<!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+<audio class="wp-audio-shortcode" controls="controls" id="audio-6598-1" preload="none" style="width: 100%;"><source src="http://media.forthemug.com/190131edleaving.mp3?_=1" type="audio/mpeg"/><a href="http://media.forthemug.com/190131edleaving.mp3">http://media.forthemug.com/190131edleaving.mp3</a></audio>
+<p> </p>
+<p>The Clues</p>
+<ul>
+<li>The message was for Ed Lewis</li>
+<li>There was a hidden image of a system in the first part of the message</li>
+<li>The second part of the message is a trinary sequence</li>
+<li>The system in the image is the key to unlocking the second part of the message</li>
+</ul>
+<p>The most important part of this task was to convert the trinary sequence into an ascii string.</p>
+<p>The alien signal had three tones low medium and high and were grouped into three. A trinity of trinary tits. These are represented with the numerals 1 2 and 3 You could decode these by ear, but the easiest way is to use a spectrum analyser. You can find some details on how to do this here: <strong><a href="https://manual.audacityteam.org/man/spectrogram_view.html" rel="noopener" target="_blank"><em>Spectrogram View – Audacity Help</em> Manual</a></strong></p>
+<p>If you don’t understand number bases you might find this guide useful: <em><a href="http://www.steves-internet-guide.com/binary-numbers-explained/" rel="noopener" target="_blank"><strong>Binary Numbers Explained – Beginners Guide</strong></a></em></p>
+<p>In this instance we made it easy for you by encoding high as 2 medium as 1 and low as 0. However genuine Thargoid messages are binary and counter-intuitively encode high as 0 and low as 1, so a thorough commander would have explored all possibilities.</p>
+<p>Once you have transcribed your trinary numbers you can then use this lookup table to work out the ascii numerals.</p>
+<p><img alt="" class="aligncenter wp-image-6599" height="85" sizes="(max-width: 798px) 100vw, 798px" src="/assets/media/2019/02/Table1-300x32.jpg" srcset="/assets/media/2019/02/Table1-300x32.jpg 300w, /assets/media/2019/02/Table1-1024x110.jpg 1024w, /assets/media/2019/02/Table1-600x65.jpg 600w, /assets/media/2019/02/Table1-768x83.jpg 768w, /assets/media/2019/02/Table1.jpg 1801w" width="798"/></p>
+<p>The resulting string is gibberish:</p>
+<pre> vimphkrqeygnibhofsscdfmubiovwnxcut</pre>
+<p>However one of our clues is that the system is the key to unlocking the message so that suggests that the message is a Vigenère cipher. The Vigenère cipher was once known as the unbreakable cyper and it took three centuries to break it. You can find out more here: <em><a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" rel="noopener" target="_blank"><strong>Vigenère cipher – Wikipedia</strong></a></em></p>
+<p>What you may find surprising is that a number of you came very close to solving the puzzle by simply guessing the content of the message.</p>
+<p>The cypher is decoded using the keyword, however if you guess the message you can put the message into a decoder and it will decode the message to show the key. If the words you guess are not at the beginning of the message you can simply pad the front of your guess until you see something that could look like the keyword.</p>
+<p><a href="https://kayahr.github.io/canonn-decryptor/#/?data=N4IgdghgtgpiBcIQBoQEswAcCuAXAzggNqgY64JIC%2BAulUA%3D"><img alt="" class="aligncenter wp-image-6602" height="696" sizes="(max-width: 803px) 100vw, 803px" src="/assets/media/2019/02/CanonnDecryptor-1-300x260.jpg" srcset="/assets/media/2019/02/CanonnDecryptor-1-300x260.jpg 300w, media/CanonnDecryptor-1-1024x887.jpg 1024w, /assets/media/2019/02/CanonnDecryptor-1-600x520.jpg 600w, /assets/media/2019/02/CanonnDecryptor-1-768x666.jpg 768w, /assets/media/2019/02/CanonnDecryptor-1.jpg 1319w" width="803"/></a></p>
+<p><em><strong><a href="https://kayahr.github.io/canonn-decryptor/#/?data=N4IgdghgtgpiBcIQBoQEswAcCuAXAzggNqgY64JIC%2BAulUA%3D" rel="noopener" target="_blank">Canonn Decryptor Tool</a></strong></em></p>
+<p>So let’s assume that you have got this far and not been able to guess the message or any parts of its content. You have no other choice than to find out the secret key so you will need to view the hidden message in the file.</p>
+<p>Once again you can use the spectrum analysis tool to view the image in the message. A number of commanders did a truly excellent job of this. In fact they did a far better job than I was able to do myself.</p>
+<p>The image you uncover will give you some clues about the system you are looking for. You should record as many facts about the system as you can so that you can compare it with potential candidates.</p>
+<p>I am not so cruel as to force you to search through the whole EDSM database for matching systems. If you remember the first clue is that the message is somehow connected with Ed Lewis. The audio broadcast on the Gnosis can give you some ideas about what that connection may be.</p>
+<p>If that gives you some ideas about potential systems then you should look them up on EDSM to see if they match the image from the audio. Or you could skip that step and just use the names as the keywords in the decryptor and the answer should simply pop out.</p>
+<p>I hope that this tutorial has been helpful. Good luck uncovering the message.</p>
+<p><em><strong>CMDR LCU No Fool Like One</strong></em></p>

@@ -1,0 +1,20 @@
+{
+  "title": "Maelstrom",
+  "slug": "maelstrom",
+  "section": "codex",
+  "date": "2023-05-11T10:52:00+01:00",
+  "modified": null,
+  "excerpt": "",
+  "banner": "media/maelstrom.png",
+  "categories": [
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "wayback",
+  "original_link": "https://canonn.science/codex/maelstrom/"
+}

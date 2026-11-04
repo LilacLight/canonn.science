@@ -1,0 +1,26 @@
+{
+  "title": "Research Base KG-3362",
+  "slug": "research-base-kg-3362",
+  "section": "codex",
+  "date": "2018-06-30T18:39:51",
+  "modified": "2024-07-08T14:58:43",
+  "excerpt": "Research Base KG-3362 is an abandoned settlement that has been attacked by Thargoids in the Pleiades Sector HR-W d1-17 system on body 1 a.",
+  "banner": "media/Research-Base-KG-3362.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
+      "category": "Xenology",
+      "subs": [
+        "Thargoids"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/research-base-kg-3362/"
+}

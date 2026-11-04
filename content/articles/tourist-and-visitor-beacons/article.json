@@ -1,0 +1,20 @@
+{
+  "title": "Tourist and Visitor Beacons",
+  "slug": "tourist-and-visitor-beacons",
+  "section": "codex",
+  "date": "2023-01-19T22:50:47",
+  "modified": "2024-06-15T20:01:46",
+  "excerpt": "Tourist Beacons can be discovered all across the galaxy, but they mostly found within the human inhabited bubble.",
+  "banner": "media/VisitorBeacon-scaled.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Tourist Beacons"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/tourist-and-visitor-beacons/"
+}

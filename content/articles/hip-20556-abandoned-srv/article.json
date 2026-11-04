@@ -1,0 +1,20 @@
+{
+  "title": "HIP 20556 Abandoned SRV",
+  "slug": "hip-20556-abandoned-srv",
+  "section": "codex",
+  "date": "2022-08-16T03:13:54",
+  "modified": "2024-07-07T23:14:27",
+  "excerpt": "An Abandoned SRV can be found in the HIP 20556 system on body 6 a.",
+  "banner": "media/AbandonedSRV.png",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Crashed Ships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/hip-20556-abandoned-srv/"
+}

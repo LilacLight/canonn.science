@@ -1,0 +1,20 @@
+{
+  "title": "11 Parsecs Bar",
+  "slug": "11-parsecs-bar",
+  "section": "codex",
+  "date": "2017-11-10T03:27:10",
+  "modified": "2022-11-24T13:47:28",
+  "excerpt": "11 Parsecs is a bar that may be found in orbit of HIP 110028 6. Two Satellites giving Engineer Data are adjacent to the facility. Contains a Navigation Beacon. The number and type of ships around the area is typical for the system’s primary Navigation Beacon. The bar was constructed by The Winged Hussars with…",
+  "banner": "media/Screenshot_2664.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Orbital Installations"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/11-parsecs-bar/"
+}

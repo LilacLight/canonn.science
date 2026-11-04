@@ -1,0 +1,20 @@
+{
+  "title": "Kuntae Comms Installation",
+  "slug": "kuntae-comms-installation",
+  "section": "codex",
+  "date": "2018-06-03T09:58:52",
+  "modified": "2018-06-03T09:58:52",
+  "excerpt": "A Comms Installation can be found in orbit of Kuntae A 3. Contains two Satellites giving Engineer Data. Not of any known scientific interest. (Image from CMDR Kaz Archer)",
+  "banner": "media/Kuntae.jpg",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Orbital Installations"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": "https://canonn.science/codex/kuntae-comms-installation/"
+}
