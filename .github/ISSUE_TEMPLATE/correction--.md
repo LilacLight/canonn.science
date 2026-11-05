@@ -1,8 +1,8 @@
 ---
 name: 'Correction: '
 about: Propose a correction to an existing article
-title: ''
-labels: ''
+title: 'Correction: '
+labels: documentation
 assignees: ''
 
 ---

@@ -1,8 +1,8 @@
 ---
 name: 'Feature:'
 about: Suggest an idea for this project
-title: ''
-labels: ''
+title: 'Feature: '
+labels: enhancement
 assignees: ''
 
 ---

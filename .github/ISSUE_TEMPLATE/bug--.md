@@ -1,8 +1,8 @@
 ---
 name: 'Bug: '
 about: Only used to report crashes or broken functionality not content
-title: ''
-labels: ''
+title: 'Bug: '
+labels: bug
 assignees: ''
 
 ---

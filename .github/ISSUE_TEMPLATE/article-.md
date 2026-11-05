@@ -1,8 +1,8 @@
 ---
 name: 'Article:'
 about: Propose a new article or section
-title: ''
-labels: ''
+title: 'Article: '
+labels: Article
 assignees: ''
 
 ---
