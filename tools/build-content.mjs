@@ -61,6 +61,7 @@ for (const a of articles) {
     title: meta.title,
     date: meta.date ?? null,
     modified: meta.modified ?? null,
+    author: meta.author ?? null,
     excerpt: meta.excerpt || (text.length > 200 ? text.slice(0, 197).trimEnd() + '…' : text),
     banner_image: bannerFile ? rewriteMediaUrl(meta.banner, slug) : meta.banner && isExternalBannerOk(meta.banner) ? meta.banner : null,
     source: meta.source ?? 'community',

@@ -11,7 +11,7 @@ export const SHARED = path.join(CONTENT, 'shared-media');
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const SECTION = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const ISO = /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?(Z|[+-]\d{2}:\d{2})?)?$/;
-const KEYS = ['title', 'slug', 'section', 'date', 'modified', 'excerpt', 'banner', 'categories', 'format', 'source', 'original_link', 'scripts'];
+const KEYS = ['title', 'slug', 'section', 'date', 'modified', 'excerpt', 'banner', 'categories', 'format', 'source', 'original_link', 'scripts', 'author'];
 /** `source` values written by the archive migration. Their articles get leniency (no date, no category). */
 export const LEGACY_SOURCES = new Set(['wayback', 'articles.json', 'manual']);
 
@@ -97,6 +97,8 @@ export function loadArticles(taxonomy) {
     if (meta.date == null && !legacy) err(slug, 'date is required');
     if (meta.excerpt != null && (typeof meta.excerpt !== 'string' || meta.excerpt.length > 600)) err(slug, 'excerpt must be plain text, max 600 characters');
     if (meta.excerpt && /[<>]/.test(meta.excerpt)) err(slug, 'excerpt must be plain text (no < or >)');
+    if (meta.author != null && (typeof meta.author !== 'string' || !meta.author.trim() || meta.author.length > 200)) err(slug, 'author must be plain text, max 200 characters');
+    if (meta.author && /[<>]/.test(meta.author)) err(slug, 'author must be plain text (no < or >)');
     if (meta.scripts != null && typeof meta.scripts !== 'boolean') err(slug, 'scripts must be true or false');
     if (meta.original_link != null && !/^https?:\/\//.test(meta.original_link)) err(slug, 'original_link must be an http(s) URL');
 

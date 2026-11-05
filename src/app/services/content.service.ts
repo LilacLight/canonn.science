@@ -28,6 +28,7 @@ export interface ArticleSummary {
 
 export interface Article extends ArticleSummary {
   modified: string | null;
+  author: string | null;
   /** Sanitised HTML and widget segments, prepared by tools/build-content.mjs. */
   segments: ArticleSegment[];
   /** True when the article's author opted in to running scripts (reviewed by a maintainer). */

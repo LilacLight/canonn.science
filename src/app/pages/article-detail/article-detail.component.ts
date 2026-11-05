@@ -43,6 +43,7 @@ interface Placement {
         </ng-container>
 
         <h1>{{ article.title }}</h1>
+        <p class="author" *ngIf="article.author">By {{ article.author }}</p>
         <p class="meta" *ngIf="article.date">{{ article.date | date: 'longDate' }}</p>
 
         <div class="tags" *ngIf="placement$ | async as places">
@@ -102,6 +103,12 @@ interface Placement {
 
     h1 {
       font-size: 1.9rem;
+    }
+
+    .author {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 0.25rem 0 0;
     }
 
     .meta {

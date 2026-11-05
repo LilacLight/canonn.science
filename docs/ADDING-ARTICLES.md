@@ -19,6 +19,7 @@ content/articles/my-discovery/
   "slug": "my-discovery",
   "section": "codex",
   "date": "2026-11-04",
+  "author": "Jane Doe",
   "excerpt": "One or two plain-text sentences for the article card.",
   "banner": "media/banner.png",
   "categories": [
@@ -33,6 +34,7 @@ content/articles/my-discovery/
 | `excerpt` | Plain text, max 600 characters, no `<` or `>`. If omitted, the start of the body is used. |
 | `banner` | Optional. `media/<file>` or `shared-media/<path>`. |
 | `categories` | At least one. Names must exist in `content/taxonomy.json`; `subs` may be empty. An article may be in several categories. |
+| `author` | Optional. Plain text, max 200 characters. Shown under the title. |
 | `modified`, `original_link`, `source` | Optional. |
 
 ## Writing the body

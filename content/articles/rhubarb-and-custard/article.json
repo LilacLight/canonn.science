@@ -1,11 +1,12 @@
 {
   "title": "Rhubarb and Custard",
+  "author": "LCU No Fool Like One",
   "slug": "rhubarb-and-custard",
   "section": "codex",
   "date": "2020-08-20T16:07:24",
   "modified": "2022-05-30T17:15:54",
   "excerpt": "In July 3306 Canonn researchers mining the Spansh galactic database identified that two class III gas giants in the KOI 413 system were in essentially the same orbit. The only difference between them being the orbital inclination and the orbital period. This configuration meant that the bodies were almost certain to collide at some point….",
-  "banner": null,
+  "banner": "media/cover.png",
   "categories": [
     {
       "category": "Cartographics & Exploration",
