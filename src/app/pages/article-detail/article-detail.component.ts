@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { AsyncPipe, DatePipe, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Observable, combineLatest, of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { EMPTY, Observable, combineLatest, of } from 'rxjs';
+import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { Article, ContentService, articleLink } from '../../services/content.service';
 import { ArticleHtmlPipe, ArticleSegment, ScriptedHtmlDirective } from '../../services/article-html';
 import { XyzConverterComponent } from '../../widgets/xyz-converter.component';
@@ -21,6 +21,16 @@ interface Placement {
   standalone: true,
   imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, NotFoundComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
   template: `
+    <ng-container *ngIf="reviewMode && (review$ | async) as r">
+      <div class="review-bar">
+        <a class="btn" *ngIf="r.prev; else noPrev" [routerLink]="['/review', r.prev.slug]">&larr; Prev</a>
+        <ng-template #noPrev><span class="btn disabled">&larr; Prev</span></ng-template>
+        <span class="review-pos">{{ r.index + 1 }} / {{ r.total }}</span>
+        <a class="btn" *ngIf="r.next; else noNext" [routerLink]="['/review', r.next.slug]">Next &rarr;</a>
+        <ng-template #noNext><span class="btn disabled">Next &rarr;</span></ng-template>
+        <a class="btn bug" [href]="r.bugUrl" target="_blank" rel="noopener">Report bug</a>
+      </div>
+    </ng-container>
     <app-not-found *ngIf="notFound"></app-not-found>
     <ng-container *ngIf="article$ | async as article">
       <div class="hero" *ngIf="article.banner_image">
@@ -72,6 +82,42 @@ interface Placement {
     </ng-container>
   `,
   styles: [`
+    .review-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .review-bar .btn {
+      background: var(--accent-dim);
+      color: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    .review-bar a.btn:hover {
+      text-decoration: none;
+      border-color: var(--accent);
+    }
+
+    .review-bar .btn.disabled {
+      opacity: 0.4;
+    }
+
+    .review-pos {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
     .hero {
       position: relative;
       max-height: 360px;
@@ -150,12 +196,41 @@ export class ArticleDetailComponent {
     return 'widget' in seg ? seg.widget : 'html';
   }
 
-  article$: Observable<Article | null> = this.route.paramMap.pipe(
-    switchMap((params) =>
-      this.content.getArticle(params.get('slug')!).pipe(
+  /** True under /review, where the canonical redirect is skipped and a navigation bar is shown. */
+  reviewMode = !!this.route.snapshot.data['review'];
+
+  /** Articles newest first (undated last), the order the review pager walks. */
+  private sorted$ = this.content.getManifest().pipe(
+    map((m) => [...m].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))),
+    shareReplay(1),
+  );
+
+  /** Slug from the URL; bare /review resolves to the most recent article. */
+  private slug$: Observable<string> = this.route.paramMap.pipe(
+    switchMap((params) => {
+      const slug = params.get('slug');
+      if (slug || !this.reviewMode) {
+        return of(slug!);
+      }
+      return this.sorted$.pipe(
+        tap((list) => {
+          if (list.length) {
+            this.router.navigate(['/review', list[0].slug], { replaceUrl: true });
+          }
+        }),
+        switchMap(() => EMPTY),
+      );
+    }),
+  );
+
+  article$: Observable<Article | null> = this.slug$.pipe(
+    switchMap((slug) =>
+      this.content.getArticle(slug).pipe(
         tap((article) => {
           this.notFound = false;
-          this.redirectToCanonical(article);
+          if (!this.reviewMode) {
+            this.redirectToCanonical(article);
+          }
         }),
         // Unknown slug (404, or the dev server answering with index.html).
         catchError(() => {
@@ -166,14 +241,40 @@ export class ArticleDetailComponent {
     ),
   );
 
+  /** Prev is newer, next is older; plus a prefilled GitHub bug report for the page. */
+  review$ = combineLatest([this.slug$, this.sorted$, this.article$]).pipe(
+    map(([slug, list, article]) => {
+      const index = list.findIndex((a) => a.slug === slug);
+      const title = article?.title ?? list[index]?.title ?? slug;
+      const pageUrl = article
+        ? location.origin + this.router.serializeUrl(this.router.createUrlTree(articleLink(article)))
+        : location.href;
+      const body = `**Page:** ${pageUrl}
+
+**Describe the bug**
+
+**To Reproduce**
+
+**Expected behavior**
+`;
+      const params = new URLSearchParams({ title: `Bug: ${title}`, body, labels: 'bug' });
+      return {
+        index,
+        total: list.length,
+        prev: index > 0 ? list[index - 1] : null,
+        next: index >= 0 && index < list.length - 1 ? list[index + 1] : null,
+        bugUrl: `https://github.com/canonn-science/canonn.science/issues/new?${params}`,
+      };
+    }),
+  );
+
   /**
    * Where the article sits in the sorted navigation (home > category > sub).
    * A sub-category with a single article has no page of its own, so it shows
    * as plain text rather than a link; "Everything else" is left out.
    */
-  placement$ = combineLatest([this.route.paramMap, this.content.getNavigation(), this.content.getManifest()]).pipe(
-    map(([params, nav]) => {
-      const slug = params.get('slug')!;
+  placement$ = combineLatest([this.slug$, this.content.getNavigation(), this.content.getManifest()]).pipe(
+    map(([slug, nav]) => {
       const places: Placement[] = [];
       for (const cat of nav) {
         const sub = cat.subs.find((s) => s.articles.includes(slug));

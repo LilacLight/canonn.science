@@ -11,7 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 // First path segments owned by the app itself, so an article slug can never
 // shadow them.
-const RESERVED = new Set(['search', 'category', 'article', 'analysis', 'topics', 'assets', 'donate']);
+const RESERVED = new Set(['search', 'category', 'article', 'analysis', 'topics', 'assets', 'donate', 'review']);
 
 /**
  * Matches the original canonn.science article URLs:
@@ -36,6 +36,8 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'donate', component: DonateComponent },
   { path: 'codex/donate', redirectTo: 'donate', pathMatch: 'full' },
+  { path: 'review', component: ArticleDetailComponent, data: { review: true } },
+  { path: 'review/:slug', component: ArticleDetailComponent, data: { review: true } },
   { path: 'search', component: SearchComponent },
   { path: 'analysis', component: AnalysisComponent },
   { path: 'analysis/sorter', component: SorterComponent },
