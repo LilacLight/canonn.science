@@ -81,6 +81,7 @@ interface Placement {
       </article>
     </ng-container>
   `,
+  host: { '(click)': 'onAnchorClick($event)' },
   styles: [`
     .review-bar {
       position: sticky;
@@ -191,6 +192,25 @@ export class ArticleDetailComponent {
   private content = inject(ContentService);
 
   notFound = false;
+
+  /**
+   * Same-page links like href="#3" would resolve against <base href="/"> and send the router to the
+   * home page. Scroll to the target on this page instead and keep the fragment in the address bar.
+   */
+  onAnchorClick(event: MouseEvent): void {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    const link = (event.target as Element | null)?.closest?.('a');
+    const href = link?.getAttribute('href');
+    if (!link || !href || !href.startsWith('#') || href.length < 2) {
+      return;
+    }
+    event.preventDefault();
+    const id = decodeURIComponent(href.slice(1));
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(history.state, '', location.pathname + location.search + href);
+  }
 
   kind(seg: ArticleSegment): string {
     return 'widget' in seg ? seg.widget : 'html';
