@@ -5,6 +5,8 @@
 
 /** The coordinate calculator: a <form onsubmit="return calc_xyz()"> followed by its <script>. */
 const XYZ_CALCULATOR = /<form\b[^>]*calc_xyz\(\)[\s\S]*?<\/form>\s*<script>[\s\S]*?<\/script>/i;
+/** Marker placed in an article body where the Hesperus log decoder goes. */
+const HESPERUS_DECODER = /<div\b[^>]*data-widget="hesperus-decoder"[^>]*>\s*<\/div>/i;
 /** The Gnosis itinerary: date-fns + jQuery <script> tags, then a <table> that a script fills in. */
 const GNOSIS_ITINERARY = /(?:<script\b[^>]*src="[^"]*(?:date_fns|jquery)[^"]*"[^>]*><\/script>\s*)+<table>[\s\S]*?class="rows"[\s\S]*?<\/table>/i;
 /** The speed-scanning leaderboard, fetched from a Canonn API that is gone. */
@@ -26,21 +28,33 @@ function fillTypedHeadings(html) {
   return html;
 }
 
+/**
+ * WordPress anchors were empty headings (<h2 id="Foo"></h2>) sitting just above the real heading,
+ * often with a separator between them. Move the id onto the next real heading of the same level so
+ * "#Foo" links land on it, and drop the empty heading.
+ */
+export function moveHeadingAnchors(html) {
+  return html.replace(/<h([1-6])\s+id="([^"]+)"\s*>\s*<\/h\1>((?:\s*<(?:p|hr)\b[^>]*>(?:\s*<a\b[^>]*>[^<]*<\/a>\s*<\/p>)?)*\s*)<h\1>/gi, (m, lvl, id, between) => `${between}<h${lvl} id="${id}">`);
+}
+
 /** Splits article HTML into { html } segments and fixed { widget } segments. */
 export function splitLegacyWidgets(html) {
-  if (!/<script|calc_xyz|id="result"/i.test(html)) return [{ html }];
+  if (!/<script|calc_xyz|id="result"|data-widget=/i.test(html)) return [{ html }];
   return split(fillTypedHeadings(html.replace(LEADERBOARD, LEADERBOARD_NOTE)));
 }
 
 function split(html) {
   const xyz = XYZ_CALCULATOR.exec(html);
   const gnosis = GNOSIS_ITINERARY.exec(html);
-  const m = [xyz, gnosis].filter(Boolean).sort((a, b) => a.index - b.index)[0];
+  const hesperus = HESPERUS_DECODER.exec(html);
+  const m = [xyz, gnosis, hesperus].filter(Boolean).sort((a, b) => a.index - b.index)[0];
   if (!m) return [{ html }];
   const rest = split(html.slice(m.index + m[0].length));
   let widget;
   if (m === xyz) {
     widget = { widget: 'xyz-converter' };
+  } else if (m === hesperus) {
+    widget = { widget: 'hesperus-decoder' };
   } else {
     const d = /Date\.UTC\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/.exec(m[0]);
     const systems = [...m[0].matchAll(/"([^"]+)"\s*:\s*dateFns\.addWeeks\(\s*startDate\s*,\s*(\d+)\s*\)/g)].map((x) => ({ name: x[1], week: Number(x[2]) }));

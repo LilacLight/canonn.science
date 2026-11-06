@@ -226,6 +226,16 @@ export function sanitizeBody(html, slug, { scripts = false } = {}) {
     }
     return { tagName, attribs: out };
   };
+  // Headings may keep an id so in-page "#section" links work. Ids that could shadow a browser global
+  // (DOM clobbering, e.g. id="location") or that are not plain names are dropped.
+  const CLOBBER = new Set(['location', 'document', 'window', 'top', 'parent', 'self', 'name', 'history', 'navigator', 'frames', 'length', 'cookie', 'body', 'forms', 'images', 'links', 'opener', 'status', 'event', 'screen']);
+  const headingTransforms = Object.fromEntries(
+    ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((t) => [t, (tagName, attribs) => {
+      const out = { ...attribs };
+      if (out.id && (!/^[A-Za-z][\w.:-]{0,100}$/.test(out.id) || CLOBBER.has(out.id.toLowerCase()))) delete out.id;
+      return { tagName, attribs: out };
+    }]),
+  );
   const transformTags = Object.fromEntries(
     ['a', 'img', 'source', 'video', 'audio', 'iframe'].map((t) => [t, (tagName, attribs) => rewriteAttrs(tagName, attribs)]),
   );
@@ -239,7 +249,7 @@ export function sanitizeBody(html, slug, { scripts = false } = {}) {
     allowedIframeDomains: policy.embedHosts,
     allowIframeRelativeUrls: true,
     allowedStyles,
-    transformTags,
+    transformTags: { ...transformTags, ...headingTransforms },
     // A frame is kept only if it is https (host-checked above) or one of our own PDFs.
     exclusiveFilter: (frame) => badScript(frame) || frame.tag === 'iframe' && !(/^https:\/\//i.test(frame.attribs.src ?? '') || isLocalPdf(frame.attribs.src ?? '')),
     disallowedTagsMode: 'discard',

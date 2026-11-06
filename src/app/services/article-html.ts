@@ -56,6 +56,7 @@ export function cleanArticleHtml(html: string, scripts = false): string {
 export type ArticleSegment =
   | { html: string }
   | { widget: 'xyz-converter' }
+  | { widget: 'hesperus-decoder' }
   | { widget: 'gnosis-itinerary'; start: [number, number, number]; systems: { name: string; week: number }[] };
 
 @Pipe({ name: 'articleHtml', standalone: true })

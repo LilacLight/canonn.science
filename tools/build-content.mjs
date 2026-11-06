@@ -11,7 +11,7 @@ import { copyFileSync, linkSync, mkdirSync, rmSync, writeFileSync, existsSync } 
 import path from 'node:path';
 import { ROOT, sanitizeBody, rewriteMediaUrl } from './lib/policy.mjs';
 import { loadArticles, loadTaxonomy, resolveMedia, isExternalBannerOk, walk, SHARED, ARTICLES } from './lib/content.mjs';
-import { splitLegacyWidgets } from './lib/legacy.mjs';
+import { splitLegacyWidgets, moveHeadingAnchors } from './lib/legacy.mjs';
 
 const OUT = path.join(ROOT, '.generated');
 const checkOnly = process.argv.includes('--check');
@@ -52,7 +52,7 @@ rmSync(OUT, { recursive: true, force: true });
 const built = new Map(); // slug -> record
 for (const a of articles) {
   const { meta, slug } = a;
-  const segments = splitLegacyWidgets(a.html).map((seg) => ('html' in seg ? { html: sanitizeBody(seg.html, slug, { scripts: meta.scripts === true }) } : seg));
+  const segments = splitLegacyWidgets(moveHeadingAnchors(a.html)).map((seg) => ('html' in seg ? { html: sanitizeBody(seg.html, slug, { scripts: meta.scripts === true }) } : seg));
   const text = stripTags(segments.map((s) => s.html ?? '').join(' '));
   const bannerFile = meta.banner && /^(media|shared-media)\//.test(meta.banner) ? resolveMedia(slug, meta.banner) : null;
   built.set(slug, {
