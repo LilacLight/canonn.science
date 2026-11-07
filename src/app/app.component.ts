@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { ContentService, RecentItem, articleLink } from './services/content.service';
@@ -85,9 +85,23 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
               <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate via PayPal" />
             </a>
             <ng-container *ngTemplateOutlet="socials"></ng-container>
+            <button type="button" class="footer-btn" (click)="openReport()">Report a problem</button>
+            <a class="footer-btn" [href]="submitArticleUrl" target="_blank" rel="noopener">Submit an article</a>
           </div>
         </div>
       </footer>
+
+      <dialog #reportDialog class="report-dialog" aria-labelledby="report-title" (click)="onDialogClick($event)">
+        <h2 id="report-title">Report a problem</h2>
+        <p class="report-page">About: <strong>{{ pageTitle }}</strong></p>
+        <p>What kind of problem is it? This opens a pre-filled GitHub issue (a free GitHub account is needed).</p>
+        <div class="report-options">
+          @for (o of reportOptions; track o.label) {
+            <a class="report-option" [href]="issueUrl(o)" target="_blank" rel="noopener" (click)="closeReport()">{{ o.label }}</a>
+          }
+        </div>
+        <button type="button" class="report-cancel" (click)="closeReport()">Cancel</button>
+      </dialog>
     </div>
   `,
   styles: [`
@@ -212,6 +226,72 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
       margin-top: 0.75rem;
     }
 
+    .footer-btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent-light);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .footer-btn:hover,
+    .footer-btn:focus-visible {
+      background: var(--accent);
+      color: #0b0e13;
+      text-decoration: none;
+    }
+
+    .report-dialog {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      max-width: 440px;
+      width: calc(100% - 2rem);
+    }
+
+    .report-dialog::backdrop {
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .report-dialog h2 {
+      margin: 0 0 0.5rem;
+    }
+
+    .report-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .report-option {
+      display: block;
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+    }
+
+    .report-option:hover,
+    .report-option:focus-visible {
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.05);
+      text-decoration: none;
+    }
+
+    .report-cancel {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font: inherit;
+      padding: 0;
+    }
+
     .header-socials {
       display: flex;
       align-items: center;
@@ -313,6 +393,43 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
 export class AppComponent {
   private router = inject(Router);
   recent$ = inject(ContentService).getRecent();
+
+  @ViewChild('reportDialog') private dialog!: ElementRef<HTMLDialogElement>;
+
+  private readonly repo = 'https://github.com/canonn-science/canonn.science/issues/new';
+  readonly submitArticleUrl = `${this.repo}?template=article-.md`;
+  pageTitle = '';
+  private pageUrl = '';
+
+  readonly reportOptions = [
+    { label: 'Something went wrong', template: 'bug--.md', prefix: 'Bug', detail: 'Something went wrong on this page.' },
+    { label: 'This article is inaccurate', template: 'correction--.md', prefix: 'Correction', detail: 'This article is inaccurate.\n\nWhat is wrong, and what should it say?\n' },
+    { label: 'This article is incomplete', template: 'correction--.md', prefix: 'Correction', detail: 'This article is incomplete.\n\nWhat is missing?\n' },
+    { label: 'Images are missing', template: 'correction--.md', prefix: 'Correction', detail: 'Images are missing or broken in this article.\n\nWhich images?\n' },
+  ];
+
+  openReport(): void {
+    const h1 = document.querySelector('main h1')?.textContent?.trim();
+    this.pageTitle = h1 || document.title;
+    this.pageUrl = location.href;
+    this.dialog.nativeElement.showModal();
+  }
+
+  closeReport(): void {
+    this.dialog.nativeElement.close();
+  }
+
+  /** Clicking the backdrop (the dialog element itself) closes it. */
+  onDialogClick(event: MouseEvent): void {
+    if (event.target === this.dialog.nativeElement) this.closeReport();
+  }
+
+  issueUrl(o: { template: string; prefix: string; detail: string }): string {
+    const title = `${o.prefix}: ${this.pageTitle}`;
+    const body = `## Page\n${this.pageTitle}\n${this.pageUrl}\n\n## Details\n${o.detail}`;
+    const q = new URLSearchParams({ template: o.template, title, body });
+    return `${this.repo}?${q.toString()}`;
+  }
 
   link(r: RecentItem): string[] {
     return articleLink(r);
