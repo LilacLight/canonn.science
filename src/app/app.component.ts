@@ -41,10 +41,12 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
               </svg>
             </button>
           </form>
-          <a routerLink="/donate" class="paypal-donate-link" aria-label="Donate to Canonn">
-            <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate via PayPal" />
-          </a>
-          <div class="header-socials"><ng-container *ngTemplateOutlet="socials"></ng-container></div>
+          <div class="header-socials">
+            <a routerLink="/donate" class="paypal-donate-link" aria-label="Donate to Canonn">
+              <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate via PayPal" />
+            </a>
+            <ng-container *ngTemplateOutlet="socials"></ng-container>
+          </div>
         </div>
       </header>
 
