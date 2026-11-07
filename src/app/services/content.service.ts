@@ -19,6 +19,8 @@ export interface ArticleSummary {
   section: string | null;
   title: string;
   date: string | null;
+  /** Last real change: newest of `date`, `modified` and the last git change. */
+  updated?: string | null;
   /** Plain text. */
   excerpt: string;
   categories: Category[];
@@ -55,6 +57,16 @@ export interface NavCategory {
   subs: NavSub[];
   /** Articles shown directly in a category that has no sub-categories. */
   articles: string[];
+}
+
+/** One entry of the "recently added / updated" ticker. */
+export interface RecentItem {
+  slug: string;
+  section: string | null;
+  title: string;
+  created: string | null;
+  updated: string | null;
+  kind: 'new' | 'updated';
 }
 
 export interface SearchEntry {
@@ -96,7 +108,12 @@ export class ContentService {
     shareReplay(1),
   );
 
-  private navigation$ = this.http.get<{ categories: NavCategory[] }>('/assets/content/navigation.json').pipe(
+  private navFile$ = this.http.get<{ categories: NavCategory[]; recent?: RecentItem[] }>('/assets/content/navigation.json').pipe(
+    tap({ error: (err) => console.error('Failed to load navigation.json', err) }),
+    shareReplay(1),
+  );
+
+  private navigation$ = this.navFile$.pipe(
     map((n) => n.categories),
     tap({ error: (err) => console.error('Failed to load navigation.json', err) }),
     catchError(() => of([] as NavCategory[])),
@@ -124,6 +141,11 @@ export class ContentService {
 
   getNavigation(): Observable<NavCategory[]> {
     return this.navigation$;
+  }
+
+  /** The ten most recently added or updated articles, newest first. */
+  getRecent(): Observable<RecentItem[]> {
+    return this.navFile$.pipe(map((n) => n.recent ?? []), catchError(() => of([] as RecentItem[])));
   }
 
   getSearchIndex(): Observable<SearchEntry[]> {

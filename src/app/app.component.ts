@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ContentService, RecentItem, articleLink } from './services/content.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, AsyncPipe],
   template: `
     <div class="shell">
       <header class="site-header">
@@ -36,6 +38,26 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
           </a>
         </div>
       </header>
+
+      @if (recent$ | async; as recent) {
+        @if (recent.length) {
+          <div class="ticker" role="region" aria-label="Recently added and updated articles">
+            <div class="ticker-track">
+              @for (copy of [0, 1]; track copy) {
+                <ul class="ticker-list" [attr.aria-hidden]="copy === 1 ? 'true' : null">
+                  @for (r of recent; track r.slug) {
+                    <li>
+                      <span class="badge" [class.badge-new]="r.kind === 'new'">{{ r.kind === 'new' ? 'New' : 'Updated' }}</span>
+                      <a [routerLink]="link(r)" [attr.tabindex]="copy === 1 ? -1 : null">{{ r.title }}</a>
+                      <time>{{ ago(r.updated) }}</time>
+                    </li>
+                  }
+                </ul>
+              }
+            </div>
+          </div>
+        }
+      }
 
       <main class="site-main">
         <router-outlet></router-outlet>
@@ -172,6 +194,76 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
       margin-top: 0.75rem;
     }
 
+    .ticker {
+      overflow: hidden;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 90s linear infinite;
+    }
+
+    .ticker:hover .ticker-track,
+    .ticker:focus-within .ticker-track {
+      animation-play-state: paused;
+    }
+
+    .ticker-list {
+      display: flex;
+      flex-shrink: 0;
+      margin: 0;
+      padding: 0.45rem 0;
+      list-style: none;
+    }
+
+    .ticker-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      padding: 0 1.25rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .ticker-list a {
+      color: var(--text);
+    }
+
+    .ticker-list time {
+      color: var(--text-muted);
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      color: var(--text);
+      border: 1px solid var(--text-muted);
+    }
+
+    .badge-new {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0b0e13;
+    }
+
+    @keyframes ticker-scroll {
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker { overflow-x: auto; }
+      .ticker-track { animation: none; }
+      .ticker-list[aria-hidden='true'] { display: none; }
+    }
+
     .site-main {
       flex: 1;
     }
@@ -185,7 +277,24 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   `],
 })
 export class AppComponent {
-  constructor(private router: Router) {}
+  private router = inject(Router);
+  recent$ = inject(ContentService).getRecent();
+
+  link(r: RecentItem): string[] {
+    return articleLink(r);
+  }
+
+  /** "today", "yesterday", "3 days ago", "2 months ago". */
+  ago(iso: string | null): string {
+    const t = iso ? Date.parse(iso) : NaN;
+    if (Number.isNaN(t)) return '';
+    const days = Math.floor((Date.now() - t) / 86_400_000);
+    if (days <= 0) return 'today';
+    if (days === 1) return 'yesterday';
+    if (days < 30) return `${days} days ago`;
+    if (days < 365) return `${Math.floor(days / 30)} month${days >= 60 ? 's' : ''} ago`;
+    return `${Math.floor(days / 365)} year${days >= 730 ? 's' : ''} ago`;
+  }
 
   onSearch(event: Event, value: string): void {
     event.preventDefault();

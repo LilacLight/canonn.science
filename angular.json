@@ -20,7 +20,8 @@
             "assets": [
               { "glob": "**/*", "input": "public" },
               { "glob": "**/*", "input": ".generated/content", "output": "assets/content" },
-              { "glob": "**/*", "input": ".generated/media", "output": "assets/media" }
+              { "glob": "**/*", "input": ".generated/media", "output": "assets/media" },
+              { "glob": "**/*", "input": ".generated/public" }
             ],
             "styles": ["src/styles.css"],
             "scripts": []
