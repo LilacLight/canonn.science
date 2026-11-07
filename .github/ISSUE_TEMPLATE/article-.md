@@ -21,4 +21,4 @@ A short unique title
 Link to a google doc
 
 ## Media
-Attach any files that you want to appear in the article. We prefer webp format images with compression or provide links.. but not imgur
+Attach any files that you want to appear in the article. We prefer webp format images with compression or provide links.. but please do not use imgur (it is blocked in the UK). Use https://postimg.cc instead
