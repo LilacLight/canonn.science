@@ -37,6 +37,13 @@ src/                   Angular app
 5. **AI review** (advisory, `docs/CONTENT-REVIEW.md`) catches intent and deception the rules cannot, and treats article text as
    untrusted data. **CODEOWNERS** puts a maintainer on everything that is not a single article folder.
 
+## Recently updated
+
+The build records each article's `updated` date (newest of `date`, `modified` in article.json, and the last git
+commit touching its folder; commits touching more than 15 articles are ignored as bulk edits, so CI checks out full
+history). The ten newest appear in a ticker under the header, marked New or Updated, and the newest 50 are written
+to `/recently-updated.json` (title, url, created, updated, kind) as a static file for tools that cannot run JavaScript.
+
 ## Deployment
 
 `.github/workflows/deploy.yml` builds on every push to `main` and publishes to GitHub Pages

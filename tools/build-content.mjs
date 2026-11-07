@@ -7,11 +7,13 @@
 //   content/manifest.json  navigation.json  categories.json  search-index.json
 //   content/articles/<slug>.json   (sanitised, pre-segmented article)
 //   media/<slug>/...  media/_shared/...
-import { copyFileSync, linkSync, mkdirSync, rmSync, writeFileSync, existsSync } from 'node:fs';
+//   public/recently-updated.json   static feed for external tools, served at the site root
+import { copyFileSync, linkSync, mkdirSync, readFileSync, rmSync, writeFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { ROOT, sanitizeBody, rewriteMediaUrl } from './lib/policy.mjs';
 import { loadArticles, loadTaxonomy, resolveMedia, isExternalBannerOk, walk, SHARED, ARTICLES } from './lib/content.mjs';
 import { splitLegacyWidgets, moveHeadingAnchors } from './lib/legacy.mjs';
+import { loadGitDates } from './lib/gitdates.mjs';
 
 const OUT = path.join(ROOT, '.generated');
 const checkOnly = process.argv.includes('--check');
@@ -50,6 +52,8 @@ rmSync(OUT, { recursive: true, force: true });
 
 // ---------------------------------------------------------------- articles
 const built = new Map(); // slug -> record
+const gitDates = loadGitDates();
+const later = (a, b) => (!a ? b : !b ? a : Date.parse(b) > Date.parse(a) ? b : a);
 for (const a of articles) {
   const { meta, slug } = a;
   const segments = splitLegacyWidgets(moveHeadingAnchors(a.html)).map((seg) => ('html' in seg ? { html: sanitizeBody(seg.html, slug, { scripts: meta.scripts === true }) } : seg));
@@ -61,6 +65,8 @@ for (const a of articles) {
     title: meta.title,
     date: meta.date ?? null,
     modified: meta.modified ?? null,
+    // Newest of the declared `modified` date and the last real git change, never before `date`.
+    updated: later(later(meta.date ?? null, meta.modified ?? null), gitDates.get(slug) ?? null),
     author: meta.author ?? null,
     excerpt: meta.excerpt || (text.length > 200 ? text.slice(0, 197).trimEnd() + '…' : text),
     banner_image: bannerFile ? rewriteMediaUrl(meta.banner, slug) : meta.banner && isExternalBannerOk(meta.banner) ? meta.banner : null,
@@ -129,7 +135,7 @@ const topCats = new Map();
 for (const c of categories) for (const s of new Set(allOf(c))) (topCats.get(s) ?? topCats.set(s, []).get(s)).push({ name: c.name, slug: c.slug });
 
 const manifest = [...built.values()]
-  .map((r) => ({ slug: r.slug, section: r.section, title: r.title, date: r.date, excerpt: r.excerpt, categories: topCats.get(r.slug) ?? [], banner_image: r.banner_image, source: r.source }))
+  .map((r) => ({ slug: r.slug, section: r.section, title: r.title, date: r.date, updated: r.updated, excerpt: r.excerpt, categories: topCats.get(r.slug) ?? [], banner_image: r.banner_image, source: r.source }))
   .sort((x, y) => (y.date ?? '').localeCompare(x.date ?? ''));
 
 const searchIndex = [...built.values()].map((r) => ({ slug: r.slug, section: r.section, title: r.title, categories: (topCats.get(r.slug) ?? []).map((c) => c.slug), text: r.text }));
@@ -150,7 +156,30 @@ for (const t of topicList) {
 }
 
 write('content/manifest.json', manifest);
-write('content/navigation.json', { categories });
+// Recently added / updated. "new" = has a date and was last changed within a day of it; anything else is "updated".
+const DAY = 86_400_000;
+const activity = (r) => Date.parse(r.updated ?? r.date ?? '') || 0;
+const recentAll = [...built.values()]
+  .filter((r) => activity(r) > 0)
+  .sort((x, y) => activity(y) - activity(x))
+  .map((r) => ({
+    slug: r.slug,
+    section: r.section,
+    title: r.title,
+    created: r.date,
+    updated: r.updated,
+    kind: r.date && Date.parse(r.updated) - Date.parse(r.date) <= DAY ? 'new' : 'updated',
+  }));
+const SITE = 'https://' + readFileSync(path.join(ROOT, 'public', 'CNAME'), 'utf8').trim();
+const articleUrl = (r) => `${SITE}/${r.section === 'pages' ? '' : r.section ? r.section + '/' : 'article/'}${r.slug}`;
+
+write('content/navigation.json', { categories, recent: recentAll.slice(0, 10) });
+// Plain static JSON at the site root, for tools that cannot run JavaScript.
+write('public/recently-updated.json', JSON.stringify({
+  generated: new Date().toISOString(),
+  note: 'Most recently created or updated articles, newest first. kind is "new" or "updated".',
+  articles: recentAll.slice(0, 50).map((r) => ({ title: r.title, url: articleUrl(r), created: r.created, updated: r.updated, kind: r.kind })),
+}, null, 2) + '\n');
 write('content/categories.json', topicList);
 write('content/search-index.json', searchIndex);
 for (const r of built.values()) {
