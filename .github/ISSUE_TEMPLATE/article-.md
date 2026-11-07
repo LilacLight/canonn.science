@@ -11,6 +11,9 @@ Instead of raising an issue you can create your own article by forking the websi
 
 Alternatively provide us with the following:
 
+## Author
+Give us your commander name so we can credit you
+
 ## Category
 Where do you want it to appear on the website. It can be in more than one place
 
