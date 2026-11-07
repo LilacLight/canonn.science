@@ -69,9 +69,13 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
             An archive of the Canonn Interstellar Research Group codex, rebuilt from Internet Archive
             snapshots after the original site went offline.
           </p>
-          <a routerLink="/donate" class="paypal-donate-link" aria-label="Donate to Canonn">
-            <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate via PayPal" />
-          </a>
+          <div class="footer-actions">
+            <a routerLink="/donate" class="paypal-donate-link" aria-label="Donate to Canonn">
+              <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate via PayPal" />
+            </a>
+            <a routerLink="/discord" class="footer-link">Discord</a>
+            <a href="https://bsky.app/profile/canonn.science" class="footer-link" target="_blank" rel="noopener">Bluesky</a>
+          </div>
         </div>
       </footer>
     </div>
@@ -190,8 +194,17 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
       width: auto;
     }
 
-    .site-footer .paypal-donate-link {
+    .footer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
       margin-top: 0.75rem;
+    }
+
+    .footer-link {
+      color: var(--accent-light);
+      font-size: 0.9rem;
     }
 
     .ticker {
