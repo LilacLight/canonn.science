@@ -6,6 +6,7 @@ import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { Article, ContentService, articleLink } from '../../services/content.service';
 import { ArticleHtmlPipe, ArticleSegment, ScriptedHtmlDirective } from '../../services/article-html';
 import { XyzConverterComponent } from '../../widgets/xyz-converter.component';
+import { AdamastorDecoderComponent } from '../../widgets/adamastor-decoder.component';
 import { HesperusDecoderComponent } from '../../widgets/hesperus-decoder.component';
 import { GnosisItineraryComponent } from '../../widgets/gnosis-itinerary.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
@@ -20,7 +21,7 @@ interface Placement {
 @Component({
   selector: 'app-article-detail',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, NotFoundComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, NotFoundComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, AdamastorDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
   template: `
     <ng-container *ngIf="reviewMode && (review$ | async) as r">
       <div class="review-bar">
@@ -73,6 +74,7 @@ interface Placement {
           <ng-container [ngSwitch]="kind(seg)">
             <app-xyz-converter *ngSwitchCase="'xyz-converter'"></app-xyz-converter>
             <app-hesperus-decoder *ngSwitchCase="'hesperus-decoder'"></app-hesperus-decoder>
+            <app-adamastor-decoder *ngSwitchCase="'adamastor-decoder'"></app-adamastor-decoder>
             <app-gnosis-itinerary *ngSwitchCase="'gnosis-itinerary'" [start]="$any(seg).start" [systems]="$any(seg).systems"></app-gnosis-itinerary>
             <ng-container *ngSwitchDefault>
               <div *ngIf="article.scripts; else plain" class="prose" [appScriptedHtml]="$any(seg).html"></div>

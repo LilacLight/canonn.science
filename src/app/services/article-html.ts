@@ -57,6 +57,7 @@ export type ArticleSegment =
   | { html: string }
   | { widget: 'xyz-converter' }
   | { widget: 'hesperus-decoder' }
+  | { widget: 'adamastor-decoder' }
   | { widget: 'gnosis-itinerary'; start: [number, number, number]; systems: { name: string; week: number }[] };
 
 @Pipe({ name: 'articleHtml', standalone: true })

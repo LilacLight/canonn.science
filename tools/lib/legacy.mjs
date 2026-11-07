@@ -7,6 +7,8 @@
 const XYZ_CALCULATOR = /<form\b[^>]*calc_xyz\(\)[\s\S]*?<\/form>\s*<script>[\s\S]*?<\/script>/i;
 /** Marker placed in an article body where the Hesperus log decoder goes. */
 const HESPERUS_DECODER = /<div\b[^>]*data-widget="hesperus-decoder"[^>]*>\s*<\/div>/i;
+/** Marker placed in an article body where the Adamastor message decoder goes. */
+const ADAMASTOR_DECODER = /<div\b[^>]*data-widget="adamastor-decoder"[^>]*>\s*<\/div>/i;
 /** The Gnosis itinerary: date-fns + jQuery <script> tags, then a <table> that a script fills in. */
 const GNOSIS_ITINERARY = /(?:<script\b[^>]*src="[^"]*(?:date_fns|jquery)[^"]*"[^>]*><\/script>\s*)+<table>[\s\S]*?class="rows"[\s\S]*?<\/table>/i;
 /** The speed-scanning leaderboard, fetched from a Canonn API that is gone. */
@@ -47,12 +49,15 @@ function split(html) {
   const xyz = XYZ_CALCULATOR.exec(html);
   const gnosis = GNOSIS_ITINERARY.exec(html);
   const hesperus = HESPERUS_DECODER.exec(html);
-  const m = [xyz, gnosis, hesperus].filter(Boolean).sort((a, b) => a.index - b.index)[0];
+  const adamastor = ADAMASTOR_DECODER.exec(html);
+  const m = [xyz, gnosis, hesperus, adamastor].filter(Boolean).sort((a, b) => a.index - b.index)[0];
   if (!m) return [{ html }];
   const rest = split(html.slice(m.index + m[0].length));
   let widget;
   if (m === xyz) {
     widget = { widget: 'xyz-converter' };
+  } else if (m === adamastor) {
+    widget = { widget: 'adamastor-decoder' };
   } else if (m === hesperus) {
     widget = { widget: 'hesperus-decoder' };
   } else {
