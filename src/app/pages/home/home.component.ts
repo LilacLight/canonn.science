@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AsyncPipe, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ArticleSummary, ContentService } from '../../services/content.service';
@@ -8,22 +9,37 @@ import { Tile, TileGridComponent } from '../../components/tile-grid.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AsyncPipe, NgIf, TileGridComponent],
+  imports: [AsyncPipe, NgIf, RouterLink, TileGridComponent],
   template: `
     <section class="hero">
       <div class="container hero-inner">
-        <img src="/brand/logo.png" alt="Canonn Interstellar Research Group" class="hero-logo" />
-        <p class="hero-tag">
-          An archive of the Canonn codex -- xenobiology, archaeology, cartography and research
-          notes gathered from the Elite Dangerous galaxy.
+        <p>
+          <strong>Canonn Interstellar Research Group</strong> (or the &lsquo;Canonn&rsquo; for short) is an
+          independent cooperative made up of thousands of Commanders committed to science and discovering
+          the mysteries of the universe. Founded in Varati on August 4th 3301 the Canonn has continued to
+          spread and is even present in Colonia.
         </p>
-        <p class="hero-stat" *ngIf="articleCount$ | async as count">{{ count }} articles archived</p>
+        <p>
+          We are a non-exclusive, open group that does not take part in politics and is adamantly neutral,
+          we believe anything that distracts from our research is to be avoided. We do not restrict our
+          pilots but we do enforce that any overtly political actions are not taken in our name.
+        </p>
+        <p>
+          You can find all our research in these pages and we encourage anyone seeking to work with us to
+          <a routerLink="/how-to-join">join us</a>, take part in our
+          <a routerLink="/discord">discord</a> Be forewarned there will be
+          plenty of off the wall &ldquo;tinfoil&rdquo; theories and talk of biscuits but that&rsquo;s just an
+          average day around here. Join us, discover the ongoing mysteries, and make some new friends!
+        </p>
       </div>
     </section>
 
-    <section class="container categories">
-      <h2>Browse by topic</h2>
+    <section class="container categories" id="topics">
       <ng-container *ngIf="tiles$ | async as tiles">
+      <div class="categories-head">
+        <h2>Browse by topic</h2>
+        <p class="hero-stat">{{ tiles.length }} topics<ng-container *ngIf="articleCount$ | async as count"> &middot; {{ count }} articles archived</ng-container></p>
+      </div>
         <app-tile-grid *ngIf="tiles.length; else noCategories" [tiles]="tiles"></app-tile-grid>
         <ng-template #noCategories>
           <p class="empty">
@@ -40,7 +56,7 @@ import { Tile, TileGridComponent } from '../../components/tile-grid.component';
         radial-gradient(ellipse at top, rgba(242, 135, 31, 0.12), transparent 60%),
         var(--bg);
       border-bottom: 1px solid var(--border);
-      padding: 3.5rem 0 3rem;
+      padding: 1.25rem 0 1rem;
       text-align: center;
     }
 
@@ -50,16 +66,27 @@ import { Tile, TileGridComponent } from '../../components/tile-grid.component';
       align-items: center;
     }
 
-    .hero-logo {
-      max-width: 360px;
-      width: 80%;
-      margin-bottom: 1.5rem;
+    .hero h1 {
+      font-size: 1.4rem;
+      margin: 0 0 0.5rem;
     }
 
-    .hero-tag {
-      max-width: 620px;
+    .hero-inner {
+      align-items: stretch;
+    }
+
+    .hero-inner p {
+      max-width: none;
+      width: 100%;
       color: var(--text-muted);
-      font-size: 1.05rem;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      margin: 0 0 0.5rem;
+      text-align: left;
+    }
+
+    .hero-inner a {
+      color: var(--accent-light);
     }
 
     .hero-stat {
@@ -68,15 +95,28 @@ import { Tile, TileGridComponent } from '../../components/tile-grid.component';
       font-weight: 600;
       letter-spacing: 0.02em;
       margin: 0;
+      text-align: left;
     }
 
     .categories {
-      padding: 3rem 1.5rem 4rem;
+      padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .categories-head {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .categories-head h2,
+    .categories-head p {
+      margin: 0;
     }
 
     .categories h2 {
       font-size: 1.3rem;
-      margin-bottom: 1.25rem;
     }
 
     .empty {
@@ -105,6 +145,11 @@ export class HomeComponent {
       })),
     ),
   );
+  scrollToTopics(event: Event): void {
+    event.preventDefault();
+    document.getElementById('topics')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   articleCount$: Observable<number> = this.content
     .getManifest()
     .pipe(map((articles: ArticleSummary[]) => articles.length));
