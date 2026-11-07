@@ -36,8 +36,13 @@ interface Placement {
     <app-not-found *ngIf="notFound"></app-not-found>
     <ng-container *ngIf="article$ | async as article">
       <div class="hero" *ngIf="article.banner_image">
-        <img [src]="article.banner_image" alt="" />
+        <img [src]="article.banner_image" alt="" (click)="fullscreen = true" />
         <div class="hero-shade"></div>
+        <button type="button" class="hero-expand" (click)="fullscreen = true" aria-label="View header image full screen" title="View full image">&#x26F6; Full image</button>
+      </div>
+      <div class="lightbox" *ngIf="fullscreen && article.banner_image" role="dialog" aria-modal="true" aria-label="Header image" (click)="fullscreen = false">
+        <img [src]="article.banner_image" alt="" />
+        <button type="button" class="lightbox-close" (click)="fullscreen = false" aria-label="Close full screen image">&times;</button>
       </div>
 
       <article class="container article-page">
@@ -85,7 +90,7 @@ interface Placement {
       </article>
     </ng-container>
   `,
-  host: { '(click)': 'onAnchorClick($event)' },
+  host: { '(click)': 'onAnchorClick($event)', '(document:keydown.escape)': 'fullscreen = false' },
   styles: [`
     .review-bar {
       position: sticky;
@@ -136,10 +141,63 @@ interface Placement {
       display: block;
     }
 
+    .hero img {
+      cursor: zoom-in;
+    }
+
+    .hero-expand {
+      position: absolute;
+      right: 1rem;
+      bottom: 1.5rem;
+      z-index: 1;
+      background: rgba(11, 14, 19, 0.7);
+      color: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .hero-expand:hover,
+    .hero-expand:focus-visible {
+      border-color: var(--accent);
+    }
+
     .hero-shade {
+      pointer-events: none;
       position: absolute;
       inset: 0;
       background: linear-gradient(to bottom, rgba(11, 14, 19, 0) 40%, var(--bg) 100%);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.92);
+      cursor: zoom-out;
+    }
+
+    .lightbox img {
+      max-width: 100vw;
+      max-height: 100vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 2.5rem;
+      line-height: 1;
+      cursor: pointer;
     }
 
     .article-page {
@@ -196,6 +254,9 @@ export class ArticleDetailComponent {
   private content = inject(ContentService);
 
   notFound = false;
+
+  /** Header image shown full screen. */
+  fullscreen = false;
 
   /**
    * Same-page links like href="#3" would resolve against <base href="/"> and send the router to the
