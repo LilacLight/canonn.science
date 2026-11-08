@@ -87,6 +87,7 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
             <ng-container *ngTemplateOutlet="socials"></ng-container>
             <button type="button" class="footer-btn" (click)="openReport()">Report a problem</button>
             <a class="footer-btn" [href]="submitArticleUrl" target="_blank" rel="noopener">Submit an article</a>
+            <a class="footer-btn" [href]="requestFeatureUrl" target="_blank" rel="noopener">Request a feature</a>
           </div>
         </div>
       </footer>
@@ -398,6 +399,7 @@ export class AppComponent {
 
   private readonly repo = 'https://github.com/canonn-science/canonn.science/issues/new';
   readonly submitArticleUrl = `${this.repo}?template=article-.md`;
+  readonly requestFeatureUrl = `${this.repo}?template=feature-.md`;
   pageTitle = '';
   private pageUrl = '';
 
