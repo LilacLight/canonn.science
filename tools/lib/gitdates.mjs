@@ -18,6 +18,16 @@ const git = (args) => execFileSync('git', ['-c', 'core.quotepath=off', ...args],
  * newest and the earliest commit date per article slug (the earliest is when the article first
  * appeared in this repo's history, used to tell a freshly-migrated article from a long-standing
  * one that was just edited). Exported for tests.
+ *
+ * Bulk commits (a site-wide change touching more than `bulkLimit` article folders, e.g. the
+ * initial migration) are excluded from `latest`, so they don't make everything look "recently
+ * updated" the moment anyone makes an unrelated edit. But a bulk commit still counts towards
+ * `first`: it's very often the ONLY commit that ever introduced a given article, and skipping it
+ * there would let a later, unrelated small edit masquerade as that article's "first seen" date —
+ * making a years-old migrated article look brand new.
+ *
+ * Dates are compared as actual instants (not as raw strings), since the `%cI` format includes a
+ * UTC offset and two differently-offset timestamps do not always sort correctly as strings.
  */
 export function parseGitLogRange(out, bulkLimit = BULK_COMMIT_ARTICLES) {
   const latest = new Map();
@@ -26,17 +36,21 @@ export function parseGitLogRange(out, bulkLimit = BULK_COMMIT_ARTICLES) {
     if (!block.trim()) continue;
     const [date, ...files] = block.split('\n');
     const d = date.trim();
+    const t = Date.parse(d);
     const slugs = new Set();
     for (const f of files) {
       const m = /^content\/articles\/([^/]+)\//.exec(f.trim());
       if (m) slugs.add(m[1]);
     }
-    if (!slugs.size || slugs.size > bulkLimit) continue;
+    if (!slugs.size) continue;
+    const isBulk = slugs.size > bulkLimit;
     for (const s of slugs) {
-      const prevLatest = latest.get(s);
-      if (!prevLatest || d > prevLatest) latest.set(s, d);
+      if (!isBulk) {
+        const prevLatest = latest.get(s);
+        if (!prevLatest || t > Date.parse(prevLatest)) latest.set(s, d);
+      }
       const prevFirst = first.get(s);
-      if (!prevFirst || d < prevFirst) first.set(s, d);
+      if (!prevFirst || t < Date.parse(prevFirst)) first.set(s, d);
     }
   }
   return { latest, first };
