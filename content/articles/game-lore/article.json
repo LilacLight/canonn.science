@@ -1,0 +1,20 @@
+{
+  "title": "Game Lore",
+  "slug": "game-lore",
+  "section": "codex",
+  "date": "2017-10-15T18:09:44+01:00",
+  "modified": null,
+  "excerpt": "Items of game lore from the history of Elite, including content archived from Drew Wagar, along with other items of interest to the history of the game.",
+  "banner": "media/banner.png",
+  "categories": [
+    {
+      "category": "News and Events",
+      "subs": [
+        "Community"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "wayback",
+  "original_link": "https://canonn.science/game-lore/"
+}
