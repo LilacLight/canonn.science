@@ -406,6 +406,7 @@ export class AppComponent {
     { label: 'This article is inaccurate', template: 'correction--.md', prefix: 'Correction', detail: 'This article is inaccurate.\n\nWhat is wrong, and what should it say?\n' },
     { label: 'This article is incomplete', template: 'correction--.md', prefix: 'Correction', detail: 'This article is incomplete.\n\nWhat is missing?\n' },
     { label: 'Images are missing', template: 'correction--.md', prefix: 'Correction', detail: 'Images are missing or broken in this article.\n\nWhich images?\n' },
+    { label: 'An article is missing', template: 'article-.md', prefix: 'Article', detail: 'I think an article is missing from the site.\n\nWhat do you think is missing? Describe the topic, its old title, or anything else that identifies it.\n\nTip: check the Wayback Machine for the old site before reporting \u2014 visit https://web.archive.org/web/*/https://canonn.science/* (or https://web.archive.org/web/*/https://science.canonn.tech/*), search for the topic, and if you find it, paste the archive.org link here so it can be recovered.\n' },
   ];
 
   openReport(): void {
