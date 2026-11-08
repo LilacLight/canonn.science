@@ -36,13 +36,13 @@ interface Placement {
     <app-not-found *ngIf="notFound"></app-not-found>
     <ng-container *ngIf="article$ | async as article">
       <div class="hero" *ngIf="article.banner_image">
-        <img [src]="article.banner_image" alt="" (click)="fullscreen = true" />
+        <img [src]="article.banner_image" alt="" (click)="lightboxSrc = article.banner_image" />
         <div class="hero-shade"></div>
-        <button type="button" class="hero-expand" (click)="fullscreen = true" aria-label="View header image full screen" title="View full image">&#x26F6; Full image</button>
+        <button type="button" class="hero-expand" (click)="lightboxSrc = article.banner_image" aria-label="View header image full screen" title="View full image">&#x26F6; Full image</button>
       </div>
-      <div class="lightbox" *ngIf="fullscreen && article.banner_image" role="dialog" aria-modal="true" aria-label="Header image" (click)="fullscreen = false">
-        <img [src]="article.banner_image" alt="" />
-        <button type="button" class="lightbox-close" (click)="fullscreen = false" aria-label="Close full screen image">&times;</button>
+      <div class="lightbox" *ngIf="lightboxSrc" role="dialog" aria-modal="true" aria-label="Enlarged image" (click)="lightboxSrc = null">
+        <img [src]="lightboxSrc" [alt]="lightboxAlt" />
+        <button type="button" class="lightbox-close" (click)="lightboxSrc = null" aria-label="Close full screen image">&times;</button>
       </div>
 
       <article class="container article-page">
@@ -90,7 +90,7 @@ interface Placement {
       </article>
     </ng-container>
   `,
-  host: { '(click)': 'onAnchorClick($event)', '(document:keydown.escape)': 'fullscreen = false' },
+  host: { '(click)': 'onAnchorClick($event)', '(document:keydown.escape)': 'lightboxSrc = null' },
   styles: [`
     .review-bar {
       position: sticky;
@@ -142,6 +142,10 @@ interface Placement {
     }
 
     .hero img {
+      cursor: zoom-in;
+    }
+
+    .prose ::ng-deep img {
       cursor: zoom-in;
     }
 
@@ -255,8 +259,40 @@ export class ArticleDetailComponent {
 
   notFound = false;
 
-  /** Header image shown full screen. */
-  fullscreen = false;
+  /** Image (banner, inline image or link to an image) shown full screen; null when closed. */
+  lightboxSrc: string | null = null;
+  lightboxAlt = '';
+
+  private static readonly IMAGE_URL = /\.(png|jpe?g|gif|webp|avif|svg)$/i;
+
+  /** Opens the lightbox for a click on an image in the article body, or on a link to an image file. */
+  private openBodyImage(event: MouseEvent): boolean {
+    const target = event.target as Element | null;
+    if (!target?.closest?.('.prose')) {
+      return false;
+    }
+    const img = target.closest('img');
+    const link = target.closest('a');
+    let src: string | null = null;
+    let alt = '';
+    if (link && ArticleDetailComponent.IMAGE_URL.test((link.getAttribute('href') ?? '').split(/[?#]/)[0])) {
+      // Link to an image: show that image (usually the full-size version of a thumbnail).
+      src = link.href;
+      alt = img?.alt ?? link.textContent?.trim() ?? '';
+    } else if (img && !link && img.currentSrc) {
+      src = img.currentSrc;
+      alt = img.alt;
+    } else if (img && link) {
+      return false; // image inside an ordinary link: follow the link
+    }
+    if (!src) {
+      return false;
+    }
+    event.preventDefault();
+    this.lightboxSrc = src;
+    this.lightboxAlt = alt;
+    return true;
+  }
 
   /**
    * Same-page links like href="#3" would resolve against <base href="/"> and send the router to the
@@ -264,6 +300,9 @@ export class ArticleDetailComponent {
    */
   onAnchorClick(event: MouseEvent): void {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    if (this.openBodyImage(event)) {
       return;
     }
     const link = (event.target as Element | null)?.closest?.('a');
