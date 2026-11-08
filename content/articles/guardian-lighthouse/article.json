@@ -1,0 +1,27 @@
+{
+  "title": "Guardian Lighthouse",
+  "slug": "guardian-lighthouse",
+  "section": "codex",
+  "date": "2024-03-20T22:52:45+00:00",
+  "modified": "2026-06-07T13:43:54+00:00",
+  "author": "SovereignWinter",
+  "excerpt": "Canonn Interstellar Research became the first group to simultaneously ignite all 30 known Guardian Beacons, in a coordinated effort called Project Guardian Lighthouse.",
+  "banner": "media/Canonn_Light_House.png",
+  "categories": [
+    {
+      "category": "Xenology",
+      "subs": [
+        "Guardian"
+      ]
+    },
+    {
+      "category": "News and Events",
+      "subs": [
+        "Community"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "wayback",
+  "original_link": "https://canonn.science/codex/research-notes/guardian-lighthouse/"
+}
