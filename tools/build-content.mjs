@@ -66,7 +66,7 @@ for (const a of articles) {
     date: meta.date ?? null,
     modified: meta.modified ?? null,
     // Newest of the declared `modified` date and the last real git change, never before `date`.
-    updated: later(later(meta.date ?? null, meta.modified ?? null), gitDates.get(slug) ?? null),
+    updated: later(later(meta.date ?? null, meta.modified ?? null), gitDates.latest.get(slug) ?? null),
     author: meta.author ?? null,
     excerpt: meta.excerpt || (text.length > 200 ? text.slice(0, 197).trimEnd() + '…' : text),
     banner_image: bannerFile ? rewriteMediaUrl(meta.banner, slug) : meta.banner && isExternalBannerOk(meta.banner) ? meta.banner : null,
@@ -156,20 +156,29 @@ for (const t of topicList) {
 }
 
 write('content/manifest.json', manifest);
-// Recently added / updated. "new" = has a date and was last changed within a day of it; anything else is "updated".
+// Recently added / updated. "new" = first appeared in this repo's git history within the last day
+// (so a migrated article with an old `date` still shows as "new" rather than "updated"); anything
+// else is "updated". Falls back to comparing `date`/`updated` when git history isn't available.
 const DAY = 86_400_000;
+const now = Date.now();
 const activity = (r) => Date.parse(r.updated ?? r.date ?? '') || 0;
 const recentAll = [...built.values()]
   .filter((r) => activity(r) > 0)
   .sort((x, y) => activity(y) - activity(x))
-  .map((r) => ({
-    slug: r.slug,
-    section: r.section,
-    title: r.title,
-    created: r.date,
-    updated: r.updated,
-    kind: r.date && Date.parse(r.updated) - Date.parse(r.date) <= DAY ? 'new' : 'updated',
-  }));
+  .map((r) => {
+    const firstSeen = gitDates.first.get(r.slug) ?? null;
+    const isNew = firstSeen
+      ? now - Date.parse(firstSeen) <= DAY
+      : Boolean(r.date) && Date.parse(r.updated) - Date.parse(r.date) <= DAY;
+    return {
+      slug: r.slug,
+      section: r.section,
+      title: r.title,
+      created: r.date,
+      updated: r.updated,
+      kind: isNew ? 'new' : 'updated',
+    };
+  });
 const SITE = 'https://' + readFileSync(path.join(ROOT, 'public', 'CNAME'), 'utf8').trim();
 const articleUrl = (r) => `${SITE}/${r.section === 'pages' ? '' : r.section ? r.section + '/' : 'article/'}${r.slug}`;
 
