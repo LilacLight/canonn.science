@@ -1,6 +1,7 @@
 // First- and last-change dates per article, taken from git history.
 //
-// An article's "updated" date is the newest commit that touched its folder, and its "first seen"
+// An article's "updated" date is the newest commit that changed its body (body.md / body.html);
+// metadata, media and site-wide changes do not count. Its "first seen"
 // date is the earliest, ignoring bulk commits (site-wide fixes that touch many articles at once
 // would otherwise flood "recently updated", or make a bulk migration commit look like every
 // article was freshly added). Returns empty maps when git history is unavailable (no git, or a
@@ -19,7 +20,9 @@ const git = (args) => execFileSync('git', ['-c', 'core.quotepath=off', ...args],
  * appeared in this repo's history, used to tell a freshly-migrated article from a long-standing
  * one that was just edited). Exported for tests.
  *
- * Bulk commits (a site-wide change touching more than `bulkLimit` article folders, e.g. the
+ * `latest` only counts commits that change an article's body file; `first` counts any file in the folder.
+ *
+ * Bulk commits (a site-wide change touching more than `bulkLimit` article bodies, e.g. the
  * initial migration) are excluded from `latest`, so they don't make everything look "recently
  * updated" the moment anyone makes an unrelated edit. But a bulk commit still counts towards
  * `first`: it's very often the ONLY commit that ever introduced a given article, and skipping it
@@ -37,15 +40,18 @@ export function parseGitLogRange(out, bulkLimit = BULK_COMMIT_ARTICLES) {
     const [date, ...files] = block.split('\n');
     const d = date.trim();
     const t = Date.parse(d);
-    const slugs = new Set();
+    const slugs = new Set(); // every article folder touched (for first-seen)
+    const bodySlugs = new Set(); // only those whose body changed (for latest)
     for (const f of files) {
-      const m = /^content\/articles\/([^/]+)\//.exec(f.trim());
-      if (m) slugs.add(m[1]);
+      const m = /^content\/articles\/([^/]+)\/(.*)$/.exec(f.trim());
+      if (!m) continue;
+      slugs.add(m[1]);
+      if (/^body\.(?:md|html)$/.test(m[2])) bodySlugs.add(m[1]);
     }
     if (!slugs.size) continue;
-    const isBulk = slugs.size > bulkLimit;
+    const isBulk = bodySlugs.size > bulkLimit;
     for (const s of slugs) {
-      if (!isBulk) {
+      if (!isBulk && bodySlugs.has(s)) {
         const prevLatest = latest.get(s);
         if (!prevLatest || t > Date.parse(prevLatest)) latest.set(s, d);
       }

@@ -71,7 +71,7 @@ export interface RecentItem {
   title: string;
   created: string | null;
   updated: string | null;
-  kind: 'new' | 'updated';
+  kind: 'new' | 'updated' | null;
 }
 
 export interface SearchEntry {
