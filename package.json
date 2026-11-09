@@ -30,6 +30,7 @@
     "htmlparser2": "^9.1.0",
     "marked": "^12.0.2",
     "sanitize-html": "^2.13.0",
+    "sharp": "^0.35.5",
     "typescript": "~5.5.0"
   }
 }
