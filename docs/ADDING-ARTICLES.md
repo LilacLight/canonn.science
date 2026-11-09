@@ -39,6 +39,18 @@ content/articles/my-discovery/
 | `author` | Optional. Plain text, max 200 characters. Shown under the title. |
 | `modified`, `original_link`, `source` | Optional. |
 
+## Editing an article's metadata from the site
+
+Add `?edit=1` to any article address (for example `https://science.canonn.tech/codex/some-article?edit=1`) to reveal
+an **Edit article.json** button. It opens a form to change the title, section, date, author and excerpt, add or remove
+categories and sub-categories, pin the article, and link related articles using a search.
+
+- The parameter stays on every link you follow until you remove it from the address.
+- Changes that could break links from other pages or sites (a new section, or removing the last article from a
+  category or sub-category) are flagged, and you must tick a box to acknowledge them.
+- Nothing is saved from the browser. **Submit as GitHub issue** opens a new issue containing the complete
+  `article.json`; a maintainer saves it to `content/articles/<slug>/article.json`. The slug cannot be changed here.
+
 ## Writing the body
 
 - Reference your own files as `media/<file>`, e.g. `![Scan](media/scan.png)`.

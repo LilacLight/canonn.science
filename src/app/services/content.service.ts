@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, shareReplay, tap } from 'rxjs/operators';
 import type { ArticleSegment } from './article-html';
+import type { EditorData } from '../components/article-editor.model';
 
 export interface Category {
   name: string;
@@ -155,6 +156,13 @@ export class ContentService {
   getSearchIndex(): Observable<SearchEntry[]> {
     return this.searchIndex$;
   }
+
+  /** Raw article.json files, taxonomy and inbound links, for the hidden editor (?edit=1). Loaded on demand. */
+  getEditorData(): Observable<EditorData> {
+    return (this.editor$ ??= this.http.get<EditorData>('/assets/content/editor.json').pipe(shareReplay(1)));
+  }
+
+  private editor$?: Observable<EditorData>;
 
   getArticle(slug: string): Observable<Article> {
     return this.http.get<Article>(`/assets/content/articles/${slug}.json`);

@@ -11,6 +11,8 @@ import { HesperusDecoderComponent } from '../../widgets/hesperus-decoder.compone
 import { GnosisItineraryComponent } from '../../widgets/gnosis-itinerary.component';
 import { ShareBlueskyComponent } from '../../components/share-bluesky.component';
 import { ArticleGridComponent } from '../../components/article-grid.component';
+import { ArticleEditorComponent } from '../../components/article-editor.component';
+import { EditModeService } from '../../services/edit-mode';
 import { NotFoundComponent } from '../not-found/not-found.component';
 
 interface Placement {
@@ -23,7 +25,7 @@ interface Placement {
 @Component({
   selector: 'app-article-detail',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, ArticleGridComponent, NotFoundComponent, ShareBlueskyComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, AdamastorDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, ArticleGridComponent, ArticleEditorComponent, NotFoundComponent, ShareBlueskyComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, AdamastorDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
   template: `
     <ng-container *ngIf="reviewMode && (review$ | async) as r">
       <div class="review-bar">
@@ -98,6 +100,7 @@ interface Placement {
           </ng-container>
         </section>
       </article>
+      <app-article-editor *ngIf="editMode.active && !reviewMode" [slug]="article.slug"></app-article-editor>
     </ng-container>
   `,
   host: { '(click)': 'onAnchorClick($event)', '(document:keydown.escape)': 'lightboxSrc = null' },
@@ -271,6 +274,8 @@ export class ArticleDetailComponent {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private content = inject(ContentService);
+  /** True while the address carries ?edit=1, which reveals the article.json editor. */
+  editMode = inject(EditModeService);
 
   notFound = false;
 
@@ -444,7 +449,8 @@ export class ArticleDetailComponent {
   private redirectToCanonical(article: Article): void {
     const canonical = this.router.serializeUrl(this.router.createUrlTree(articleLink(article)));
     const current = this.router.url.split(/[?#]/)[0].replace(/\/+$/, '');
-    if (current !== canonical) {
+    // Compare paths only: in edit mode the serializer appends ?edit=1 to the canonical address.
+    if (current !== canonical.split(/[?#]/)[0]) {
       this.router.navigateByUrl(canonical, { replaceUrl: true });
     }
   }

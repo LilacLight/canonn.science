@@ -194,6 +194,26 @@ write('public/recently-updated.json', JSON.stringify({
 }, null, 2) + '\n');
 write('content/categories.json', topicList);
 write('content/search-index.json', searchIndex);
+
+// Data for the hidden article.json editor (?edit=1). Only fetched when the editor is opened.
+// `inbound` = articles whose body links to this one; `linkedBy` = articles listing it in `linked`.
+const ownHost = /^https?:\/\/(?:www\.)?(?:canonn\.science|science\.canonn\.tech)(?=[/?#]|$)/i;
+const inbound = new Map([...built.keys()].map((k) => [k, new Set()]));
+const linkedBy = new Map([...built.keys()].map((k) => [k, new Set()]));
+for (const r of built.values()) {
+  const html = r.segments.map((seg) => seg.html ?? '').join(' ');
+  for (const m of html.matchAll(/href\s*=\s*"([^"]+)"/gi)) {
+    const href = m[1].replace(ownHost, '');
+    if (!href.startsWith('/')) continue;
+    const last = href.split(/[?#]/)[0].split('/').filter(Boolean).pop()?.toLowerCase();
+    if (last && last !== r.slug && inbound.has(last)) inbound.get(last).add(r.slug);
+  }
+  for (const l of r.linked) if (linkedBy.has(l) && l !== r.slug) linkedBy.get(l).add(r.slug);
+}
+write('content/editor.json', {
+  taxonomy: { otherName: taxonomy.otherName, categories: taxonomy.categories.map((c) => ({ name: c.name, subs: c.subs })) },
+  articles: Object.fromEntries(articles.map((a) => [a.slug, { meta: a.meta, inbound: [...inbound.get(a.slug)].sort(), linkedBy: [...linkedBy.get(a.slug)].sort() }])),
+});
 for (const r of built.values()) {
   const { placements, text, ...publish } = r;
   write(`content/articles/${r.slug}.json`, { ...publish, categories: topCats.get(r.slug) ?? [] });
