@@ -59,7 +59,7 @@ import {
           <label>Author
             <input type="text" [value]="draft.author" (input)="set('author', $any($event.target).value)" />
           </label>
-          <label>Excerpt <small>({{ draft.excerpt.length }}/600, plain text)</small>
+          <label>Excerpt <small>({{ draft.excerpt.length }}/600, plain text; a blank one is pre-filled from the start of the article)</small>
             <textarea rows="3" [value]="draft.excerpt" (input)="set('excerpt', $any($event.target).value)"></textarea>
           </label>
         </fieldset>
@@ -269,6 +269,11 @@ export class ArticleEditorComponent implements OnInit {
 
   reset(): void {
     this.draft = draftFrom(this.meta);
+    // A blank excerpt is pre-filled with the one the site already shows on the article's card
+    // (taken from the start of the body), so it is saved explicitly. Edit or clear it as needed.
+    if (!this.draft.excerpt.trim()) {
+      this.draft.excerpt = (this.manifest.find((a) => a.slug === this.slug)?.excerpt ?? '').replace(/[<>]/g, '').slice(0, 600);
+    }
     this.acknowledged = false;
     this.query = '';
     this.results = [];
