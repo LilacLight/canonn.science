@@ -102,6 +102,8 @@ export function validate(slug: string, d: Draft, taxonomy: Taxonomy): string[] {
 export function buildMeta(original: ArticleMeta, d: Draft): ArticleMeta {
   const out: ArticleMeta = { ...original };
   const set = (key: string, value: unknown, keep: boolean) => {
+    // Leave a field exactly as it was unless the edit changed it (e.g. keep an existing "excerpt": "").
+    if (!keep && (original[key] ?? '') === '') return;
     if (keep) out[key] = value;
     else delete out[key];
   };
