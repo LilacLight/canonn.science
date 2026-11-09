@@ -11,7 +11,7 @@ export const SHARED = path.join(CONTENT, 'shared-media');
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const SECTION = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const ISO = /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?(Z|[+-]\d{2}:\d{2})?)?$/;
-const KEYS = ['title', 'slug', 'section', 'date', 'modified', 'excerpt', 'banner', 'categories', 'format', 'source', 'original_link', 'scripts', 'author'];
+const KEYS = ['title', 'slug', 'section', 'date', 'modified', 'excerpt', 'banner', 'categories', 'format', 'source', 'original_link', 'scripts', 'author', 'linked'];
 /** `source` values written by the archive migration. Their articles get leniency (no date, no category). */
 export const LEGACY_SOURCES = new Set(['wayback', 'articles.json', 'manual']);
 
@@ -102,6 +102,12 @@ export function loadArticles(taxonomy) {
     if (meta.scripts != null && typeof meta.scripts !== 'boolean') err(slug, 'scripts must be true or false');
     if (meta.original_link != null && !/^https?:\/\//.test(meta.original_link)) err(slug, 'original_link must be an http(s) URL');
 
+    if (meta.linked != null) {
+      if (!Array.isArray(meta.linked) || meta.linked.length > 24 || meta.linked.some((l) => typeof l !== 'string' || !SLUG.test(l))) err(slug, 'linked must be an array of up to 24 article slugs');
+      else if (meta.linked.includes(slug)) err(slug, 'linked must not include the article itself');
+      else if (new Set(meta.linked).size !== meta.linked.length) err(slug, 'linked contains a duplicate slug');
+    }
+
     if (!Array.isArray(meta.categories)) err(slug, 'categories must be an array');
     else {
       if (meta.categories.length === 0 && !legacy) err(slug, 'at least one category is required');
@@ -109,6 +115,7 @@ export function loadArticles(taxonomy) {
         const subs = subsOf.get(c?.category);
         if (!subs) { err(slug, `unknown category "${c?.category}" (see content/taxonomy.json)`); continue; }
         if (!Array.isArray(c.subs)) { err(slug, `category "${c.category}": subs must be an array`); continue; }
+        if (c.pinned != null && typeof c.pinned !== 'boolean') err(slug, `category "${c.category}": pinned must be true or false`);
         for (const s of c.subs) if (!subs.has(s)) err(slug, `unknown sub-category "${s}" in "${c.category}"`);
       }
     }

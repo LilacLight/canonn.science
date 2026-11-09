@@ -6,6 +6,8 @@ import { map, switchMap } from 'rxjs/operators';
 import { ShareBlueskyComponent } from '../../components/share-bluesky.component';
 import { ArticleSummary, Category, ContentService, articleLink } from '../../services/content.service';
 
+const isPinned = (a: ArticleSummary, slug: string) => a.categories.some((c) => c.slug === slug && c.pinned);
+
 @Component({
   selector: 'app-article-list',
   standalone: true,
@@ -131,8 +133,8 @@ export class ArticleListComponent {
         map((articles) =>
           articles
             .filter((a) => a.categories.some((c) => c.slug === slug))
-            // Most recent first; undated articles go last.
-            .sort((a, b) => (b.date ? Date.parse(b.date) : 0) - (a.date ? Date.parse(a.date) : 0)),
+            // Pinned first, then most recent first; undated articles go last.
+            .sort((a, b) => Number(isPinned(b, slug)) - Number(isPinned(a, slug)) || (b.date ? Date.parse(b.date) : 0) - (a.date ? Date.parse(a.date) : 0)),
         ),
       ),
     ),

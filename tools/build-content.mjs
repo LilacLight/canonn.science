@@ -73,6 +73,7 @@ for (const a of articles) {
     source: meta.source ?? 'community',
     scripts: meta.scripts === true,
     original_link: meta.original_link ?? null,
+    linked: Array.isArray(meta.linked) ? meta.linked : [],
     placements: meta.categories,
     segments,
     text,
@@ -87,7 +88,9 @@ for (const f of walk(SHARED)) place(f, path.join(OUT, 'media', '_shared', path.r
 
 // ---------------------------------------------------------------- navigation
 const dateKey = (s) => built.get(s).date ?? '';
-const newestFirst = (slugs) => [...new Set(slugs)].sort((x, y) => dateKey(y).localeCompare(dateKey(x)));
+// Articles pinned in a category (`"pinned": true` on its entry in article.json) come first, then newest first.
+const pinnedIn = (slug, category) => built.get(slug).placements.some((p) => p.category === category && p.pinned === true);
+const newestFirst = (slugs, category) => [...new Set(slugs)].sort((x, y) => Number(pinnedIn(y, category)) - Number(pinnedIn(x, category)) || dateKey(y).localeCompare(dateKey(x)));
 
 // category -> sub|null -> slugs
 const tree = new Map(taxonomy.categories.map((c) => [c.name, new Map([[null, []], ...c.subs.map((s) => [s, []])])]));
@@ -102,10 +105,10 @@ const catSlugs = new Set();
 const categories = [];
 for (const c of taxonomy.categories) {
   const subs = tree.get(c.name);
-  const cat = { name: c.name, slug: slugify(c.name, catSlugs), description: c.description ?? null, subs: [], articles: newestFirst(subs.get(null)) };
+  const cat = { name: c.name, slug: slugify(c.name, catSlugs), description: c.description ?? null, subs: [], articles: newestFirst(subs.get(null), c.name) };
   const subSlugs = new Set();
   for (const [name, slugs] of subs) {
-    if (name !== null && slugs.length) cat.subs.push({ name, slug: slugify(name, subSlugs), articles: newestFirst(slugs) });
+    if (name !== null && slugs.length) cat.subs.push({ name, slug: slugify(name, subSlugs), articles: newestFirst(slugs, c.name) });
   }
   if (cat.subs.length && cat.articles.length) {
     cat.subs.push({ name: taxonomy.otherName, slug: slugify(taxonomy.otherName, subSlugs), articles: cat.articles });
@@ -132,7 +135,7 @@ for (const c of categories) {
 
 // ---------------------------------------------------------------- per-article category info
 const topCats = new Map();
-for (const c of categories) for (const s of new Set(allOf(c))) (topCats.get(s) ?? topCats.set(s, []).get(s)).push({ name: c.name, slug: c.slug });
+for (const c of categories) for (const s of new Set(allOf(c))) (topCats.get(s) ?? topCats.set(s, []).get(s)).push({ name: c.name, slug: c.slug, pinned: pinnedIn(s, c.name) });
 
 const manifest = [...built.values()]
   .map((r) => ({ slug: r.slug, section: r.section, title: r.title, date: r.date, updated: r.updated, excerpt: r.excerpt, categories: topCats.get(r.slug) ?? [], banner_image: r.banner_image, source: r.source }))
@@ -191,6 +194,26 @@ write('public/recently-updated.json', JSON.stringify({
 }, null, 2) + '\n');
 write('content/categories.json', topicList);
 write('content/search-index.json', searchIndex);
+
+// Data for the hidden article.json editor (?edit=1). Only fetched when the editor is opened.
+// `inbound` = articles whose body links to this one; `linkedBy` = articles listing it in `linked`.
+const ownHost = /^https?:\/\/(?:www\.)?(?:canonn\.science|science\.canonn\.tech)(?=[/?#]|$)/i;
+const inbound = new Map([...built.keys()].map((k) => [k, new Set()]));
+const linkedBy = new Map([...built.keys()].map((k) => [k, new Set()]));
+for (const r of built.values()) {
+  const html = r.segments.map((seg) => seg.html ?? '').join(' ');
+  for (const m of html.matchAll(/href\s*=\s*"([^"]+)"/gi)) {
+    const href = m[1].replace(ownHost, '');
+    if (!href.startsWith('/')) continue;
+    const last = href.split(/[?#]/)[0].split('/').filter(Boolean).pop()?.toLowerCase();
+    if (last && last !== r.slug && inbound.has(last)) inbound.get(last).add(r.slug);
+  }
+  for (const l of r.linked) if (linkedBy.has(l) && l !== r.slug) linkedBy.get(l).add(r.slug);
+}
+write('content/editor.json', {
+  taxonomy: { otherName: taxonomy.otherName, categories: taxonomy.categories.map((c) => ({ name: c.name, subs: c.subs })) },
+  articles: Object.fromEntries(articles.map((a) => [a.slug, { meta: a.meta, inbound: [...inbound.get(a.slug)].sort(), linkedBy: [...linkedBy.get(a.slug)].sort() }])),
+});
 for (const r of built.values()) {
   const { placements, text, ...publish } = r;
   write(`content/articles/${r.slug}.json`, { ...publish, categories: topCats.get(r.slug) ?? [] });
