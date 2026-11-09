@@ -134,3 +134,85 @@ img {
 
 /* in-page anchors: leave room for the sticky header */
 .prose [id], #Hesperus-Decoder { scroll-margin-top: 5rem; }
+
+/*Details element styling*/
+summary {
+  background-color: #373737;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+summary:hover {
+  background-color: black;
+  color: #ff7300;
+}
+
+details[open] > summary {
+  background-color: black;
+  color: #ff7300;
+}
+
+details {
+  background-color: #263238;
+  color: #cfd8dc;
+  font-size: 1rem;
+  border: thin solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+article > *:first-child {
+  margin: 0;
+}
+
+article > * + * {
+  margin: 0.75rem 0 0 0;
+}
+
+.detailsarticle {
+  color: #cfd8dc;
+  background: #263238;
+  padding: 0.75rem;
+  margin: 0;
+}
+
+details code {
+  font-size: 1.125rem;
+  color: white;
+  background: black;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+details cite {
+  display: inline-block;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: #23282d;
+}
+
+/* Details-Contents Styling*/
+.con1 {
+  color: #cfd8dc;
+  font-size: 1rem;
+}
+
+.con2 {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.con3 {
+  color: #cfd8dc;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
