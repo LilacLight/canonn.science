@@ -9,7 +9,7 @@
     "content:check": "node tools/build-content.mjs --check",
     "content:guard": "node tools/content-guard.mjs",
     "start": "npm run content && ng serve",
-    "build": "npm run content && ng build",
+    "build": "npm run content && ng build && node tools/generate-share-pages.mjs",
     "test:tools": "node --test tools/test/*.test.mjs"
   },
   "dependencies": {

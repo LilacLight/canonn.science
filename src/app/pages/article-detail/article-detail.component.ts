@@ -9,6 +9,7 @@ import { XyzConverterComponent } from '../../widgets/xyz-converter.component';
 import { AdamastorDecoderComponent } from '../../widgets/adamastor-decoder.component';
 import { HesperusDecoderComponent } from '../../widgets/hesperus-decoder.component';
 import { GnosisItineraryComponent } from '../../widgets/gnosis-itinerary.component';
+import { ShareBlueskyComponent } from '../../components/share-bluesky.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 
 interface Placement {
@@ -21,7 +22,7 @@ interface Placement {
 @Component({
   selector: 'app-article-detail',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, NotFoundComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, AdamastorDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, NotFoundComponent, ShareBlueskyComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, AdamastorDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
   template: `
     <ng-container *ngIf="reviewMode && (review$ | async) as r">
       <div class="review-bar">
@@ -62,6 +63,7 @@ interface Placement {
         <h1>{{ article.title }}</h1>
         <p class="author" *ngIf="article.author">By {{ article.author }}</p>
         <p class="meta" *ngIf="article.date">{{ article.date | date: 'longDate' }}</p>
+        <p class="share" *ngIf="!reviewMode"><app-share-bluesky [text]="article.title"></app-share-bluesky></p>
 
         <div class="tags" *ngIf="placement$ | async as places">
           <ng-container *ngIf="places.length; else oldTags">
@@ -223,6 +225,8 @@ interface Placement {
       font-size: 0.9rem;
       margin: 0.25rem 0 0;
     }
+
+    .share { margin: 0 0 1rem; }
 
     .meta {
       color: var(--text-muted);
