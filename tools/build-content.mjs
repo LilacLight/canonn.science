@@ -161,8 +161,9 @@ for (const t of topicList) {
 write('content/manifest.json', manifest);
 // Recently added / updated. "new" = first appeared in this repo's git history within the last day
 // (so a migrated article with an old `date` still shows as "new" rather than "updated"), and
-// stays "new" for that whole period even if its body is edited meanwhile; anything else is "updated".
-// Only body changes count as updates (see lib/gitdates.mjs). Falls back to comparing `date`/`updated` when git history isn't available.
+// stays "new" for that whole period even if its body is edited meanwhile. Otherwise it is "updated" only
+// if its body really changed after it first appeared (see lib/gitdates.mjs); an article that is neither
+// new nor updated gets kind null (no badge). Falls back to comparing `date`/`updated` without git history.
 const NEW_FOR = 86_400_000;
 const now = Date.now();
 const activity = (r) => Date.parse(r.updated ?? r.date ?? '') || 0;
@@ -174,13 +175,15 @@ const recentAll = [...built.values()]
     const isNew = firstSeen
       ? now - Date.parse(firstSeen) <= NEW_FOR
       : Boolean(r.date) && Date.parse(r.updated) - Date.parse(r.date) <= NEW_FOR;
+    const base = Date.parse(firstSeen ?? r.date ?? '') || 0;
+    const isUpdated = Date.parse(r.updated ?? '') > base;
     return {
       slug: r.slug,
       section: r.section,
       title: r.title,
       created: r.date,
       updated: r.updated,
-      kind: isNew ? 'new' : 'updated',
+      kind: isNew ? 'new' : isUpdated ? 'updated' : null,
     };
   });
 const SITE = 'https://' + readFileSync(path.join(ROOT, 'public', 'CNAME'), 'utf8').trim();
@@ -190,7 +193,7 @@ write('content/navigation.json', { categories, recent: recentAll.slice(0, 10) })
 // Plain static JSON at the site root, for tools that cannot run JavaScript.
 write('public/recently-updated.json', JSON.stringify({
   generated: new Date().toISOString(),
-  note: 'Most recently created or updated articles, newest first. kind is "new" or "updated".',
+  note: 'Most recently created or updated articles, newest first. kind is "new", "updated" or null (neither).',
   articles: recentAll.slice(0, 50).map((r) => ({ title: r.title, url: articleUrl(r), created: r.created, updated: r.updated, kind: r.kind })),
 }, null, 2) + '\n');
 write('content/categories.json', topicList);

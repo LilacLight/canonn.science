@@ -59,7 +59,9 @@ import { ContentService, RecentItem, articleLink } from './services/content.serv
                 <ul class="ticker-list" [attr.aria-hidden]="copy === 1 ? 'true' : null">
                   @for (r of recent; track r.slug) {
                     <li>
-                      <span class="badge" [class.badge-new]="r.kind === 'new'">{{ r.kind === 'new' ? 'New' : 'Updated' }}</span>
+                      @if (r.kind) {
+                        <span class="badge" [class.badge-new]="r.kind === 'new'">{{ r.kind === 'new' ? 'New' : 'Updated' }}</span>
+                      }
                       <a [routerLink]="link(r)" [attr.tabindex]="copy === 1 ? -1 : null">{{ r.title }}</a>
                       <time>{{ ago(r.updated) }}</time>
                     </li>
