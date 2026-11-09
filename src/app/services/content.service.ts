@@ -11,6 +11,8 @@ export interface Category {
   /** Banner image of the most recent article in this topic that has one. */
   image?: string | null;
   latest_date?: string | null;
+  /** On an article's categories: the article is pinned to the top of this category. */
+  pinned?: boolean;
 }
 
 export interface ArticleSummary {
@@ -36,6 +38,8 @@ export interface Article extends ArticleSummary {
   /** True when the article's author opted in to running scripts (reviewed by a maintainer). */
   scripts: boolean;
   original_link: string | null;
+  /** Slugs of articles the author linked to, shown below the article. */
+  linked?: string[];
 }
 
 /** The home > category > sub-category tree, built by tools/build-content.mjs. */

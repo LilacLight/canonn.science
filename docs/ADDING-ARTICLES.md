@@ -34,6 +34,8 @@ content/articles/my-discovery/
 | `excerpt` | Plain text, max 600 characters, no `<` or `>`. If omitted, the start of the body is used. |
 | `banner` | Optional. `media/<file>` or `shared-media/<path>`. |
 | `categories` | At least one. Names must exist in `content/taxonomy.json`; `subs` may be empty. An article may be in several categories. |
+| `categories[].pinned` | Optional `true`. Pins the article to the top of that category and its sub-categories instead of time order. Pinned articles are still newest first among themselves. |
+| `linked` | Optional array of article slugs (max 24), e.g. `["other-article"]`. Shown as cards under the article, in the order given. Slugs that don't match an article are silently ignored. |
 | `author` | Optional. Plain text, max 200 characters. Shown under the title. |
 | `modified`, `original_link`, `source` | Optional. |
 

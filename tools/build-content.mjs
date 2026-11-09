@@ -73,6 +73,7 @@ for (const a of articles) {
     source: meta.source ?? 'community',
     scripts: meta.scripts === true,
     original_link: meta.original_link ?? null,
+    linked: Array.isArray(meta.linked) ? meta.linked : [],
     placements: meta.categories,
     segments,
     text,
@@ -87,7 +88,9 @@ for (const f of walk(SHARED)) place(f, path.join(OUT, 'media', '_shared', path.r
 
 // ---------------------------------------------------------------- navigation
 const dateKey = (s) => built.get(s).date ?? '';
-const newestFirst = (slugs) => [...new Set(slugs)].sort((x, y) => dateKey(y).localeCompare(dateKey(x)));
+// Articles pinned in a category (`"pinned": true` on its entry in article.json) come first, then newest first.
+const pinnedIn = (slug, category) => built.get(slug).placements.some((p) => p.category === category && p.pinned === true);
+const newestFirst = (slugs, category) => [...new Set(slugs)].sort((x, y) => Number(pinnedIn(y, category)) - Number(pinnedIn(x, category)) || dateKey(y).localeCompare(dateKey(x)));
 
 // category -> sub|null -> slugs
 const tree = new Map(taxonomy.categories.map((c) => [c.name, new Map([[null, []], ...c.subs.map((s) => [s, []])])]));
@@ -102,10 +105,10 @@ const catSlugs = new Set();
 const categories = [];
 for (const c of taxonomy.categories) {
   const subs = tree.get(c.name);
-  const cat = { name: c.name, slug: slugify(c.name, catSlugs), description: c.description ?? null, subs: [], articles: newestFirst(subs.get(null)) };
+  const cat = { name: c.name, slug: slugify(c.name, catSlugs), description: c.description ?? null, subs: [], articles: newestFirst(subs.get(null), c.name) };
   const subSlugs = new Set();
   for (const [name, slugs] of subs) {
-    if (name !== null && slugs.length) cat.subs.push({ name, slug: slugify(name, subSlugs), articles: newestFirst(slugs) });
+    if (name !== null && slugs.length) cat.subs.push({ name, slug: slugify(name, subSlugs), articles: newestFirst(slugs, c.name) });
   }
   if (cat.subs.length && cat.articles.length) {
     cat.subs.push({ name: taxonomy.otherName, slug: slugify(taxonomy.otherName, subSlugs), articles: cat.articles });
@@ -132,7 +135,7 @@ for (const c of categories) {
 
 // ---------------------------------------------------------------- per-article category info
 const topCats = new Map();
-for (const c of categories) for (const s of new Set(allOf(c))) (topCats.get(s) ?? topCats.set(s, []).get(s)).push({ name: c.name, slug: c.slug });
+for (const c of categories) for (const s of new Set(allOf(c))) (topCats.get(s) ?? topCats.set(s, []).get(s)).push({ name: c.name, slug: c.slug, pinned: pinnedIn(s, c.name) });
 
 const manifest = [...built.values()]
   .map((r) => ({ slug: r.slug, section: r.section, title: r.title, date: r.date, updated: r.updated, excerpt: r.excerpt, categories: topCats.get(r.slug) ?? [], banner_image: r.banner_image, source: r.source }))
