@@ -5,7 +5,7 @@
   "date": "2026-11-12T18:00:00",
   "modified": null,
   "author": "LilacLight",
-  "excerpt": "",
+  "excerpt": "On the 29th October 3312, the Pilots' Federation sent out a request for commanders to investigate the permit locked LFT 509 system.",
   "banner": "media/Perpetual Toil.webp",
   "categories": [
     {
@@ -17,5 +17,5 @@
   ],
   "format": "html",
   "source": "articles.json",
-  "original_link": "https://science.canonn.tech"
+  "original_link": null
 }
