@@ -3,13 +3,16 @@ import { AsyncPipe, DatePipe, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefau
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { EMPTY, Observable, combineLatest, of } from 'rxjs';
 import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { Article, ContentService, articleLink } from '../../services/content.service';
+import { Article, ArticleSummary, ContentService, articleLink } from '../../services/content.service';
 import { ArticleHtmlPipe, ArticleSegment, ScriptedHtmlDirective } from '../../services/article-html';
 import { XyzConverterComponent } from '../../widgets/xyz-converter.component';
 import { AdamastorDecoderComponent } from '../../widgets/adamastor-decoder.component';
 import { HesperusDecoderComponent } from '../../widgets/hesperus-decoder.component';
 import { GnosisItineraryComponent } from '../../widgets/gnosis-itinerary.component';
 import { ShareBlueskyComponent } from '../../components/share-bluesky.component';
+import { ArticleGridComponent } from '../../components/article-grid.component';
+import { ArticleEditorComponent } from '../../components/article-editor.component';
+import { EditModeService } from '../../services/edit-mode';
 import { NotFoundComponent } from '../not-found/not-found.component';
 
 interface Placement {
@@ -22,7 +25,7 @@ interface Placement {
 @Component({
   selector: 'app-article-detail',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, NotFoundComponent, ShareBlueskyComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, AdamastorDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [AsyncPipe, DatePipe, NgIf, NgFor, RouterLink, ArticleGridComponent, ArticleEditorComponent, NotFoundComponent, ShareBlueskyComponent, ArticleHtmlPipe, ScriptedHtmlDirective, XyzConverterComponent, HesperusDecoderComponent, AdamastorDecoderComponent, GnosisItineraryComponent, NgSwitch, NgSwitchCase, NgSwitchDefault],
   template: `
     <ng-container *ngIf="reviewMode && (review$ | async) as r">
       <div class="review-bar">
@@ -89,7 +92,15 @@ interface Placement {
             </ng-container>
           </ng-container>
         </ng-container>
+
+        <section class="linked" *ngIf="linked$ | async as linked">
+          <ng-container *ngIf="linked.length">
+            <h2>Related articles</h2>
+            <app-article-grid [articles]="linked"></app-article-grid>
+          </ng-container>
+        </section>
       </article>
+      <app-article-editor *ngIf="editMode.active && !reviewMode" [slug]="article.slug"></app-article-editor>
     </ng-container>
   `,
   host: { '(click)': 'onAnchorClick($event)', '(document:keydown.escape)': 'lightboxSrc = null' },
@@ -210,6 +221,9 @@ interface Placement {
       padding: 2.5rem 1.5rem 5rem;
     }
 
+    .linked { margin-top: 3rem; }
+    .linked h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+
     .breadcrumb {
       color: var(--text-muted);
       font-size: 0.85rem;
@@ -260,6 +274,8 @@ export class ArticleDetailComponent {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private content = inject(ContentService);
+  /** True while the address carries ?edit=1, which reveals the article.json editor. */
+  editMode = inject(EditModeService);
 
   notFound = false;
 
@@ -367,6 +383,7 @@ export class ArticleDetailComponent {
         }),
       ),
     ),
+    shareReplay({ bufferSize: 1, refCount: true }),
   );
 
   /** Prev is newer, next is older; plus a prefilled GitHub bug report for the page. */
@@ -401,6 +418,14 @@ export class ArticleDetailComponent {
    * A sub-category with a single article has no page of its own, so it shows
    * as plain text rather than a link; "Everything else" is left out.
    */
+  /** Articles named in `linked`, in the order the author listed them. */
+  linked$: Observable<ArticleSummary[]> = combineLatest([this.article$, this.content.getManifest()]).pipe(
+    map(([article, manifest]) => {
+      const bySlug = new Map(manifest.map((a) => [a.slug, a]));
+      return (article?.linked ?? []).map((s) => bySlug.get(s)).filter((a): a is ArticleSummary => !!a);
+    }),
+  );
+
   placement$ = combineLatest([this.slug$, this.content.getNavigation(), this.content.getManifest()]).pipe(
     map(([slug, nav]) => {
       const places: Placement[] = [];
@@ -424,7 +449,8 @@ export class ArticleDetailComponent {
   private redirectToCanonical(article: Article): void {
     const canonical = this.router.serializeUrl(this.router.createUrlTree(articleLink(article)));
     const current = this.router.url.split(/[?#]/)[0].replace(/\/+$/, '');
-    if (current !== canonical) {
+    // Compare paths only: in edit mode the serializer appends ?edit=1 to the canonical address.
+    if (current !== canonical.split(/[?#]/)[0]) {
       this.router.navigateByUrl(canonical, { replaceUrl: true });
     }
   }

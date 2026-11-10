@@ -89,7 +89,8 @@ export class TopicComponent {
         thumb: s.thumb,
         link: ['/topics', category.slug, s.slug],
       }));
-      const direct = toArticles(singles).sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+      const pinned = (a: ArticleSummary) => a.categories.some((c) => c.slug === category.slug && c.pinned);
+      const direct = toArticles(singles).sort((a, b) => Number(pinned(b)) - Number(pinned(a)) || (b.date ?? '').localeCompare(a.date ?? ''));
       return { category, subName: null, tiles: tiles.length ? tiles : null, articles: direct.length ? direct : null };
     }),
   );

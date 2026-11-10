@@ -50,3 +50,15 @@ test('commit dates with different UTC offsets compare chronologically, not lexic
   assert.equal(latest.get('a'), '2026-11-06T21:00:00-05:00');
   assert.equal(first.get('a'), '2026-11-07T02:00:00+02:00');
 });
+
+test('only body changes count as updates; metadata/media/site-wide edits do not', () => {
+  const log = '\x012026-11-08T10:00:00Z\ncontent/articles/a/article.json\ncontent/articles/a/media/x.png\n\n\x012026-11-01T10:00:00Z\ncontent/articles/a/body.md\n\n\x012026-10-01T10:00:00Z\ncontent/articles/a/article.json\n';
+  const { latest, first } = parseGitLogRange(log);
+  assert.equal(latest.get('a'), '2026-11-01T10:00:00Z');
+  assert.equal(first.get('a'), '2026-10-01T10:00:00Z');
+});
+
+test('a commit touching many article.json files is not a bulk body edit', () => {
+  const files = Array.from({ length: 30 }, (_, i) => `content/articles/s${i}/article.json`).join('\n') + '\ncontent/articles/s0/body.md';
+  assert.equal(parseGitLogRange(`\x012026-11-08T00:00:00Z\n${files}\n`).latest.get('s0'), '2026-11-08T00:00:00Z');
+});

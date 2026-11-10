@@ -16,5 +16,9 @@
   ],
   "format": "html",
   "source": "articles.json",
-  "original_link": "https://canonn.science/codex/crashed-thargoid-scout-pleiades-sector-ln-t-c3-4/"
+  "original_link": "https://canonn.science/codex/crashed-thargoid-scout-pleiades-sector-ln-t-c3-4/",
+  "linked": [
+    "crashed-scout-3",
+    "crashed-thargoid-scout"
+  ]
 }
