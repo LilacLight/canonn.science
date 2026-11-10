@@ -4,12 +4,14 @@
   "section": "media",
   "date": "2017-04-23T18:44:29+01:00",
   "modified": null,
-  "excerpt": "",
+  "excerpt": "Canonn Faction News have published the following public service announcements, courtesy of Cmdr Po.",
   "banner": "https://i.ytimg.com/vi/p3OyT7ywfa4/hqdefault.jpg",
   "categories": [
     {
-      "category": "Obsolete/Incomplete",
-      "subs": []
+      "category": "News and Events",
+      "subs": [
+        "Canonn Faction News"
+      ]
     }
   ],
   "format": "html",

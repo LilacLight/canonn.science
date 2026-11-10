@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { ArticleSummary, ContentService, NavCategory } from '../../services/content.service';
 import { Tile, TileGridComponent } from '../../components/tile-grid.component';
 import { ArticleGridComponent } from '../../components/article-grid.component';
+import { ShareBlueskyComponent } from '../../components/share-bluesky.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 
 interface View {
@@ -23,7 +24,7 @@ interface View {
 @Component({
   selector: 'app-topic',
   standalone: true,
-  imports: [AsyncPipe, NgIf, RouterLink, TileGridComponent, ArticleGridComponent, NotFoundComponent],
+  imports: [AsyncPipe, NgIf, RouterLink, ShareBlueskyComponent, TileGridComponent, ArticleGridComponent, NotFoundComponent],
   template: `
     <ng-container *ngIf="view$ | async as v">
       <app-not-found *ngIf="v === 'missing'"></app-not-found>
@@ -36,6 +37,7 @@ interface View {
           <ng-template #here>{{ v.category.name }}</ng-template>
         </nav>
         <h1>{{ v.subName || v.category.name }}</h1>
+        <p class="share"><app-share-bluesky [text]="v.subName || v.category.name"></app-share-bluesky></p>
         <p class="description" *ngIf="!v.subName && v.category.description">{{ v.category.description }}</p>
         <app-tile-grid *ngIf="v.tiles" [tiles]="v.tiles"></app-tile-grid>
         <h2 class="direct" *ngIf="v.tiles && v.articles">Articles</h2>
@@ -47,6 +49,7 @@ interface View {
     .topic-page { padding: 2.5rem 1.5rem 4rem; }
     .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.6rem; }
     h1 { margin-bottom: 0.75rem; }
+    .share { margin: 0 0 1rem; }
     .description { max-width: 720px; color: var(--text-muted); margin-bottom: 1.75rem; }
     .direct { font-size: 1.15rem; margin: 2.5rem 0 1rem; }
   `],
@@ -86,7 +89,8 @@ export class TopicComponent {
         thumb: s.thumb,
         link: ['/topics', category.slug, s.slug],
       }));
-      const direct = toArticles(singles).sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+      const pinned = (a: ArticleSummary) => a.categories.some((c) => c.slug === category.slug && c.pinned);
+      const direct = toArticles(singles).sort((a, b) => Number(pinned(b)) - Number(pinned(a)) || (b.date ?? '').localeCompare(a.date ?? ''));
       return { category, subName: null, tiles: tiles.length ? tiles : null, articles: direct.length ? direct : null };
     }),
   );

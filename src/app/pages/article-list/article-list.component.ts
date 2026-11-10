@@ -3,16 +3,20 @@ import { AsyncPipe, DatePipe, NgForOf, NgIf } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { ShareBlueskyComponent } from '../../components/share-bluesky.component';
 import { ArticleSummary, Category, ContentService, articleLink } from '../../services/content.service';
+
+const isPinned = (a: ArticleSummary, slug: string) => a.categories.some((c) => c.slug === slug && c.pinned);
 
 @Component({
   selector: 'app-article-list',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, NgForOf, NgIf, RouterLink],
+  imports: [AsyncPipe, DatePipe, NgForOf, NgIf, RouterLink, ShareBlueskyComponent],
   template: `
     <section class="container list-page" *ngIf="categoryName$ | async as name">
       <nav class="breadcrumb"><a routerLink="/">Home</a> / {{ name }}</nav>
       <h1>{{ name }}</h1>
+      <p class="share"><app-share-bluesky [text]="name"></app-share-bluesky></p>
 
       <div class="article-grid" *ngIf="articles$ | async as articles">
         <a class="card" *ngFor="let article of articles" [routerLink]="articleLink(article)">
@@ -33,6 +37,8 @@ import { ArticleSummary, Category, ContentService, articleLink } from '../../ser
     .list-page {
       padding: 2.5rem 1.5rem 4rem;
     }
+
+    .share { margin: 0 0 1rem; }
 
     .breadcrumb {
       color: var(--text-muted);
@@ -127,8 +133,8 @@ export class ArticleListComponent {
         map((articles) =>
           articles
             .filter((a) => a.categories.some((c) => c.slug === slug))
-            // Most recent first; undated articles go last.
-            .sort((a, b) => (b.date ? Date.parse(b.date) : 0) - (a.date ? Date.parse(a.date) : 0)),
+            // Pinned first, then most recent first; undated articles go last.
+            .sort((a, b) => Number(isPinned(b, slug)) - Number(isPinned(a, slug)) || (b.date ? Date.parse(b.date) : 0) - (a.date ? Date.parse(a.date) : 0)),
         ),
       ),
     ),

@@ -9,7 +9,7 @@
     "content:check": "node tools/build-content.mjs --check",
     "content:guard": "node tools/content-guard.mjs",
     "start": "npm run content && ng serve",
-    "build": "npm run content && ng build",
+    "build": "npm run content && ng build && node tools/generate-share-pages.mjs",
     "test:tools": "node --test tools/test/*.test.mjs"
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "htmlparser2": "^9.1.0",
     "marked": "^12.0.2",
     "sanitize-html": "^2.13.0",
+    "sharp": "^0.35.5",
     "typescript": "~5.5.0"
   }
 }

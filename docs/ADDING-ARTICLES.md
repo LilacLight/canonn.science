@@ -34,8 +34,22 @@ content/articles/my-discovery/
 | `excerpt` | Plain text, max 600 characters, no `<` or `>`. If omitted, the start of the body is used. |
 | `banner` | Optional. `media/<file>` or `shared-media/<path>`. |
 | `categories` | At least one. Names must exist in `content/taxonomy.json`; `subs` may be empty. An article may be in several categories. |
+| `categories[].pinned` | Optional `true`. Pins the article to the top of that category and its sub-categories instead of time order. Pinned articles are still newest first among themselves. |
+| `linked` | Optional array of article slugs (max 24), e.g. `["other-article"]`. Shown as cards under the article, in the order given. Slugs that don't match an article are silently ignored. |
 | `author` | Optional. Plain text, max 200 characters. Shown under the title. |
 | `modified`, `original_link`, `source` | Optional. |
+
+## Editing an article's metadata from the site
+
+Add `?edit=1` to any article address (for example `https://science.canonn.tech/codex/some-article?edit=1`) to reveal
+an **Edit article.json** button. It opens a form to change the title, section, date, author and excerpt, add or remove
+categories and sub-categories, pin the article, and link related articles using a search.
+
+- The parameter stays on every link you follow until you remove it from the address.
+- Changes that could break links from other pages or sites (a new section, or removing the last article from a
+  category or sub-category) are flagged, and you must tick a box to acknowledge them.
+- Nothing is saved from the browser. **Submit as GitHub issue** opens a new issue containing the complete
+  `article.json`; a maintainer saves it to `content/articles/<slug>/article.json`. The slug cannot be changed here.
 
 ## Writing the body
 

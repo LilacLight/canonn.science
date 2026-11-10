@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, shareReplay, tap } from 'rxjs/operators';
 import type { ArticleSegment } from './article-html';
+import type { EditorData } from '../components/article-editor.model';
 
 export interface Category {
   name: string;
@@ -11,6 +12,8 @@ export interface Category {
   /** Banner image of the most recent article in this topic that has one. */
   image?: string | null;
   latest_date?: string | null;
+  /** On an article's categories: the article is pinned to the top of this category. */
+  pinned?: boolean;
 }
 
 export interface ArticleSummary {
@@ -36,6 +39,8 @@ export interface Article extends ArticleSummary {
   /** True when the article's author opted in to running scripts (reviewed by a maintainer). */
   scripts: boolean;
   original_link: string | null;
+  /** Slugs of articles the author linked to, shown below the article. */
+  linked?: string[];
 }
 
 /** The home > category > sub-category tree, built by tools/build-content.mjs. */
@@ -66,7 +71,7 @@ export interface RecentItem {
   title: string;
   created: string | null;
   updated: string | null;
-  kind: 'new' | 'updated';
+  kind: 'new' | 'updated' | null;
 }
 
 export interface SearchEntry {
@@ -151,6 +156,13 @@ export class ContentService {
   getSearchIndex(): Observable<SearchEntry[]> {
     return this.searchIndex$;
   }
+
+  /** Raw article.json files, taxonomy and inbound links, for the hidden editor (?edit=1). Loaded on demand. */
+  getEditorData(): Observable<EditorData> {
+    return (this.editor$ ??= this.http.get<EditorData>('/assets/content/editor.json').pipe(shareReplay(1)));
+  }
+
+  private editor$?: Observable<EditorData>;
 
   getArticle(slug: string): Observable<Article> {
     return this.http.get<Article>(`/assets/content/articles/${slug}.json`);
