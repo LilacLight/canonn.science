@@ -3,8 +3,10 @@
   "slug": "alliance-chieftain-aerodynamics",
   "section": "codex",
   "date": "2023-10-06T03:41:00",
+  "modified": null,
   "author": "SovereignWinter",
   "excerpt": "The Alliance Chieftain is a medium size ship manufactured by Lakon Spaceways. It was designed to be sturdy yet maneuverable compared to other ships in its size and weight class making it a common choice for anti-Thargoid combat. At first look it appears at least semi-aerodynamic due to the…",
+  "banner": "media/banner.webp"
   "categories": [
     {
       "category": "Technology",
@@ -16,5 +18,4 @@
   "format": "html",
   "source": "wayback",
   "original_link": "https://canonn.science/codex/research-notes/alliance-chieftain-aerodynamics/",
-  "banner": "media/banner.webp"
 }
