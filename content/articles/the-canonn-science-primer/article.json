@@ -8,10 +8,8 @@
   "banner": "media/UA_whitebg.jpg",
   "categories": [
     {
-      "category": "Bureau of Governance & Settlement",
-      "subs": [
-        "Research"
-      ]
+      "category": "Obsolete/Incomplete",
+      "subs": []
     }
   ],
   "format": "html",
