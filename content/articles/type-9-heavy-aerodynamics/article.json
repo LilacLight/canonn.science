@@ -1,0 +1,20 @@
+{
+  "title": "Type-9 Heavy Aerodynamics",
+  "slug": "type-9-heavy-aerodynamics",
+  "section": "codex",
+  "date": "2025-04-23T01:23:49+01:00",
+  "author": "SovereignWinter",
+  "excerpt": "Aerodynamic analysis of the Lakon Type-9 Heavy, \"The Cow\": lift and drag, stability and control across the subsonic to hypersonic regimes.",
+  "banner": "media/banner.webp",
+  "categories": [
+    {
+      "category": "Technology",
+      "subs": [
+        "Spacecraft"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "wayback",
+  "original_link": "https://canonn.science/codex/research-notes/type-9-heavy-aerodynamics/"
+}
