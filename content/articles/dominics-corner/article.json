@@ -1,10 +1,11 @@
 {
-  "title": "Dominic’s Corner",
+  "title": "Dominic's Corner",
   "slug": "dominics-corner",
   "section": "codex",
   "date": "2018-06-30T21:37:48",
   "modified": "2024-07-08T13:55:21",
-  "excerpt": "Dominic’s Corner is an abandoned settlement that has been attacked by Thargoids in the Pleiades Sector GW-W c1-15 system on body 12 a.",
+  "author": "factabulous",
+  "excerpt": "Dominic's Corner is an abandoned settlement that has been attacked by Thargoids in the Pleiades Sector GW-W c1-15 system on body 12 a.",
   "banner": "media/Corner.webp",
   "categories": [
     {
