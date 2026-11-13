@@ -212,6 +212,10 @@ code, pre {
   color: #333;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 strong {
   font-weight: bold;
 }
