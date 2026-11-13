@@ -215,3 +215,12 @@ code, pre {
 strong {
   font-weight: bold;
 }
+
+.display-posts-listing .listing-item {
+  clear:both;
+}
+
+.display-posts-listing img {
+  float:left;
+  margin:0 10px 10px 0
+}
