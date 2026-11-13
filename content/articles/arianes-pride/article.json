@@ -1,10 +1,11 @@
 {
-  "title": "Ariane’s Pride Crash Site",
+  "title": "Ariane's Pride Crash Site",
   "slug": "arianes-pride",
   "section": "codex",
   "date": "2018-12-20T10:18:15",
   "modified": "2024-07-07T23:40:29",
-  "excerpt": "Ariane’s Pride is a crashed Type 9 found in the HIP 32001 system on body 3 a.",
+  "author": "factabulous",
+  "excerpt": "Ariane's Pride is a crashed Type 9 found in the HIP 32001 system on body 3 a.",
   "banner": "media/ariane.webp",
   "categories": [
     {
