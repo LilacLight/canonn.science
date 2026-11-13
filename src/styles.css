@@ -204,10 +204,14 @@ details cite {
   padding-right: 1.75rem;
 }
 
-code {
+code, pre {
   display: inline-block;
   vertical-align: top;
   padding: 0 0.4rem;
   background: #faf6e1;
   color: #333;
+}
+
+strong {
+  font-weight: bold;
 }
