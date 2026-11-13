@@ -9,6 +9,12 @@
   "banner": "media/Saragir-Hertzsprung-Terminal-LilacLight-2025-10-28_18-33-59.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Listening Posts"
+      ]
+    },
+    {
       "category": "News and Events",
       "subs": [
         "Mysteries & Hunts"

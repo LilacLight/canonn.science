@@ -9,6 +9,12 @@
   "banner": "shared-media/2017/07/Screenshot_2308-e1505589634555.jpg",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Wreckage"
+      ]
+    },
+    {
       "category": "Xenology",
       "subs": [
         "Thargoids"

@@ -9,6 +9,12 @@
   "banner": "media/Ngaruayanka.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Listening Posts"
+      ]
+    },
+    {
       "category": "News and Events",
       "subs": []
     },

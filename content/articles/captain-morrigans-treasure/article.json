@@ -9,6 +9,12 @@
   "banner": "shared-media/2017/05/Screenshot_1431-1.jpg",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Listening Posts"
+      ]
+    },
+    {
       "category": "News and Events",
       "subs": [
         "Mysteries & Hunts"
