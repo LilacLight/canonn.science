@@ -101,7 +101,7 @@ img {
 }
 
 .prose table td, .prose table th {
-  border: 1px solid var(--border);
+  border: 1px solid #808080;
   padding: 0.5rem 0.75rem;
 }
 
@@ -138,7 +138,7 @@ img {
 /*Details element styling*/
 summary {
   background-color: #373737;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   padding: 0.5rem;
   transition: 0.3s;
   cursor: pointer;
@@ -197,22 +197,30 @@ details cite {
 }
 
 /* Details-Contents Styling*/
-.con1 {
-  color: #cfd8dc;
-  font-size: 1rem;
-}
-
-.con2 {
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.con3 {
-  color: #cfd8dc;
+.contents {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+}
+
+code, pre {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 0.4rem;
+  background: #faf6e1;
+  color: #333;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.display-posts-listing .listing-item {
+  clear:both;
+}
+
+.display-posts-listing img {
+  float:left;
+  margin:0 10px 10px 0
 }

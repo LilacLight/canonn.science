@@ -1,0 +1,21 @@
+{
+  "title": "LFT 509 Investigation",
+  "slug": "lft-509-investigation",
+  "section": "codex",
+  "date": "2026-11-10T22:15:00",
+  "modified": null,
+  "author": "LilacLight",
+  "excerpt": "On the 29th October 3312, the Pilots' Federation sent out a request for commanders to investigate the permit locked LFT 509 system.",
+  "banner": "media/Perpetual Toil.webp",
+  "categories": [
+    {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    }
+  ],
+  "format": "html",
+  "source": "articles.json",
+  "original_link": null
+}
