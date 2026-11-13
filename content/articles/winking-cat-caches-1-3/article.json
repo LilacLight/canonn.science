@@ -9,6 +9,12 @@
   "banner": "media/WinkingCat.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Abandoned Settlements"
+      ]
+    },
+    {
       "category": "News and Events",
       "subs": []
     }

@@ -9,6 +9,12 @@
   "banner": "media/Njambalba-Frost-Dock.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Listening Posts"
+      ]
+    },
+    {
       "category": "News and Events",
       "subs": [
         "Mysteries & Hunts"

@@ -9,6 +9,12 @@
   "banner": "media/overlook1-1.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    },
+    {
       "category": "Xenology",
       "subs": [
         "Thargoids"

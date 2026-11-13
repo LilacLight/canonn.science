@@ -9,6 +9,12 @@
   "banner": "media/omega.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Listening Posts"
+      ]
+    },
+    {
       "category": "News and Events",
       "subs": []
     }

@@ -5,12 +5,13 @@
   "date": "2021-10-04T17:31:56+01:00",
   "modified": null,
   "author": "Node",
-  "excerpt": "",
+  "excerpt": "Trading Vessel MD-003 is an abandoned Anaconda that can be found in the HR 5625 system, on body A 1.",
   "banner": "media/359320_20211004173019_1.webp",
   "categories": [
     {
       "category": "Civilisation",
       "subs": [
+        "Abandoned Settlements",
         "Crashed Ships"
       ]
     }

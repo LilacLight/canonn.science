@@ -9,8 +9,15 @@
   "banner": "media/eagle-eye.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Orbital Installations"
+      ]
+    },
+    {
       "category": "Xenology",
       "subs": [
+        "Eagle Eye",
         "Thargoids"
       ]
     }

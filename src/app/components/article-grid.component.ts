@@ -36,7 +36,7 @@ import { ArticleSummary, articleLink } from '../services/content.service';
     .card-body h3 { font-size: 1.02rem; margin-bottom: 0.3rem; }
     .card-date { color: var(--text-muted); font-size: 0.78rem; margin: 0 0 0.5rem; }
     .card-excerpt {
-      color: var(--text-muted); font-size: 0.88rem; display: -webkit-box; -webkit-line-clamp: 3;
+      color: var(--text-muted); font-size: 0.88rem; display: -webkit-box; -webkit-line-clamp: 4;
       -webkit-box-orient: vertical; overflow: hidden;
     }
     .empty { color: var(--text-muted); }

@@ -9,6 +9,13 @@
   "banner": "media/Screenshot_2192.jpg",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Unregistered Comms Beacons",
+        "Wreckage"
+      ]
+    },
+    {
       "category": "Xenology",
       "subs": [
         "Thargoids"
