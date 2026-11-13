@@ -9,13 +9,18 @@
   "banner": "media/20230801124047_1.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    },
+    {
       "category": "News and Events",
       "subs": []
     },
     {
       "category": "Xenology",
       "subs": [
-        "Megaships",
         "Thargoids"
       ]
     }

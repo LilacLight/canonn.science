@@ -9,9 +9,14 @@
   "banner": "media/kingfisher.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Megaships"
+      ]
+    },
+    {
       "category": "Xenology",
       "subs": [
-        "Megaships",
         "Thargoids"
       ]
     }
