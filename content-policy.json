@@ -191,6 +191,8 @@
     "height",
     "max-width",
     "min-width",
+    "max-height",
+    "min-height",
     "margin",
     "margin-top",
     "margin-bottom",
