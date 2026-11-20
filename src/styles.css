@@ -75,7 +75,7 @@ img {
 .prose img {
   border-radius: var(--radius);
   margin: 1rem 0;
-  background-color: #d9d9d9; /* light grey so transparent images with dark text stay readable */
+  background-color: #8d8d8d; /* light grey so transparent images with dark text stay readable */
 }
 
 .prose a {
@@ -241,6 +241,7 @@ strong {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
+  z-index:1
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -248,16 +249,16 @@ strong {
   content: '';
   position: absolute;
   width: 2px;
-  background-color: white;
+  background-color: rgb(127, 127, 127);
   top: 0;
   bottom: 0;
   left: 50%;
-  z-index:1
 }
 
 /* Container around content */
 .timeline-container {
   padding: 10px 40px;
+  margin-bottom: 10px;
   position: relative;
   background-color: inherit;
 }
@@ -266,14 +267,23 @@ strong {
 .timeline-container::after {
   content: '';
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #FF9F55;
-  top: 15px;
+  width: 10px;
+  height: 10px;
+  background-color: #FF9F55;
+  border: 3px solid white;
+  top: 25px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 2;
+}
+
+/* Fix the circle for containers on the left side */
+.left::after {
+  right: -9px;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -7px;
 }
 
 /* Place the container to the left */
@@ -316,23 +326,21 @@ strong {
   border-color: transparent white transparent transparent;
 }
 
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
 /* The actual content */
-.content {
-  padding: 20px 30px;
+.timeline-content {
+  padding: 20px 20px;
   background-color: #141a22;
   position: relative;
   border-radius: 6px;
+  z-index: 3;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.tl-seperator {
+  text-align: center;
+  background-color: #141a22;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  z-index: 3;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -341,7 +349,7 @@ strong {
   .timeline::after {
   left: 31px;
   }
-
+  
   /* Full-width containers */
   .timeline-container {
   width: 100%;
