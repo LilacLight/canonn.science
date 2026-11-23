@@ -407,8 +407,8 @@ b {
   object-fit: cover;
 }
 
-.gallery figure {
   /* reset figure default margin */
+.gallery figure {
   height: var(--gallery-height);
 }
 /* -- Gallery Test -- */
