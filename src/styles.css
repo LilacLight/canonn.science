@@ -50,7 +50,7 @@ a:hover {
 
 img {
   border-radius: var(--radius);
-  max-width: 75%;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: auto;
@@ -117,6 +117,7 @@ img {
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-top: 0.4rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -408,8 +409,6 @@ b {
 
 .gallery figure {
   /* reset figure default margin */
-  margin: 5;
-  padding-bottom: 1em;
   height: var(--gallery-height);
 }
 /* -- Gallery Test -- */
