@@ -4,32 +4,32 @@
 <p>For details regarding data acquisition and analysis methodology, please refer to the first analysis reported last month [1].</p>
 <h2><strong>Analysis of Data Packets in GR001 and GR222</strong></h2>
 <p>For starters, the figure below shows the GR164 O03 result from the last report. The version shown here is normalized for ease of comparison to subsequent results. It should be noted that, in this form, the histogram represents a probability distribution function (PDF). The PDF of the packet length (as measured by the number of “bars” in each data packet) has a minimum of 6 and a maximum of less than 50. Additionally, there are two prominent peaks, one in the vicinity of packet length 9 and the other near 16. The overall picture that we see here is rather odd for a totally random process (why not dial-in something simpler?).</p>
-<figure style="text-align:center">
+<figure>
   <img alt="" height="564" sizes="(max-width: 1024px) 100vw, 1024px" src="media/GS164_annotated-1024x564.webp" srcset="media/GS164_annotated-1024x564.webp 1024w, media/GS164_annotated-300x165.webp 300w, media/GS164_annotated-768x423.webp 768w, media/GS164_annotated-600x330.webp 600w, media/GS164_annotated.webp 1635w" width="1024" />
 </figure>
 <p>The next order of business was to see how the above result changes in a different Guardian site. The figure below shows the PDF of packet lengths for the J03 obelisk in the GR001 site, which was selected because is the farthest one from GR164 within the Col 173 Guardian bubble. Data collection was carried out over the course of 21 hours and 567 data packets were extracted. The first thing to note here is that it is somewhat similar to the GR164 O03 result. The mean and standard deviation of the PDF below is 15.48 and 6.40, respectively, while the corresponding values for GR164 O03 are 15.07 and 6.27. The maximum and minimum values are very similar in the two results, but overall bulk of the distribution has shifted to the right by a small amount. If the data packets encode a distance value, then perhaps things have shifted to reflect a change in obelisk position relative to all other ones throughout the galaxy. Alternatively, these two results are essentially the same within statistical limits and what we see here is a random process that follows some sort of bimodal PDF.</p>
-<figure style="text-align:center">
+<figure>
   <img alt="" height="564" sizes="(max-width: 1024px) 100vw, 1024px" src="media/GS001_annotated-1024x564.webp" srcset="media/GS001_annotated-1024x564.webp 1024w, media/GS001_annotated-300x165.webp 300w, media/GS001_annotated-768x423.webp 768w, media/GS001_annotated-600x330.webp 600w, media/GS001_annotated.webp 1635w" width="1024" />
 </figure>
 <p>In order to see if we can observe a higher degree of change in the packet length PDF relative to the GR164 O03 result, a data collection was carried out in one of the sites located in the Eorl Auwsy nebula, which, at the time of this writing, was home to the most distant Ancient Ruins. Data collection was carried out over the course of 26 hours, yielding 631 data packets. The packet length PDF for the GR222 B02 obelisk is shown below. Again, the first thing to note is the general resemblance to the GR164 O03 result. There are two prominent peaks centered around packet lengths 8 and 14. The mean and standard deviation of the distribution are respectively 15.83 and 6.60, both of which are higher than the GR164 O03 values of 15.07 and 6.27. One can see that the bulk of the distribution is shifted to the right even more than the GR001 J03 result. The implication here is that the distribution is shifted to the right because the majority of other obelisks are farther away than in the first two experiments. However, if data packets actually represent distances, then given the 22,000 Ly in separation between GR164 and GR222 one would expect a more dramatic shift in the distribution. <strong> Such dramatic shift would have made it much easier to correlate the content of the data packets with physical quantities, so its absence means a serious deciphering effort is still out of reach.</strong></p>
-<figure style="text-align:center">
+<figure>
   <img alt="" height="564" sizes="(max-width: 1024px) 100vw, 1024px" src="media/GS222_annotated-1024x564.webp" srcset="media/GS222_annotated-1024x564.webp 1024w, media/GS222_annotated-300x165.webp 300w, media/GS222_annotated-768x423.webp 768w, media/GS222_annotated-600x330.webp 600w, media/GS222_annotated.webp 1635w" width="1024" />
 </figure>
 <p>For convenience, an animated figure comparing the three PDFs is shown below.</p>
-<figure style="text-align:center">
+<figure>
   <img src="media/imgur-k2541z9.gif" width="728" />
 </figure>
-<h2><b>Data Packet Repetition Analysis</b></h2>
-<p>Despite the ambiguous statistical properties of the data packet lengths, we wanted to see if any of the bar sequence patterns repeated themselves. Of the 1756 data packets collected, 37 exhibited sequence of bars that were observed at least twice, as shown in the table below. Most of them only had 2 repetitions, but some repeated 3 times. One particular bar sequence, <b>SNTLNE</b>, was observed a total of 4 times.</p>
-<figure style="text-align:center">
+<h2><strong>Data Packet Repetition Analysis</strong></h2>
+<p>Despite the ambiguous statistical properties of the data packet lengths, we wanted to see if any of the bar sequence patterns repeated themselves. Of the 1756 data packets collected, 37 exhibited sequence of bars that were observed at least twice, as shown in the table below. Most of them only had 2 repetitions, but some repeated 3 times. One particular bar sequence, <strong>SNTLNE</strong>, was observed a total of 4 times.</p>
+<figure>
   <img alt="" height="763" src="media/Repetiton_Table_2.png" width="210" />
 </figure>
-<p>As noted in the previous data packet analysis [1], there are a number of sparse spaces that can appear between adjacent bars. <b>If these do not convey information, then we can conclude that we have seen a good number of repetitions in the data.</b> </p>
-<p>If the sparse spaces do carry information, then no data packet has ever been observed twice. Although not exactly the same, the two data packets below (<b>NSLTNE</b>) are nearly identical. The keen eye will see that two of the sparse spaces are swapped, but otherwise the two are the same.</p>
-<figure style="text-align:center">
+<p>As noted in the previous data packet analysis [1], there are a number of sparse spaces that can appear between adjacent bars. <strong>If these do not convey information, then we can conclude that we have seen a good number of repetitions in the data.</strong> </p>
+<p>If the sparse spaces do carry information, then no data packet has ever been observed twice. Although not exactly the same, the two data packets below (<strong>NSLTNE</strong>) are nearly identical. The keen eye will see that two of the sparse spaces are swapped, but otherwise the two are the same.</p>
+<figure>
   <img alt="" height="979" sizes="(max-width: 824px) 100vw, 824px" src="media/NSLTNE_comparison.webp" srcset="media/NSLTNE_comparison.webp 824w, media/NSLTNE_comparison-253x300.webp 253w, media/NSLTNE_comparison-768x912.webp 768w, media/NSLTNE_comparison-600x713.webp 600w" width="824" />
 </figure>
-<h2><b>Conclusion and Outlook</b></h2>
+<h2><strong>Conclusion and Outlook</strong></h2>
 <p>Analysis of data packets from the obelisk audio in the GR001 and GR222 sites was carried out. We have made the following observations:</p>
 <ol>
   <li>The PDF of packet lengths in the two new sites shares many of the salient features of the GR164 O03 result, namely similar maximum and minimum values as well as prominent peaks in the vicinity of 9 and 15.</li>
@@ -37,10 +37,10 @@
   <li>The shift in the mean and standard deviation of the GR222 B02 packet length PDF does not seem to be commensurate with the 22,000 Ly distance to GR164 O03. We expected to see a much larger shift in the distribution. The caveat here is, of course, that we don't know how three (decimal) orders magnitude map to whatever numeral system the data packets are encoding.</li>
   <li>Of all the data packets collected, 37 had bar sequences that were observed at least twice, but with differing inter-bar spacings. One pair of data packets was nearly identical.</li>
 </ol>
-<p>It's hard to make solid conclusions at this time, but <b>the evidence seems to point more strongly toward data packets that encode random, meaningless patterns.</b></p>
+<p>It's hard to make solid conclusions at this time, but <strong>the evidence seems to point more strongly toward data packets that encode random, meaningless patterns.</strong></p>
 <p>However, it is endlessly puzzling why a random process would follow the type of bimodal PDF observed at the three sites. It's difficult to see why the fdev…er, Guardians would adopt these distributions. Perhaps we're just seeing the echoes of a Monolith network that hasn't been fully operational for millions of years, the secrets of which we'll never fully uncover.</p>
 <p>Given that Engineer Ram Tah has not yet responded to an Open Letter [2,3] requesting his feedback, only one more experiment is in the works for this line of inquiry. We might go back to GR164 O03 and reproduce the first experiment: if we see a rightward shift in the PDF similar to that of GR222 B02, then we can conclude that we simply have a rather odd bimodal PDF without underlying meaning.</p>
-<h2><b>References</b></h2>
+<h2><strong>References</strong></h2>
 <p>[1] CMDR Maligno, “Analysis of Guardian Obelisk Audio Data Packets”, <a href="/codex/analysis-of-guardian-obelisk-audio-data-packets/" rel="noopener noreferrer" target="_blank">https://canonn.science/codex/analysis-of-guardian-obelisk-audio-data-packets/</a></p>
 <p>[2] CMDR Maligno, “An Open Letter to Engineer Ram Tah”, <a href="https://forums.frontier.co.uk/threads/an-open-letter-to-engineer-ram-tah.389684/" rel="noopener noreferrer" target="_blank">https://forums.frontier.co.uk/threads/an-open-letter-to-engineer-ram-tah.389684/</a></p>
 <p>[3] Canonn Media, Canonn Faction News Report 11-11-3303, <a href="https://www.youtube.com/watch?v=6OONrDzpJVs&amp;list=PLP26MSlf_N9e1-7ftrY3ImSHhU4sWMs6U&amp;index=10" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=6OONrDzpJVs&amp;list=PLP26MSlf_N9e1-7ftrY3ImSHhU4sWMs6U&amp;index=10</a></p>
