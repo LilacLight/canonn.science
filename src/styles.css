@@ -50,7 +50,7 @@ a:hover {
 
 img {
   border-radius: var(--radius);
-  max-width: 75%;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: auto;
@@ -102,6 +102,8 @@ img {
   border-collapse: collapse;
 /*  width: 100%; */
   margin: 1rem 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .prose table td, .prose table th {
@@ -117,6 +119,7 @@ img {
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-top: 0.4rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -215,8 +218,8 @@ details cite {
 code, pre {
   display: inline-block;
   vertical-align: top;
-  padding: 0 0.4rem;
-  background: #faf6e1;
+  padding: 0 0.3rem;
+  background: #fff090;
   color: #333;
 }
 /* -- Details styling -- */
@@ -406,10 +409,8 @@ b {
   object-fit: cover;
 }
 
-.gallery figure {
   /* reset figure default margin */
-  margin: 5;
-  padding-bottom: 1em;
+.gallery figure {
   height: var(--gallery-height);
 }
 /* -- Gallery Test -- */
