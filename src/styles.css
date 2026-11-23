@@ -28,9 +28,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 600;
+/*  font-weight: 600; */
   line-height: 1.25;
   margin: 0 0 0.6em;
 }
@@ -49,8 +49,11 @@ a:hover {
 }
 
 img {
-  max-width: 100%;
+  border-radius: var(--radius);
+  max-width: 75%;
   height: auto;
+  display: block;
+  margin: auto;
 }
 
 ::selection {
@@ -68,15 +71,15 @@ img {
    archive -- keeps embedded WP markup (images, blockquotes, tables,
    galleries) legible without depending on any original theme CSS. */
 .prose {
-  font-size: 1.05rem;
+/*  font-size: 1.05rem; */
   color: var(--text);
 }
 
-.prose img {
-  border-radius: var(--radius);
-  margin: 1rem 0;
-  background-color: #8d8d8d; /* light grey so transparent images with dark text stay readable */
-}
+/*.prose img {*/
+/*  border-radius: var(--radius); Move to img */ 
+/*  margin: 1rem 0; */
+/*  background-color: #8d8d8d; /* light grey so transparent images with dark text stay readable */
+/*}*/
 
 .prose a {
   color: var(--accent-light);
@@ -90,13 +93,14 @@ img {
   font-style: italic;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
-  margin-top: 1.6em;
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6{
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 .prose table {
   border-collapse: collapse;
-  width: 100%;
+/*  width: 100%; */
   margin: 1rem 0;
 }
 
@@ -113,15 +117,18 @@ img {
   color: var(--text-muted);
   font-size: 0.85rem;
   margin-top: 0.4rem;
+  text-align: center;
 }
 
 .prose iframe, .prose video {
-  max-width: 100%;
+  max-width: 75%;
+  display: block;
+  margin: auto;
   border-radius: var(--radius);
 }
 
 .prose iframe[src*="youtube"], .prose iframe[src*="vimeo"] {
-  width: 100%;
+/*  width: 100%; */
   height: auto;
   aspect-ratio: 16 / 9;
   border: 0;
@@ -135,11 +142,12 @@ img {
 /* in-page anchors: leave room for the sticky header */
 .prose [id], #Hesperus-Decoder { scroll-margin-top: 5rem; }
 
-/*Details element styling*/
+/* -- Details styling -- */
 summary {
   background-color: #373737;
-  font-size: 1.1rem;
-  padding: 0.5rem;
+/*  font-size: 1.1rem; */
+  font-weight: 600; 
+  padding: 0.3rem;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -211,13 +219,18 @@ code, pre {
   background: #faf6e1;
   color: #333;
 }
+/* -- Details styling -- */
 
 pre {
   white-space: pre-wrap;
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 900;
+}
+
+b {
+  font-weight: 700;
 }
 
 .display-posts-listing .listing-item {
@@ -235,7 +248,6 @@ strong {
 }
 
 /* -- Timeline Test -- */
-
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
@@ -347,7 +359,7 @@ strong {
 @media screen and (max-width: 600px) {
   /* Place the timelime to the left */
   .timeline::after {
-  left: 31px;
+  left: 22px;
   }
   
   /* Full-width containers */
@@ -377,3 +389,27 @@ strong {
   }
 }
 /* -- Timeline Test -- */
+
+/* -- Gallery Test -- */
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+  gap: 2rem;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery figure {
+  /* reset figure default margin */
+  margin: 5;
+  padding-bottom: 1em;
+  height: var(--gallery-height);
+}
+/* -- Gallery Test -- */
