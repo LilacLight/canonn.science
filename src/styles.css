@@ -102,6 +102,8 @@ img {
   border-collapse: collapse;
 /*  width: 100%; */
   margin: 1rem 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .prose table td, .prose table th {
@@ -216,8 +218,8 @@ details cite {
 code, pre {
   display: inline-block;
   vertical-align: top;
-  padding: 0 0.4rem;
-  background: #faf6e1;
+  padding: 0 0.3rem;
+  background: #fff090;
   color: #333;
 }
 /* -- Details styling -- */
