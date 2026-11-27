@@ -9,10 +9,8 @@
   "banner": "media/DarkShadowLYNX_Odysseus.jpg",
   "categories": [
     {
-      "category": "Civilisation",
-      "subs": [
-        "Generation Ships"
-      ]
+      "category": "News and Events",
+      "subs": []
     }
   ],
   "format": "html",

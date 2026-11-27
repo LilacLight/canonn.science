@@ -9,10 +9,8 @@
   "banner": "media/Cmdr-Dilliam53-GenerationShipAtlas.jpg",
   "categories": [
     {
-      "category": "Civilisation",
-      "subs": [
-        "Generation Ships"
-      ]
+      "category": "News and Events",
+      "subs": []
     }
   ],
   "format": "html",

@@ -16,7 +16,9 @@
     },
     {
       "category": "News and Events",
-      "subs": []
+      "subs": [
+        "Mysteries & Hunts"
+      ]
     }
   ],
   "format": "html",

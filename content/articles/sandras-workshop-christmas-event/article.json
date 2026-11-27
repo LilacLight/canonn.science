@@ -9,8 +9,16 @@
   "banner": "media/2022-12-16-13-07-49-Wyrd.webp",
   "categories": [
     {
+      "category": "Civilisation",
+      "subs": [
+        "Listening Posts"
+      ]
+    },
+    {
       "category": "News and Events",
-      "subs": []
+      "subs": [
+        "Mysteries & Hunts"
+      ]
     }
   ],
   "format": "html",
