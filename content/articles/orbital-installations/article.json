@@ -10,7 +10,9 @@
   "categories": [
     {
       "category": "Civilisation",
-      "subs": []
+      "subs": [
+        "Orbital Installations"
+      ], "pinned": true
     }
   ],
   "format": "html",
